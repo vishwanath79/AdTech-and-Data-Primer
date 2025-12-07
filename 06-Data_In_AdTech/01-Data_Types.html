@@ -1,0 +1,637 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data Types in AdTech (First, Second, and Third-Party) &#8212; AdTech for the data Professional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06-Data_In_AdTech/01-Data_Types';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="DMPs (Data Management Platforms) - The Old Guard" href="02-DMPs.html" />
+    <link rel="prev" title="Chapter 6: Data in AdTech" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../00-Preface.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AdTech for the data Professional</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 1 - Foundations of Digital Advertising &amp; Measurement</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../About.html">About the Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Introduction/index.html">Introduction</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-Core_Concepts/index.html">Chapter 2: Core Concepts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/01-What_is_AdTech.html">What is AdTech?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/02-Key_Dataflows.html">How Data Moves in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/03-Impressions_Clicks_Conversions.html">Important Numbers for Online Ads</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-Measurement_Fundamentals/index.html">Chapter 3: Measurement Fundamentals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/01-Importance_of_Measurement.html">Why It’s Important to Measure (and Why It’s Harder Than You Think)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/02-Counting_Impressions.html">Counting Impressions: Tags, Pixels, and Logs</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/03-Measurement_Challenges.html">The Messy Truth About Measuring ROI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-User_Identification/index.html">Chapter 4: User Identification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/01-Cookies.html">Cookies (Not the Good Kind)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/02-Crumbling_Cookies.html">The Great Cookie Flip-Flop (Chaos in Motion)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/03-Alternative_IDs.html">Life After Cookies (Other Ways to Identify Yourself)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/04-Device_vs_People.html">Device IDs vs. People IDs: Who Are We Even Following?</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 2 - Programmatic Advertising &amp; Data Activation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05-Programmatic_Intro/index.html">Chapter 5: Introduction to Programmatic Advertising</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/01-What_is_Programmatic.html">What is Programmatic Advertising?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/02-RTB.html">The Millisecond Auction: Bidding in Real Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/03-Programmatic_Players.html">DSPs, SSPs, Ad Exchanges, and DMPs</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Chapter 6: Data in AdTech</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Data Types in AdTech (First, Second, and Third-Party)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-DMPs.html">DMPs (Data Management Platforms) - The Old Guard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-CDPs.html">CDPs (Customer Data Platforms)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-Segmentation_Targeting.html">Targeting and Segmentation</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 3 - Modern Challenges &amp; Future Trends</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07-Privacy_Regulation/index.html">Chapter 7: Privacy and Regulation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/01-Privacy_Concerns.html">Privacy Issues in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/02-Regulations.html">Privacy Rules (The Laws With Teeth)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/03-CMPs.html">CMPs (Platforms for Managing Consent)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/04-Privacy_by_Design.html">Privacy by Design in Action (Patterns for Engineers)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08-Programming_in_AdTech/index.html">Chapter 8: Programming in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/01-Introduction.html">Programming in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/02-Adserver.html">Basic Ad Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/03-Header%20Bidding%20Basics.html">Header Bidding Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/04-Real%20Time%20Bidding.html">Real Time Bidding (RTB) Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/05-Creative%20AB%20Testing.html">Creative A/B Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/06-Deal%20IDs%20%26%20Private%20Marketplace%20%28PMP%29.html">Deal IDs &amp; Private Marketplace (PMP)</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/07-Client%20%26%20Server%20Side%20Tagging.html">Client-Side vs Server-Side Tagging</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09-AI_ML/index.html">AI &amp; Machine Learning in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/01-AI_Applications.html">AI Applications in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/02-Algorithmic_Bidding.html">Algorithmic Bidding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/03-Predictive_Analytics.html">Predictive Analytics in AdTech</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Conclusion.html">Conclusion: The AdTech Evolution Continues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendix.html">Appendix: Resources, Tools &amp; Further Reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/06-Data_In_AdTech/01-Data_Types.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Data Types in AdTech (First, Second, and Third-Party)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-party-data-the-data-you-actually-own">First-Party Data: The Data You Actually Own</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-party-data-someone-else-s-garden">Second-Party Data: Someone Else’s Garden</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#third-party-data-the-data-graveyard">Third-Party Data: The Data Graveyard</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-data-hierarchy">The Data Hierarchy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-data-actually-looks-like">What Data Actually Looks Like</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="data-types-in-adtech-first-second-and-third-party">
+<h1>Data Types in AdTech (First, Second, and Third-Party)<a class="headerlink" href="#data-types-in-adtech-first-second-and-third-party" title="Link to this heading">#</a></h1>
+<p>Ever been targeted for an ad that made absolutely no sense? Like, you’re a 35-year-old man and suddenly you’re seeing ads for maternity wear? Or you searched for running shoes once and now every website thinks you’re a marathon runner?</p>
+<p>That’s third-party data doing its thing—or more accurately, failing at its thing.</p>
+<p>(Another way to make this happen is to use techniques like deleting/regenerating the AdID  on your phone to confuse the models but thats another chapter)</p>
+<p>Data is what makes programmatic advertising work. Without it, you’re just throwing ads at random people and hoping something sticks. With good data, you can target “women aged 25-34 in Seattle who searched for running shoes in the last 7 days and have a household income above $75K.” With bad data, you’re showing maternity ads to dudes.</p>
+<p>But here’s the thing: not all data is created equal. The source matters more than you’d think. It determines how valuable it is, how accurate it is, and whether you’ll get sued for using it.</p>
+<section id="first-party-data-the-data-you-actually-own">
+<h2>First-Party Data: The Data You Actually Own<a class="headerlink" href="#first-party-data-the-data-you-actually-own" title="Link to this heading">#</a></h2>
+<p>This is data you collect directly from your own customers. It’s yours. You own it. You don’t pay anyone else for it, and you don’t have to worry about whether someone else collected it ethically. Think of it like your own garden—you planted the seeds, you watered them, you know exactly what’s growing there.</p>
+<p><strong>What it looks like:</strong></p>
+<ul class="simple">
+<li><p>Email addresses from newsletter signups</p></li>
+<li><p>Purchase history from your e-commerce site</p></li>
+<li><p>Browsing behavior on your website (via your own analytics)</p></li>
+<li><p>App usage data from your mobile app</p></li>
+<li><p>CRM data (customer names, addresses, preferences)</p></li>
+<li><p>Loyalty program data</p></li>
+<li><p>Customer service interactionsçç</p></li>
+</ul>
+<p><strong>Why it’s valuable:</strong>
+You own it—no licensing fees, no third-party dependencies. It’s the most accurate because it comes directly from users interacting with your brand. People who gave you their email are more engaged than random web visitors. It’s privacy-compliant because users opted in å to you. And your competitors can’t access it—that’s a huge advantage.</p>
+<p><strong>Why it’s limited:</strong>
+It only covers your customers—doesn’t help you reach new audiences. It requires scale—if you only have 1,000 customers, your data isn’t that useful for targeting. And you need infrastructure—you have to build systems to collect, store, and activate it.</p>
+<p><strong>Real example:</strong>
+You run an online bookstore. You know John bought three sci-fi novels in the last month, Sarah abandoned a cart with a cookbook, and Mike browses every week but never buys.</p>
+<p>With first-party data, you can retarget John with new sci-fi releases, send Sarah an email reminder about her cart, and show Mike a discount offer to convert him.</p>
+<p>This is the gold standard. If the cookie apocalypse taught us anything, it’s that first-party data is the only data you can truly rely on.</p>
+</section>
+<section id="second-party-data-someone-else-s-garden">
+<h2>Second-Party Data: Someone Else’s Garden<a class="headerlink" href="#second-party-data-someone-else-s-garden" title="Link to this heading">#</a></h2>
+<p>This is just first-party data from another company that they share or sell directly to you. It’s not a different type of data—it’s a different relationship. Think of it like your neighbor letting you pick tomatoes from their garden. Same quality, different owner.</p>
+<p><strong>What it looks like:</strong></p>
+<ul class="simple">
+<li><p>A hotel chain shares customer data with an airline for a partnership</p></li>
+<li><p>A publisher sells their audience data directly to an advertiser</p></li>
+<li><p>A retailer shares purchase data with a brand for co-marketing</p></li>
+</ul>
+<p><strong>Why it’s valuable:</strong>
+Higher quality than third-party because it comes from a known, trusted source. You have a direct relationship—you know where it came from. You can get custom audiences tailored to specific use cases. And data clean rooms allow safe collaboration without exposing raw PII.</p>
+<p><strong>Why it’s complicated:</strong>
+Privacy concerns—users opted in to Company A, not Company B. You need legal agreements—can’t just share customer data without contracts. Limited scale—only works for specific partnerships. And you’re relying on another company’s data practices—you have to trust them.</p>
+<p><strong>Real example:</strong>
+Spotify partners with Starbucks. Spotify shares anonymized listener data (people who listen to morning playlists) with Starbucks, who targets them with coffee ads. Starbucks shares purchase data back to Spotify for measurement.</p>
+<p>Both companies benefit. Users… might not even know this is happening.</p>
+</section>
+<section id="third-party-data-the-data-graveyard">
+<h2>Third-Party Data: The Data Graveyard<a class="headerlink" href="#third-party-data-the-data-graveyard" title="Link to this heading">#</a></h2>
+<p>This is data collected by companies whose entire business is gathering, packaging, and selling audience data. They scrape the web, buy data from publishers, track users across sites, and bundle it into segments you can buy.</p>
+<p>Think of it like buying produce from a sketchy roadside stand—you don’t know where it came from, how fresh it is, or whether it’s actually what they say it is.</p>
+<p><strong>What it looks like:</strong></p>
+<ul class="simple">
+<li><p>Oracle BlueKai selling “in-market for SUVs” audiences</p></li>
+<li><p>Experian selling “high net worth households” data</p></li>
+<li><p>Lotame selling “travel enthusiasts” segments</p></li>
+<li><p>Data brokers selling demographic and behavioral profiles</p></li>
+</ul>
+<p><strong>How it’s collected:</strong>
+Cookies and tracking pixels across thousands of websites, mobile app SDKs tracking location and behavior, data partnerships with publishers, public records (address, property ownership, voter registration), and inferred data (algorithmic guesses about age, income, interests).</p>
+<p><strong>Why advertisers used to love it:</strong>
+Massive scale—reach hundreds of millions of users. Easy to buy—just upload a segment to your DSP. Fills gaps—adds targeting dimensions you don’t have from first-party data. And someone else did the hard work—no collection required.</p>
+<p><strong>Why it’s dying:</strong>
+Privacy regulations—GDPR and CCPA make it legally risky. Cookie deprecation—can’t track users across sites anymore. Low quality—often inaccurate (ever been targeted as the wrong gender or age?). Lack of transparency—you don’t know where it came from or how it was collected. And it’s expensive—data fees add up fast.</p>
+<p><strong>Real example:</strong>
+You’re launching a new luxury watch brand. You don’t have customers yet, so no first-party data. You buy a third-party segment: “affluent males aged 35-55 interested in luxury goods.”</p>
+<p>Does it work? Maybe. The data might be 60% accurate, 40% garbage. But it’s better than nothing when you’re starting from zero.</p>
+</section>
+<section id="the-data-hierarchy">
+<h2>The Data Hierarchy<a class="headerlink" href="#the-data-hierarchy" title="Link to this heading">#</a></h2>
+<p>In terms of value and reliability, it’s simple:</p>
+<p><strong>1st-party &gt; 2nd-party &gt; 3rd-party</strong></p>
+<p>First-party: You know it’s accurate because you collected it yourself. Second-party: Probably accurate if the source is trustworthy. Third-party: Who knows? Could be accurate, could be completely wrong.</p>
+<p>For privacy compliance, the ranking is the same:</p>
+<p><strong>1st-party</strong> (users opted in to you directly) &gt; <strong>2nd-party</strong> (users opted in to a partner) &gt; <strong>3rd-party</strong> (users might not even know they’re being tracked)</p>
+</section>
+<section id="what-data-actually-looks-like">
+<h2>What Data Actually Looks Like<a class="headerlink" href="#what-data-actually-looks-like" title="Link to this heading">#</a></h2>
+<p>Let’s compare how the same person might appear in different data sets:</p>
+<p><strong>Fictional First-Party Data (from retailer.com):</strong></p>
+<ul class="simple">
+<li><p>Name: Eddie Cobain</p></li>
+<li><p>Email: eddiec&#64;email.com</p></li>
+<li><p>Purchase history: Guitars ($1200), Microphone stand ($280), Recording software ($350)</p></li>
+<li><p>Browsing: Viewed “Recording gear” section 6 times in last month</p></li>
+<li><p>Location: Seattle, WA</p></li>
+<li><p>Loyalty status: Member since 2000, 15 purchases total</p></li>
+</ul>
+<p><strong>Third-Party Data (from data broker):</strong></p>
+<ul class="simple">
+<li><p>Age: 28-35 (inferred)</p></li>
+<li><p>Gender: Male (inferred)</p></li>
+<li><p>Interests: “Music enthusiast” (based on cookies from 5 sites)</p></li>
+<li><p>Income: $50K-$75K (inferred from zip code)</p></li>
+<li><p>Device: iPhone user</p></li>
+<li><p>Location: Seattle metro area</p></li>
+</ul>
+<p>Notice the difference? First-party data knows Eddie bought a guitar. Third-party data guesses he might like music stuff. One is fact, the other is inference.</p>
+<p>The cookie apocalypse is making third-party data less reliable every day. If you’re building an AdTech strategy now, start with first-party data. Everything else is just guessing.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./06-Data_In_AdTech"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 6: Data in AdTech</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02-DMPs.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">DMPs (Data Management Platforms) - The Old Guard</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-party-data-the-data-you-actually-own">First-Party Data: The Data You Actually Own</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-party-data-someone-else-s-garden">Second-Party Data: Someone Else’s Garden</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#third-party-data-the-data-graveyard">Third-Party Data: The Data Graveyard</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-data-hierarchy">The Data Hierarchy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-data-actually-looks-like">What Data Actually Looks Like</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Vishwanath Subramanian
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright © 2025 Vishwanath Subramanian. Licensed under CC BY-NC-ND 4.0..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,870 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Targeting and Segmentation &#8212; AdTech for the data Professional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06-Data_In_AdTech/04-Segmentation_Targeting';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 7: Privacy and Regulation" href="../07-Privacy_Regulation/index.html" />
+    <link rel="prev" title="CDPs (Customer Data Platforms)" href="03-CDPs.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../00-Preface.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AdTech for the data Professional</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 1 - Foundations of Digital Advertising &amp; Measurement</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../About.html">About the Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Introduction/index.html">Introduction</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-Core_Concepts/index.html">Chapter 2: Core Concepts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/01-What_is_AdTech.html">What is AdTech?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/02-Key_Dataflows.html">How Data Moves in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/03-Impressions_Clicks_Conversions.html">Important Numbers for Online Ads</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-Measurement_Fundamentals/index.html">Chapter 3: Measurement Fundamentals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/01-Importance_of_Measurement.html">Why It’s Important to Measure (and Why It’s Harder Than You Think)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/02-Counting_Impressions.html">Counting Impressions: Tags, Pixels, and Logs</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/03-Measurement_Challenges.html">The Messy Truth About Measuring ROI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-User_Identification/index.html">Chapter 4: User Identification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/01-Cookies.html">Cookies (Not the Good Kind)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/02-Crumbling_Cookies.html">The Great Cookie Flip-Flop (Chaos in Motion)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/03-Alternative_IDs.html">Life After Cookies (Other Ways to Identify Yourself)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/04-Device_vs_People.html">Device IDs vs. People IDs: Who Are We Even Following?</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 2 - Programmatic Advertising &amp; Data Activation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05-Programmatic_Intro/index.html">Chapter 5: Introduction to Programmatic Advertising</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/01-What_is_Programmatic.html">What is Programmatic Advertising?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/02-RTB.html">The Millisecond Auction: Bidding in Real Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/03-Programmatic_Players.html">DSPs, SSPs, Ad Exchanges, and DMPs</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Chapter 6: Data in AdTech</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01-Data_Types.html">Data Types in AdTech (First, Second, and Third-Party)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-DMPs.html">DMPs (Data Management Platforms) - The Old Guard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-CDPs.html">CDPs (Customer Data Platforms)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Targeting and Segmentation</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 3 - Modern Challenges &amp; Future Trends</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07-Privacy_Regulation/index.html">Chapter 7: Privacy and Regulation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/01-Privacy_Concerns.html">Privacy Issues in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/02-Regulations.html">Privacy Rules (The Laws With Teeth)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/03-CMPs.html">CMPs (Platforms for Managing Consent)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/04-Privacy_by_Design.html">Privacy by Design in Action (Patterns for Engineers)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08-Programming_in_AdTech/index.html">Chapter 8: Programming in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/01-Introduction.html">Programming in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/02-Adserver.html">Basic Ad Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/03-Header%20Bidding%20Basics.html">Header Bidding Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/04-Real%20Time%20Bidding.html">Real Time Bidding (RTB) Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/05-Creative%20AB%20Testing.html">Creative A/B Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/06-Deal%20IDs%20%26%20Private%20Marketplace%20%28PMP%29.html">Deal IDs &amp; Private Marketplace (PMP)</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/07-Client%20%26%20Server%20Side%20Tagging.html">Client-Side vs Server-Side Tagging</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09-AI_ML/index.html">AI &amp; Machine Learning in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/01-AI_Applications.html">AI Applications in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/02-Algorithmic_Bidding.html">Algorithmic Bidding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/03-Predictive_Analytics.html">Predictive Analytics in AdTech</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Conclusion.html">Conclusion: The AdTech Evolution Continues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendix.html">Appendix: Resources, Tools &amp; Further Reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/06-Data_In_AdTech/04-Segmentation_Targeting.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Targeting and Segmentation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-segmentation">What is segmentation?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-types-of-segmentation">Different Types of Segmentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demographic-segmentation">Demographic Segmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behavioral-segmentation">Behavioral Segmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#psychographic-segmentation">Psychographic Segmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-by-transaction">Segmentation by Transaction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lifecycle-segmentation">Lifecycle Segmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-of-engagement">Segmentation of Engagement</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-segmentation-strategies">Advanced Segmentation Strategies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#people-who-look-like-you">People Who Look Like You</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequential-messaging-journey-based">Sequential Messaging (Journey-Based)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exclusion-targeting-suppression">Exclusion Targeting (Suppression)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#campaigns-to-get-back-customers">Campaigns to Get Back Customers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#targeting-in-action-real-life-examples">Targeting in Action (Real-Life Examples)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-commerce-retargeting-abandoned-carts">E-commerce: Retargeting Abandoned Carts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saas-free-trial-to-paid-conversion">SaaS: Free Trial to Paid Conversion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subscription-box-keeping-customers">Subscription Box: Keeping Customers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b2b-taking-care-of-leads">B2B: Taking Care of Leads</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-segmentation-mistakes">Common Segmentation Mistakes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#too-wide">1. Too Wide</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#too-small">2. Too Small</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#static-segments">3. Static Segments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-paying-attention-to-frequency">4. Not Paying Attention to Frequency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-testing">5. Not Testing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-segmentation">Tools for Segmentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bottom-line">The Bottom Line</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="targeting-and-segmentation">
+<h1>Targeting and Segmentation<a class="headerlink" href="#targeting-and-segmentation" title="Link to this heading">#</a></h1>
+<p>You have information. You might have first-party data in a CDP, third-party segments from a DMP, or just email lists and Google Analytics.  What now?</p>
+<p>This is where <strong>segmentation</strong> (putting users into groups that make sense) and <strong>targeting</strong> (showing them ads that are relevant to them) come in.  If you do it right, your campaigns will do three to five times better than regular “spray and pray” ads.  If you do it wrong, you’re wasting money showing TV ads to people who just bought a TV.</p>
+<p>Let’s talk about how to use data to get in touch with the right people.</p>
+<section id="what-is-segmentation">
+<h2>What is segmentation?<a class="headerlink" href="#what-is-segmentation" title="Link to this heading">#</a></h2>
+<p><strong>Segmentation</strong> means splitting your audience into groups based on things they have in common, like behaviors, traits, or characteristics.</p>
+<p>You don’t treat everyone the same; instead, you make specific groups like</p>
+<ul class="simple">
+<li><p>“People who bought something in the last 10 days”</p></li>
+<li><p>“People who signed up for email but never bought anything”</p></li>
+<li><p>“Customers with a lot of value (Lifetime Value &gt; $1,000)”</p></li>
+<li><p>“People who abandoned their carts yesterday”</p></li>
+<li><p>“Customers who haven’t bought anything in six months”</p></li>
+</ul>
+<p>Each group gets messages, deals, and creative that are made just for them.</p>
+<p>Why it matters: An ad that talks to everyone doesn’t connect with anyone.  Every time, an ad for “runners training for a marathon” will do better than one for “people who like fitness.”</p>
+</section>
+<section id="different-types-of-segmentation">
+<h2>Different Types of Segmentation<a class="headerlink" href="#different-types-of-segmentation" title="Link to this heading">#</a></h2>
+<section id="demographic-segmentation">
+<h3>Demographic Segmentation<a class="headerlink" href="#demographic-segmentation" title="Link to this heading">#</a></h3>
+<p>Sort by basic traits like age, gender, income, education, location, and job title.</p>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>Women between the ages of 25 and 34</p></li>
+<li><p>Households that make $100,000 or more</p></li>
+<li><p>People who have finished college</p></li>
+<li><p>Parents with kids who are still young</p></li>
+<li><p>Executives in the C-suite</p></li>
+</ul>
+<p><strong>When it works:</strong> Broad targeting for products that are popular with a lot of people, like insurance, financial services, and consumer goods.</p>
+<p><strong>When it doesn’t:</strong> Not everyone in a demographic is the same.  Not all women between the ages of 25 and 34 have the same interests or shopping habits.</p>
+<p><strong>Tip for targeting:</strong> Don’t use demographics as your whole strategy; use them as a filter. “Men aged 25-34 who went to my site” is better than just “men aged 25-34.”</p>
+</section>
+<section id="behavioral-segmentation">
+<h3>Behavioral Segmentation<a class="headerlink" href="#behavioral-segmentation" title="Link to this heading">#</a></h3>
+<p>Put them into groups based on what they’ve done and how they interact with your brand.</p>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>Bought in the last 30 days</p></li>
+<li><p>Cart that was left behind</p></li>
+<li><p>Went to the product page three times or more</p></li>
+<li><p>Saw more than 30 seconds of a video</p></li>
+<li><p>Received more than five emails in the last month</p></li>
+</ul>
+<p><strong>When it works:</strong> Almost always. Behavior is a better sign than demographics. Someone who looked at your product is more likely to buy it than someone who just fits a demographic profile.</p>
+</section>
+<section id="psychographic-segmentation">
+<h3>Psychographic Segmentation<a class="headerlink" href="#psychographic-segmentation" title="Link to this heading">#</a></h3>
+<p>Group by personality, values, interests, and way of life.</p>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>People who like to be outside</p></li>
+<li><p>Care about the environment</p></li>
+<li><p>People who want luxury brands</p></li>
+<li><p>People who are early adopters of technology</p></li>
+<li><p>Focused on health and wellness</p></li>
+</ul>
+<p><strong>When it works:</strong> Advertising for brands, lifestyle products, and aspirational categories like travel, fashion, and cars</p>
+<p><strong>When it doesn’t work:</strong> Psychographics are often based on data from other sources, which can be very wrong.  Someone who reads one article about yoga doesn’t mean they are “wellness enthusiasts.”</p>
+<p><strong>Tip for targeting:</strong> Use first-party data when you can.  “People who are interested in sustainability who have signed up for your email list” is better than “random people who are interested in sustainability.”</p>
+</section>
+<section id="segmentation-by-transaction">
+<h3>Segmentation by Transaction<a class="headerlink" href="#segmentation-by-transaction" title="Link to this heading">#</a></h3>
+<p>Group by what they bought, how much they spent, and how often.</p>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>People buying for the first time</p></li>
+<li><p>Customers who come back (3 or more purchases)</p></li>
+<li><p>Customers who are worth a lot (top 10% LTV)</p></li>
+<li><p>People who only buy when there are sales</p></li>
+<li><p>People who pay for a subscription</p></li>
+</ul>
+<p><strong>When it works:</strong> loyalty programs, upselling, and retention marketing.</p>
+<p>RFM segmentation (Recency, Frequency, Monetary) is the best way to target people:</p>
+<ul class="simple">
+<li><p><strong>Recency:</strong> When did they last make a purchase?</p></li>
+<li><p><strong>Frequency:</strong> How often do they make purchases?</p></li>
+<li><p><strong>Money:</strong> How much do they spend?</p></li>
+</ul>
+<p>A high RFM score means you have good customers.  Low RFM means you’re likely to lose customers.</p>
+</section>
+<section id="lifecycle-segmentation">
+<h3>Lifecycle Segmentation<a class="headerlink" href="#lifecycle-segmentation" title="Link to this heading">#</a></h3>
+<p>Put them in groups based on where they are in the customer journey.</p>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>Prospects (never bought)</p></li>
+<li><p>New customers (made their first purchase less than 30 days ago)</p></li>
+<li><p>Customers who have made a purchase in the last 90 days</p></li>
+<li><p>Customers who are at risk (haven’t bought anything in 6 months)</p></li>
+<li><p>Customers who left (didn’t buy anything in 12 months)</p></li>
+</ul>
+<p><strong>When it works:</strong> Email marketing, campaigns to keep customers, and automation of the customer lifecycle.</p>
+<p><strong>Example messages:</strong></p>
+<ul class="simple">
+<li><p>“Get 20% off your first order” for prospects</p></li>
+<li><p>For new customers: “Here’s how to get the most out of your purchase”</p></li>
+<li><p>“You might also like…” for active customers</p></li>
+<li><p>“We miss you, {{customer_name}}! Here’s 30% off” for at-risk customers</p></li>
+<li><p>“It’s been a while, {{customer_name}}—want to come back?”</p></li>
+</ul>
+</section>
+<section id="segmentation-of-engagement">
+<h3>Segmentation of Engagement<a class="headerlink" href="#segmentation-of-engagement" title="Link to this heading">#</a></h3>
+<p>Put them into groups based on how they use your channels and content.</p>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>Email: Opens every email or views sms</p></li>
+<li><p>Website: People who visit once a week vs people who visit once</p></li>
+<li><p>App: Users who are active every day vs those who aren’t</p></li>
+<li><p>Social: people who interact with posts vs people who don’t</p></li>
+</ul>
+<p><strong>When it works:</strong> campaigns to re-engage people and channel optimization.</p>
+<p><strong>Tip for targeting:</strong> Don’t send more emails to users who don’t open them.  Stop wasting money on them or change how you do things.</p>
+</section>
+</section>
+<section id="advanced-segmentation-strategies">
+<h2>Advanced Segmentation Strategies<a class="headerlink" href="#advanced-segmentation-strategies" title="Link to this heading">#</a></h2>
+<section id="people-who-look-like-you">
+<h3>People Who Look Like You<a class="headerlink" href="#people-who-look-like-you" title="Link to this heading">#</a></h3>
+<p>Find new people who are like your best customers based on things they have in common.</p>
+<p><strong>How it works:</strong></p>
+<ol class="arabic simple">
+<li><p>Put your “seed audience,” like high-value customers, on a platform.</p></li>
+<li><p>The platform looks at their demographics, interests, and actions.</p></li>
+<li><p>Platform finds people who are like your customers but aren’t yet customers.</p></li>
+<li><p>You use ads to get those lookalikes to buy from you.</p></li>
+</ol>
+<p><strong>Platforms that do this:</strong></p>
+<ul class="simple">
+<li><p>Facebook Lookalike Audiences</p></li>
+<li><p>Google Similar Audiences (no longer supported, but AI targeting does this now)</p></li>
+<li><p>The Trade Desk’s lookalike modeling</p></li>
+<li><p>Lookalikes of LiveRamp</p></li>
+</ul>
+<p><strong>When it works:</strong> Getting more people to buy things than just your current audience.</p>
+<p><strong>When it doesn’t:</strong> Lookalikes don’t work if your seed audience is too small (less than 1,000 people) or too broad (all customers ever).</p>
+</section>
+<section id="sequential-messaging-journey-based">
+<h3>Sequential Messaging (Journey-Based)<a class="headerlink" href="#sequential-messaging-journey-based" title="Link to this heading">#</a></h3>
+<p>Change the ads you show people based on where they are in the funnel.</p>
+<p><strong>For example, the flow of a free trial of SaaS:</strong></p>
+<ul class="simple">
+<li><p><strong>Awareness:</strong> The user sees an ad for “project management software.”</p></li>
+<li><p><strong>Consideration:</strong> The user clicks, goes to the site, and watches the demo video.</p></li>
+<li><p><strong>Goal:</strong> User signs up for a free trial</p></li>
+<li><p><strong>Decision:</strong> On the seventh day of the trial, the user sees an ad that says, “Upgrade now and save 20%.”</p></li>
+<li><p><strong>Conversion:</strong> The user upgrades to a paid plan.</p></li>
+</ul>
+<p>Different creative and messages are used at each stage.  You aren’t showing everyone the same ad.</p>
+</section>
+<section id="exclusion-targeting-suppression">
+<h3>Exclusion Targeting (Suppression)<a class="headerlink" href="#exclusion-targeting-suppression" title="Link to this heading">#</a></h3>
+<p>It’s just as important to know who you don’t target as it is to know who you do.</p>
+<p><strong>Don’t include:</strong></p>
+<ul class="simple">
+<li><p>Customers who are already there (from acquisition campaigns)</p></li>
+<li><p>New converters (from retargeting—they’ve already bought!)</p></li>
+<li><p>Employees (from ads that raise brand awareness)</p></li>
+<li><p>Leads that aren’t very good (from lead gen campaigns)</p></li>
+</ul>
+<p><strong>For example:</strong> You run an ad that says, “Sign up and get 30% off.” Someone does sign up.  You’re wasting money and making them mad by showing them that ad over and over.</p>
+<p>Make a list of recent converters that you don’t want to see and don’t let them see them for 30 to 90 days.</p>
+</section>
+<section id="campaigns-to-get-back-customers">
+<h3>Campaigns to Get Back Customers<a class="headerlink" href="#campaigns-to-get-back-customers" title="Link to this heading">#</a></h3>
+<p>Target people who used to be customers but stopped buying.</p>
+<p><strong>Group:</strong> Customers who haven’t bought anything in more than six months</p>
+<p><strong>Messages:</strong></p>
+<ul class="simple">
+<li><p>“We miss you! Here’s 40% off to come back”</p></li>
+<li><p>“Check out what’s new since you left”</p></li>
+<li><p>Survey: “What made you stop buying from us?”</p></li>
+</ul>
+<p><strong>Works best when:</strong> You’ve made your product better or have new things they haven’t seen before.</p>
+</section>
+</section>
+<section id="targeting-in-action-real-life-examples">
+<h2>Targeting in Action (Real-Life Examples)<a class="headerlink" href="#targeting-in-action-real-life-examples" title="Link to this heading">#</a></h2>
+<section id="e-commerce-retargeting-abandoned-carts">
+<h3>E-commerce: Retargeting Abandoned Carts<a class="headerlink" href="#e-commerce-retargeting-abandoned-carts" title="Link to this heading">#</a></h3>
+<p><strong>Segment:</strong> People who put things in their cart in the last 24 hours but didn’t buy them</p>
+<p><strong>Targeting:</strong></p>
+<ul class="simple">
+<li><p>Dynamic retargeting ads that show the exact items they left behind</p></li>
+<li><p>Email with the subject line “You left something behind”</p></li>
+<li><p>Offer: 10% off or free shipping</p></li>
+</ul>
+<p><strong>Why it works:</strong> They were ready to buy, the products were specific (not generic), and they got them within 24 hours.</p>
+<p><strong>Tip:</strong> Don’t show these ads again after 7 days or after they buy.  Don’t be that brand that people can’t forget.</p>
+</section>
+<section id="saas-free-trial-to-paid-conversion">
+<h3>SaaS: Free Trial to Paid Conversion<a class="headerlink" href="#saas-free-trial-to-paid-conversion" title="Link to this heading">#</a></h3>
+<p><strong>Segment:</strong> Users who are on a free trial for days 7–14 and haven’t turned on key features</p>
+<p><strong>Targeting:</strong></p>
+<ul class="simple">
+<li><p>Messages in the app: “Use this feature to get more value”</p></li>
+<li><p>Email drip: examples of ROI in case studies</p></li>
+<li><p>“Upgrade today and save 25%” ads that show up again and again</p></li>
+</ul>
+<p><strong>Why it works:</strong> They already use your product; you’re just pushing them to see more value and make a purchase.</p>
+</section>
+<section id="subscription-box-keeping-customers">
+<h3>Subscription Box: Keeping Customers<a class="headerlink" href="#subscription-box-keeping-customers" title="Link to this heading">#</a></h3>
+<p><strong>Segment:</strong> People who didn’t pay for the last two months</p>
+<p><strong>Targeting:</strong></p>
+<ul class="simple">
+<li><p>Email: “We saw that you skipped. Would you like to change the box you get next?”</p></li>
+<li><p>Offer: “Get a bonus item when you reactivate”</p></li>
+<li><p>Survey: “How can we improve?”</p></li>
+</ul>
+<p><strong>How it works:</strong> Stopping churn before it starts.  Someone who skips two months is about to cancel.  Take action now.</p>
+</section>
+<section id="b2b-taking-care-of-leads">
+<h3>B2B: Taking Care of Leads<a class="headerlink" href="#b2b-taking-care-of-leads" title="Link to this heading">#</a></h3>
+<p><strong>Segment:</strong> Downloaded a white paper but didn’t ask for a demo</p>
+<p><strong>Targeting:</strong></p>
+<ul class="simple">
+<li><p>Ads on LinkedIn: “Find out how [similar company] uses our platform”</p></li>
+<li><p>Email sequence: content that teaches, not sales pitches</p></li>
+<li><p>Retargeting: “Set up a demo and get a free consultation”</p></li>
+</ul>
+<p><strong>Why it works:</strong> The sales cycles for B2B are long.  You’re staying on their minds without being pushy.</p>
+</section>
+</section>
+<section id="common-segmentation-mistakes">
+<h2>Common Segmentation Mistakes<a class="headerlink" href="#common-segmentation-mistakes" title="Link to this heading">#</a></h2>
+<section id="too-wide">
+<h3>1. Too Wide<a class="headerlink" href="#too-wide" title="Link to this heading">#</a></h3>
+<p>“Women ages 18 to 65” isn’t a useful group.  That’s 50% of the people.</p>
+<p><strong>Fix:</strong> Add filters for behavior or transactions.  “Women 25–40 who bought beauty products in the last 60 days” is something you can do.</p>
+</section>
+<section id="too-small">
+<h3>2. Too Small<a class="headerlink" href="#too-small" title="Link to this heading">#</a></h3>
+<p>“Men in Brooklyn who own a golden retriever and like jazz and are 34 to 35 years old” is…  a dozen people.</p>
+<p><strong>Solution:</strong> Find a balance between being specific and being big.  You need a big enough group of people in a segment to make targeting worth it.</p>
+</section>
+<section id="static-segments">
+<h3>3. Static Segments<a class="headerlink" href="#static-segments" title="Link to this heading">#</a></h3>
+<p>Making segments and never changing them again.</p>
+<p><strong>Fix:</strong> Segments need to be flexible.  As time goes by, “Purchased in last 30 days” should change on its own.</p>
+</section>
+<section id="not-paying-attention-to-frequency">
+<h3>4. Not Paying Attention to Frequency<a class="headerlink" href="#not-paying-attention-to-frequency" title="Link to this heading">#</a></h3>
+<p>Because you didn’t limit frequency, you showed the same ad to the same person 50 times.</p>
+<p><strong>Fix:</strong> Limit the number of times a user can see an ad to a certain number of times per week (for example, five times).</p>
+</section>
+<section id="not-testing">
+<h3>5. Not Testing<a class="headerlink" href="#not-testing" title="Link to this heading">#</a></h3>
+<p>Assuming you know which parts will do best without testing.</p>
+<p><strong>Solution:</strong> Run A/B tests.  Targeting broadly vs. narrowly.  Behavioral vs. demographic.  Lookalike audiences vs. custom audiences.  Learn and measure.</p>
+</section>
+</section>
+<section id="tools-for-segmentation">
+<h2>Tools for Segmentation<a class="headerlink" href="#tools-for-segmentation" title="Link to this heading">#</a></h2>
+<p><strong>CDPs:</strong> Segment, mParticle, and Treasure Data (make segments using first-party data)</p>
+<p><strong>Email services:</strong> Klaviyo, Mailchimp, and HubSpot (with built-in segmentation)</p>
+<p><strong>Ad platforms:</strong> The Trade Desk, Google Ads, and Facebook Ads Manager (for making custom audiences)</p>
+<p><strong>Analytics:</strong> Google Analytics, Mixpanel, and Amplitude (for behavioral segments)</p>
+<p><strong>DMPs:</strong> Oracle and Adobe Audience Manager (third-party segments—fewer people are using them)</p>
+</section>
+<section id="the-bottom-line">
+<h2>The Bottom Line<a class="headerlink" href="#the-bottom-line" title="Link to this heading">#</a></h2>
+<p>Segmentation is how you change “everyone” into “the right people at the right time with the right message.”</p>
+<p>Sending the same ads to everyone means low performance and wasted money.
+Ads that are targeted to specific groups get more clicks, more conversions, and lower costs per acquisition (CPA).</p>
+<p>There is data.  The tools are there.  How well you segment and target is often what makes the difference between campaigns that work and ones that don’t.</p>
+<p>Start with the basics: separate customers from leads.  Put recent buyers in one group and lapsed buyers in another.  Make messages personal based on this.</p>
+<p>Then become more advanced as you figure out what works.</p>
+<p>And always, always leave out people who have already converted.  Retargeting someone who just bought from you is a sure sign that you don’t know what you’re doing.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./06-Data_In_AdTech"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03-CDPs.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">CDPs (Customer Data Platforms)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../07-Privacy_Regulation/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 7: Privacy and Regulation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-segmentation">What is segmentation?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-types-of-segmentation">Different Types of Segmentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demographic-segmentation">Demographic Segmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behavioral-segmentation">Behavioral Segmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#psychographic-segmentation">Psychographic Segmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-by-transaction">Segmentation by Transaction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lifecycle-segmentation">Lifecycle Segmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-of-engagement">Segmentation of Engagement</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-segmentation-strategies">Advanced Segmentation Strategies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#people-who-look-like-you">People Who Look Like You</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequential-messaging-journey-based">Sequential Messaging (Journey-Based)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exclusion-targeting-suppression">Exclusion Targeting (Suppression)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#campaigns-to-get-back-customers">Campaigns to Get Back Customers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#targeting-in-action-real-life-examples">Targeting in Action (Real-Life Examples)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-commerce-retargeting-abandoned-carts">E-commerce: Retargeting Abandoned Carts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saas-free-trial-to-paid-conversion">SaaS: Free Trial to Paid Conversion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subscription-box-keeping-customers">Subscription Box: Keeping Customers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b2b-taking-care-of-leads">B2B: Taking Care of Leads</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-segmentation-mistakes">Common Segmentation Mistakes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#too-wide">1. Too Wide</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#too-small">2. Too Small</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#static-segments">3. Static Segments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-paying-attention-to-frequency">4. Not Paying Attention to Frequency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-testing">5. Not Testing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-segmentation">Tools for Segmentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bottom-line">The Bottom Line</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Vishwanath Subramanian
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright © 2025 Vishwanath Subramanian. Licensed under CC BY-NC-ND 4.0..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

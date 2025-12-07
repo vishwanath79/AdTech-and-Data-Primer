@@ -1,0 +1,715 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>DSPs, SSPs, Ad Exchanges, and DMPs &#8212; AdTech for the data Professional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '05-Programmatic_Intro/03-Programmatic_Players';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 6: Data in AdTech" href="../06-Data_In_AdTech/index.html" />
+    <link rel="prev" title="The Millisecond Auction: Bidding in Real Time" href="02-RTB.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../00-Preface.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AdTech for the data Professional</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 1 - Foundations of Digital Advertising &amp; Measurement</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../About.html">About the Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Introduction/index.html">Introduction</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-Core_Concepts/index.html">Chapter 2: Core Concepts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/01-What_is_AdTech.html">What is AdTech?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/02-Key_Dataflows.html">How Data Moves in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/03-Impressions_Clicks_Conversions.html">Important Numbers for Online Ads</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-Measurement_Fundamentals/index.html">Chapter 3: Measurement Fundamentals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/01-Importance_of_Measurement.html">Why It’s Important to Measure (and Why It’s Harder Than You Think)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/02-Counting_Impressions.html">Counting Impressions: Tags, Pixels, and Logs</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/03-Measurement_Challenges.html">The Messy Truth About Measuring ROI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-User_Identification/index.html">Chapter 4: User Identification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/01-Cookies.html">Cookies (Not the Good Kind)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/02-Crumbling_Cookies.html">The Great Cookie Flip-Flop (Chaos in Motion)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/03-Alternative_IDs.html">Life After Cookies (Other Ways to Identify Yourself)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/04-Device_vs_People.html">Device IDs vs. People IDs: Who Are We Even Following?</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 2 - Programmatic Advertising &amp; Data Activation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Chapter 5: Introduction to Programmatic Advertising</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01-What_is_Programmatic.html">What is Programmatic Advertising?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-RTB.html">The Millisecond Auction: Bidding in Real Time</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">DSPs, SSPs, Ad Exchanges, and DMPs</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06-Data_In_AdTech/index.html">Chapter 6: Data in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/01-Data_Types.html">Data Types in AdTech (First, Second, and Third-Party)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/02-DMPs.html">DMPs (Data Management Platforms) - The Old Guard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/03-CDPs.html">CDPs (Customer Data Platforms)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/04-Segmentation_Targeting.html">Targeting and Segmentation</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 3 - Modern Challenges &amp; Future Trends</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07-Privacy_Regulation/index.html">Chapter 7: Privacy and Regulation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/01-Privacy_Concerns.html">Privacy Issues in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/02-Regulations.html">Privacy Rules (The Laws With Teeth)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/03-CMPs.html">CMPs (Platforms for Managing Consent)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/04-Privacy_by_Design.html">Privacy by Design in Action (Patterns for Engineers)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08-Programming_in_AdTech/index.html">Chapter 8: Programming in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/01-Introduction.html">Programming in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/02-Adserver.html">Basic Ad Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/03-Header%20Bidding%20Basics.html">Header Bidding Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/04-Real%20Time%20Bidding.html">Real Time Bidding (RTB) Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/05-Creative%20AB%20Testing.html">Creative A/B Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/06-Deal%20IDs%20%26%20Private%20Marketplace%20%28PMP%29.html">Deal IDs &amp; Private Marketplace (PMP)</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/07-Client%20%26%20Server%20Side%20Tagging.html">Client-Side vs Server-Side Tagging</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09-AI_ML/index.html">AI &amp; Machine Learning in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/01-AI_Applications.html">AI Applications in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/02-Algorithmic_Bidding.html">Algorithmic Bidding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/03-Predictive_Analytics.html">Predictive Analytics in AdTech</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Conclusion.html">Conclusion: The AdTech Evolution Continues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendix.html">Appendix: Resources, Tools &amp; Further Reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/05-Programmatic_Intro/03-Programmatic_Players.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>DSPs, SSPs, Ad Exchanges, and DMPs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-main-players">The Main Players</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demand-side-platforms-dsps">Demand-Side Platforms (DSPs)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-dsps-work">How DSPs Work</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exchanges-for-ads">Exchanges for Ads</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platforms-for-managing-data-dmps">Platforms for Managing Data (DMPs)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-of-dmp-data">Flow of DMP Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-they-all-work-together">How They All Work Together</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-money">The Money</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-points">Important Points</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="dsps-ssps-ad-exchanges-and-dmps">
+<h1>DSPs, SSPs, Ad Exchanges, and DMPs<a class="headerlink" href="#dsps-ssps-ad-exchanges-and-dmps" title="Link to this heading">#</a></h1>
+<p>Acronyms in programmatic advertising are an alphabet soup - DSPs, SSPs, DMPs, CDPs, AdX, and PMPs that are meant to confound you.</p>
+<p>Let’s figure out who these actors are, what they do, and how they all fit into the programming ecology.</p>
+<section id="the-main-players">
+<h2>The Main Players<a class="headerlink" href="#the-main-players" title="Link to this heading">#</a></h2>
+<p>Programmatic advertising is like a stock market for ads.  You need buyers, sellers, a place to trade, and information to help you make trading judgments.</p>
+<ul class="simple">
+<li><p><strong>Advertisers</strong> are Buyers (want to show advertisements)</p></li>
+<li><p><strong>Publishers</strong> are sellers who have ad space</p></li>
+<li><p><strong>Ad Exchanges</strong> are like stock exchanges, which are markets where people may buy and sell things</p></li>
+<li><p><strong>DSPs</strong> are Buyer’s broker (tools for advertisers to acquire things)</p></li>
+<li><p><strong>SSPs</strong> are Seller’s broker (tools for publishers to sell)</p></li>
+<li><p><strong>DMPs</strong> - Market research company (gives you information on who to target) by providing data or an identity graph</p></li>
+</ul>
+<p>Let’s look at each one in detail.</p>
+</section>
+<hr class="docutils" />
+<section id="demand-side-platforms-dsps">
+<h2>Demand-Side Platforms (DSPs)<a class="headerlink" href="#demand-side-platforms-dsps" title="Link to this heading">#</a></h2>
+<p>DSP refers to the software that lets advertisers buy ad space automatically on many ad exchanges.</p>
+<p><strong>What they do:</strong></p>
+<ul class="simple">
+<li><p>Connect to many ad exchanges at the same time</p></li>
+<li><p>Check bid requests in milliseconds</p></li>
+<li><p>Choose which impressions to bid on and how much to pay</p></li>
+<li><p>Handle the pacing, finances, and optimization of campaigns</p></li>
+<li><p>Report on performance</p></li>
+</ul>
+<p><strong>Why they exist:</strong> Advertisers would have to connect to each ad exchange, publisher, and SSP separately if DSPs didn’t exist.  DSPs put all that merchandise into one place where people can buy it.</p>
+<section id="how-dsps-work">
+<h3>How DSPs Work<a class="headerlink" href="#how-dsps-work" title="Link to this heading">#</a></h3>
+<p>When someone opens a page with an ad slot:</p>
+<ol class="arabic simple">
+<li><p><strong>Bid request comes in</strong> from an ad exchange with user data and page context</p></li>
+<li><p><strong>DSP checks</strong> the impression against current campaigns</p></li>
+<li><p><strong>Filters for targeting</strong> (location, age, interests, etc.)</p></li>
+<li><p><strong>Bid calculated</strong> based on the chance of conversion and the budget</p></li>
+<li><p><strong>Bid sent</strong> to the ad exchange (if the targeting requirements are met)</p></li>
+<li><p>The ad is presented to the “auction winner.”</p></li>
+</ol>
+<p>This whole setup takes about 100 milliseconds.</p>
+<p><strong>Prominent SSPs:</strong></p>
+<ul class="simple">
+<li><p><strong>Google Ad Manager</strong> (formerly known as DoubleClick for Publishers)</p></li>
+<li><p><strong>Magnite</strong> (the combination of Rubicon Project and Telaria)</p></li>
+<li><p><strong>PubMatic</strong></p></li>
+<li><p><strong>OpenX</strong></p></li>
+<li><p><strong>Index Exchange</strong></p></li>
+</ul>
+<p><strong>How they make money:</strong>  DSPs, SSPs take 10–20% of what consumers pay.</p>
+</section>
+</section>
+<section id="exchanges-for-ads">
+<h2>Exchanges for Ads<a class="headerlink" href="#exchanges-for-ads" title="Link to this heading">#</a></h2>
+<p>Digital marketplaces that let DSPs and SSPs bid on things in real time.</p>
+<p><strong>What they do:</strong></p>
+<ul class="simple">
+<li><p>Find sellers (SSPs) who want to buy from buyers (DSPs)</p></li>
+<li><p>Run the real auction in a few milliseconds</p></li>
+<li><p>Send bid requests from SSPs to DSPs</p></li>
+<li><p>Give winning bids back to SSPs</p></li>
+<li><p>Take care of billing and making sure payments are correct</p></li>
+</ul>
+<p><strong>Why they exist:</strong> A place where buyers and sellers can meet without taking sides. Think of NASDAQ as a place to buy and sell adverts.</p>
+<p><strong>How do ad exchanges work?</strong>
+The exchange is in the middle:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Publisher (via SSP) → Ad Exchange → DSPs → Bids → Exchange → Winner → SSP → Ad Shown
+</pre></div>
+</div>
+<p><strong>Important point:</strong> Most ad exchanges use “second-price auctions,” which means that the winner pays just a little more than the second-highest bid, not the whole amount of their bid.  This makes bidders want to bid what they think is fair.</p>
+<p><strong>Big Ad Exchanges:</strong></p>
+<ul class="simple">
+<li><p><strong>Google Ad Exchange (AdX)</strong> - The biggest in terms of volume</p></li>
+<li><p><strong>OpenRTB exchanges</strong> - A lot of smaller exchanges use the OpenRTB protocol.</p></li>
+<li><p><strong>App Nexus</strong> (now part of Microsoft/Xandr)</p></li>
+<li><p>The Rubicon Project is now part of Magnite.</p></li>
+</ul>
+</section>
+<section id="platforms-for-managing-data-dmps">
+<h2>Platforms for Managing Data (DMPs)<a class="headerlink" href="#platforms-for-managing-data-dmps" title="Link to this heading">#</a></h2>
+<p><strong>What they do:</strong> They collect, organize, and use audience data to target people.</p>
+<p><strong>What they do:</strong></p>
+<ul class="simple">
+<li><p>Combine data from several sources, like websites, apps, CRMs, and third parties</p></li>
+<li><p>Make groups of people based on their hobbies, demographics, and behavior.</p></li>
+<li><p>Allow DSPs to target segments</p></li>
+<li><p>Give information about the makeup and behavior of the audience</p></li>
+</ul>
+<p><strong>Why they exist:</strong> Advertisers need information to make wise decisions about how much to bid.  DMPs make that data useful by bringing it all together.</p>
+<section id="flow-of-dmp-data">
+<h3>Flow of DMP Data<a class="headerlink" href="#flow-of-dmp-data" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Data Sources → DMP → Creating Segments → DSP → Bidding on Targeted Ads
+</pre></div>
+</div>
+<p><strong>What data sources do DMPs use?</strong></p>
+<ul class="simple">
+<li><p><strong>First-party data:</strong> People who visit your website or app</p></li>
+<li><p>Second-party data: data from partners</p></li>
+<li><p>Third-party data: audience segments that were bought</p></li>
+<li><p><strong>Data that isn’t online:</strong> CRM, point of sale, call center</p></li>
+</ul>
+<p><strong>Basic DMP segmentation:</strong></p>
+<p><strong>Important DMPs:</strong></p>
+<ul class="simple">
+<li><p><strong>Manager of Adobe Audience</strong></p></li>
+<li><p><strong>Oracle BlueKai</strong></p></li>
+<li><p><strong>Lotame</strong></p></li>
+<li><p><strong>Salesforce DMP</strong></p></li>
+</ul>
+<p><strong>Note:</strong> DMPs are going down since third-party cookies are going away.  Customer Data Platforms (CDPs) that focus on first-party data are taking their place.</p>
+</section>
+</section>
+<section id="how-they-all-work-together">
+<h2>How They All Work Together<a class="headerlink" href="#how-they-all-work-together" title="Link to this heading">#</a></h2>
+<p>When you load a webpage, here is the whole process:</p>
+<ol class="arabic simple">
+<li><p><strong>Publisher’s page loads</strong> with an ad space</p></li>
+<li><p><strong>SSP gets</strong> an ad request from a publisher</p></li>
+<li><p><strong>SSP contacts ad exchange</strong> with a request for a bid</p></li>
+<li><p><strong>Ad exchange broadcasts</strong> send requests to associated DSPs</p></li>
+<li><p><strong>DSPs ask DMPs for information on user segments</strong></p></li>
+<li><p><strong>DSPs figure out bids</strong> based on user and targeted data.</p></li>
+<li><p><strong>DSPs send bids</strong> to the ad exchange</p></li>
+<li><p><strong>Ad exchange holds an auction and picks a winner</strong></p></li>
+<li><p><strong>Winning bid sent</strong> back to SSP</p></li>
+<li><p><strong>SSP sends</strong> the winning ad to the publisher’s page</p></li>
+<li><p><strong>User sees ad</strong> (we hope)</p></li>
+</ol>
+<p>This everything happens in about 100 milliseconds.  It’s both impressive and scary at the same time.</p>
+</section>
+<section id="the-money">
+<h2>The Money<a class="headerlink" href="#the-money" title="Link to this heading">#</a></h2>
+<p>Everyone gets a piece:</p>
+<ul class="simple">
+<li><p><strong>DSP fee:</strong> 10% to 20% of the money spent on ads</p></li>
+<li><p><strong>SSP fee:</strong> 10–20% of the money spent on ads</p></li>
+<li><p><strong>Ad exchange fee:</strong> 5% to 10% of the money spent on ads</p></li>
+<li><p><strong>Data fees:</strong> These can change (DMPs, third-party data)</p></li>
+</ul>
+<p><strong>Example:</strong> The advertiser pays $10 per thousand views.</p>
+<ul class="simple">
+<li><p>DSP gets $1.50 (15%).</p></li>
+<li><p>The ad exchange takes $0.75 (7.5%).</p></li>
+<li><p>SSP costs $1.25 (12.5%).</p></li>
+<li><p><strong>What the publisher gets:</strong> $6.50</p></li>
+</ul>
+<p>The “ad tech tax” takes 35% of the money before the publisher gets any.  This is why publishers don’t like programmatic.</p>
+</section>
+<section id="important-points">
+<h2>Important Points<a class="headerlink" href="#important-points" title="Link to this heading">#</a></h2>
+<p>There are a lot of middlemen in the programmatic ecosystem, and each one adds value in its own way:</p>
+<ul class="simple">
+<li><p><strong>DSPs</strong> - Tools for advertisers to buy</p></li>
+<li><p>SSPs are tools that publishers can use to sell things.</p></li>
+<li><p><strong>Ad Exchanges</strong> - Marketplaces that make it easy to hold auctions</p></li>
+<li><p><strong>DMPs</strong> - Collecting and separating data</p></li>
+</ul>
+<p>They’re all needed right now since the ecology is too broken up for direct interactions.  But if walled gardens get bigger and privacy gets stricter, this complicated infrastructure may get smaller or maybe go away completely.</p>
+<p>For now, it’s important to know who does what in order to get around programmatic advertising.  Keep in mind that every acronym means that someone is taking a cut of the ad dollar.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./05-Programmatic_Intro"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02-RTB.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Millisecond Auction: Bidding in Real Time</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../06-Data_In_AdTech/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 6: Data in AdTech</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-main-players">The Main Players</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demand-side-platforms-dsps">Demand-Side Platforms (DSPs)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-dsps-work">How DSPs Work</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exchanges-for-ads">Exchanges for Ads</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platforms-for-managing-data-dmps">Platforms for Managing Data (DMPs)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-of-dmp-data">Flow of DMP Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-they-all-work-together">How They All Work Together</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-money">The Money</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-points">Important Points</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Vishwanath Subramanian
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright © 2025 Vishwanath Subramanian. Licensed under CC BY-NC-ND 4.0..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,655 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Messy Truth About Measuring ROI &#8212; AdTech for the data Professional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '03-Measurement_Fundamentals/03-Measurement_Challenges';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 4: User Identification" href="../04-User_Identification/index.html" />
+    <link rel="prev" title="Counting Impressions: Tags, Pixels, and Logs" href="02-Counting_Impressions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../00-Preface.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AdTech for the data Professional</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 1 - Foundations of Digital Advertising &amp; Measurement</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../About.html">About the Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Introduction/index.html">Introduction</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-Core_Concepts/index.html">Chapter 2: Core Concepts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/01-What_is_AdTech.html">What is AdTech?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/02-Key_Dataflows.html">How Data Moves in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/03-Impressions_Clicks_Conversions.html">Important Numbers for Online Ads</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Chapter 3: Measurement Fundamentals</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01-Importance_of_Measurement.html">Why It’s Important to Measure (and Why It’s Harder Than You Think)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-Counting_Impressions.html">Counting Impressions: Tags, Pixels, and Logs</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">The Messy Truth About Measuring ROI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-User_Identification/index.html">Chapter 4: User Identification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/01-Cookies.html">Cookies (Not the Good Kind)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/02-Crumbling_Cookies.html">The Great Cookie Flip-Flop (Chaos in Motion)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/03-Alternative_IDs.html">Life After Cookies (Other Ways to Identify Yourself)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/04-Device_vs_People.html">Device IDs vs. People IDs: Who Are We Even Following?</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 2 - Programmatic Advertising &amp; Data Activation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05-Programmatic_Intro/index.html">Chapter 5: Introduction to Programmatic Advertising</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/01-What_is_Programmatic.html">What is Programmatic Advertising?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/02-RTB.html">The Millisecond Auction: Bidding in Real Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/03-Programmatic_Players.html">DSPs, SSPs, Ad Exchanges, and DMPs</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06-Data_In_AdTech/index.html">Chapter 6: Data in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/01-Data_Types.html">Data Types in AdTech (First, Second, and Third-Party)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/02-DMPs.html">DMPs (Data Management Platforms) - The Old Guard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/03-CDPs.html">CDPs (Customer Data Platforms)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/04-Segmentation_Targeting.html">Targeting and Segmentation</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 3 - Modern Challenges &amp; Future Trends</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07-Privacy_Regulation/index.html">Chapter 7: Privacy and Regulation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/01-Privacy_Concerns.html">Privacy Issues in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/02-Regulations.html">Privacy Rules (The Laws With Teeth)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/03-CMPs.html">CMPs (Platforms for Managing Consent)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/04-Privacy_by_Design.html">Privacy by Design in Action (Patterns for Engineers)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08-Programming_in_AdTech/index.html">Chapter 8: Programming in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/01-Introduction.html">Programming in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/02-Adserver.html">Basic Ad Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/03-Header%20Bidding%20Basics.html">Header Bidding Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/04-Real%20Time%20Bidding.html">Real Time Bidding (RTB) Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/05-Creative%20AB%20Testing.html">Creative A/B Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/06-Deal%20IDs%20%26%20Private%20Marketplace%20%28PMP%29.html">Deal IDs &amp; Private Marketplace (PMP)</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/07-Client%20%26%20Server%20Side%20Tagging.html">Client-Side vs Server-Side Tagging</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09-AI_ML/index.html">AI &amp; Machine Learning in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/01-AI_Applications.html">AI Applications in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/02-Algorithmic_Bidding.html">Algorithmic Bidding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/03-Predictive_Analytics.html">Predictive Analytics in AdTech</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Conclusion.html">Conclusion: The AdTech Evolution Continues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendix.html">Appendix: Resources, Tools &amp; Further Reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/03-Measurement_Fundamentals/03-Measurement_Challenges.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Messy Truth About Measuring ROI</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-new-way">The New Way</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="the-messy-truth-about-measuring-roi">
+<h1>The Messy Truth About Measuring ROI<a class="headerlink" href="#the-messy-truth-about-measuring-roi" title="Link to this heading">#</a></h1>
+<p>It’s like trying to get those tangled up earphones out of your pocket when you work in adtech. It’s true, and most of the time it’s worse.</p>
+<p>The Good Old Days (Which Weren’t That Good)</p>
+<p>It was easy before the digital age:</p>
+<ul class="simple">
+<li><p>TV ads—Keep an eye on sales patterns and hope they match up.</p></li>
+<li><p>Print ads: Add a coupon code and keep track of how many people use it.</p></li>
+<li><p>Billboard—Hope for those eyes</p></li>
+</ul>
+<p>Everyone was measured at the “cohort or channel level.” For example, “We spent $100,000 on TV in Q3 and sales went up 15%.” Did the advertising on TV do it? What are the trends for each season? No one knew.</p>
+<section id="the-new-way">
+<h2>The New Way<a class="headerlink" href="#the-new-way" title="Link to this heading">#</a></h2>
+<p>We have a lot more information now:</p>
+<ul class="simple">
+<li><p>Tracking at the pixel level - Dashboards that update in real time - Attribution models based on machine learning</p></li>
+<li><p>Graphs that can be used on more than one device</p></li>
+<li><p>Giving credit for more than one touch</p></li>
+</ul>
+<p>This is excellent, but it just means that people are now arguing more over what is really making sales happen.</p>
+<p>The Real Problems</p>
+<ol class="arabic simple">
+<li><p>Correlation does not equal causation (the eternal problem)</p></li>
+</ol>
+<p>People who viewed your ad and then bought your product didn’t necessarily buy it because of the ad. They could have: Were already intending to buy— Saw a post on social media that was real— A friend told me about this, although I would have found it anyhow by searching on Google.</p>
+<p>It’s hard to identify the difference between the “incremental impact” (what the ad actually added) and the “baseline impact” (what would have happened anyhow). Incrementality tests are useful, but they are expensive and most businesses don’t do them.</p>
+<ol class="arabic simple" start="2">
+<li><p>Who Gets the Credit? Multi-Touch Attribution</p></li>
+</ol>
+<p>This is what a modern customer’s journey looks like:</p>
+<ol class="arabic simple">
+<li><p>See a commercial on YouTube 2. Don’t pay attention to it 3. A week later, see an ad on Instagram 4. Search for the item on Google 5. Click on an ad for a search engine 6. Go without buying</p></li>
+<li><p>Go to a news site that has a retargeting ad</p></li>
+<li><p>Come back straight away and buy</p></li>
+</ol>
+<p>Which point of contact “made” the sale? The first one that got people talking? The last one before you buy it? A mixture with some weight?</p>
+<p><strong>Attribution models</strong> try to figure this out:</p>
+<ul class="simple">
+<li><p><strong>Last-click</strong>: The person who clicked on them last gets all the credit (not very nice, but frequent)</p></li>
+<li><p><strong>initial-click</strong>: The initial interaction receives credit, and everything else is ignored.</p></li>
+<li><p>“Linear”: Give all touchpoints the same amount of credit (fair but not right)</p></li>
+<li><p><strong>Time-decay</strong>: Newer touches receive more credit (better but random)</p></li>
+<li><p><strong>Data-driven</strong>: Let machine learning figure things out (sounds smart, but it’s a black box)</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Chaos across all channels</p></li>
+</ol>
+<p>It’s hard to make sense of it all if you’re a huge company running commercials on TV, the internet, podcasts, influencer relationships, and retail media networks all at the same time.</p>
+<p>Different systems use different approaches to measure:</p>
+<ul class="simple">
+<li><p>TV gets its ratings from Nielsen and information from set-top boxes. - Digital employs pixels and cookies.</p></li>
+<li><p>Surveys and promo vouchers are used in podcasts</p></li>
+<li><p>Influencers use unique links to maintain track</p></li>
+<li><p>Retail media is held in walled gardens, like Amazon</p></li>
+</ul>
+<p>Most marketing teams don’t have the data technical capabilities or the money to pay for integration that you need to get a unified perspective.</p>
+<ol class="arabic simple" start="4">
+<li><p>Privacy is killing third-party tracking</p></li>
+</ol>
+<p>Do you remember when cookies let you stalk people online? Yes, that’s dying:</p>
+<ul class="simple">
+<li><p>GDPR in Europe needs permission - CCPA in California allows individuals opt out - Safari disables third-party cookies by default - Chrome is steadily getting rid of them - iOS made IDFA opt-in, but no one does.</p></li>
+</ul>
+<p>Measurement went from “we can see everything” to “we can see 40% of users and guess about the rest” all at once.</p>
+<ol class="arabic simple" start="5">
+<li><p>The platform data is only meaningful to the platform itself.</p></li>
+</ol>
+<p>When ad networks say their advertising led to purchases, it’s hard to identify who really made the transactions.</p>
+<p>Self-attribution models are used by platforms to give themselves the maximum credit. It’s like asking the car dealer if the price they gave you is fair. Yes, the answer is always yes.</p>
+<p>Best Practices (If You Want to Get Useful Results)</p>
+<ol class="arabic simple">
+<li><p>Before you start, make plans for how to succeed.</p></li>
+</ol>
+<p>Don’t launch a campaign and then try to find out what to track. Choose ahead of time:</p>
+<ul class="simple">
+<li><p>What do you want to get out of this? (Do you know the brand? Sales? Leads?</p></li>
+<li><p>What is the key performance indicator (KPI)? (Conversions? Impressions? Money?)</p></li>
+<li><p>What is the goal? (10% increase? $5 CPA? 3x ROAS?)</p></li>
+</ul>
+<p>If you don’t know what success looks like, you’ll never know if you have it.</p>
+<ol class="arabic simple" start="2">
+<li><p>Invest in the correct infrastructure</p></li>
+</ol>
+<p>This indicates you need to double-check your website’s tags to make sure they are proper.</p>
+<ul class="simple">
+<li><p>A data warehouse that combines information about ad spending and sales - Engineers that can genuinely integrate datasets appropriately - A single source of truth for metrics (not five distinct dashboards showing five different values)</p></li>
+</ul>
+<p>I’ve seen companies spend millions on marketing while fighting over whose spreadsheet is correct. Don’t be that kind of business.</p>
+<ol class="arabic simple" start="3">
+<li><p>Get to know people both online and in person</p></li>
+</ol>
+<p>If you run digital ads yet 80% of your sales occurs in physical stores, you need to develop a means to keep track of store visits and purchases. Options:</p>
+<ul class="simple">
+<li><p>Store visit attribution (Google and Facebook can accomplish this with data on where people are)</p></li>
+<li><p>Matching CRM (using customer IDs to connect online marketing to offline sales)</p></li>
+<li><p>Promo codes (they’re old school, but they work)</p></li>
+<li><p>Test and control groups (the cleanest but needs discipline)</p></li>
+</ul>
+<ol class="arabic simple" start="6">
+<li><p>Understand how AI will effect you (or not)</p></li>
+</ol>
+<p>AI and machine learning can help you uncover trends, make predictions, and make things better. But they can’t fix:</p>
+<ul class="simple">
+<li><p>Wrongly setting up tracking</p></li>
+<li><p>Attribution models that are not fair - Data that is not complete - Not being able to tell the difference between correlation and causation</p></li>
+</ul>
+<p>AI isn’t magic. AI just makes your lousy data worse.</p>
+<p>There are other things that matter besides sales. You need to measure now and then:</p>
+<ul class="simple">
+<li><p><strong>Brand lift</strong> (Do more people know about us?)</p></li>
+<li><p>“Thought” (Are we one of the things they can buy?)</p></li>
+<li><p><strong>Feelings</strong> (Do they like us or think we’re a bother?)</p></li>
+<li><p><strong>Voice share</strong> (How much of the conversation do we own?)</p></li>
+</ul>
+<p>These “soft” metrics are tougher to quantify, but they are typically more helpful than fretting about conversions from the last click.</p>
+<hr class="docutils" />
+<p>The Truth That Makes You Feel Bad</p>
+<p>There is no such thing as a flawless measurement. It never did, and it probably never will.</p>
+<p>Not trying to be flawless, but to make “good enough” decisions. You want to find out how much that is:</p>
+<ul class="simple">
+<li><p>appropriate in the appropriate way - Reliable over time - Trustworthy enough to act on - Better than guessing</p></li>
+</ul>
+<p>Companies who are too focused on attribution models and dispute about how to do things miss out on greater opportunities, like stopping campaigns that are clearly not working or putting more effort into channels that are clearly succeeding.</p>
+<p>Do what you can. Try it out in modest steps. Improve it. Say it again.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./03-Measurement_Fundamentals"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02-Counting_Impressions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Counting Impressions: Tags, Pixels, and Logs</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../04-User_Identification/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 4: User Identification</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-new-way">The New Way</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Vishwanath Subramanian
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright © 2025 Vishwanath Subramanian. Licensed under CC BY-NC-ND 4.0..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

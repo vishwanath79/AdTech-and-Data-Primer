@@ -1,0 +1,799 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Privacy by Design in Action (Patterns for Engineers) &#8212; AdTech for the data Professional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '07-Privacy_Regulation/04-Privacy_by_Design';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 8: Programming in AdTech" href="../08-Programming_in_AdTech/index.html" />
+    <link rel="prev" title="CMPs (Platforms for Managing Consent)" href="03-CMPs.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../00-Preface.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AdTech for the data Professional</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 1 - Foundations of Digital Advertising &amp; Measurement</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../About.html">About the Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Introduction/index.html">Introduction</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-Core_Concepts/index.html">Chapter 2: Core Concepts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/01-What_is_AdTech.html">What is AdTech?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/02-Key_Dataflows.html">How Data Moves in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/03-Impressions_Clicks_Conversions.html">Important Numbers for Online Ads</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-Measurement_Fundamentals/index.html">Chapter 3: Measurement Fundamentals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/01-Importance_of_Measurement.html">Why It’s Important to Measure (and Why It’s Harder Than You Think)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/02-Counting_Impressions.html">Counting Impressions: Tags, Pixels, and Logs</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/03-Measurement_Challenges.html">The Messy Truth About Measuring ROI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-User_Identification/index.html">Chapter 4: User Identification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/01-Cookies.html">Cookies (Not the Good Kind)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/02-Crumbling_Cookies.html">The Great Cookie Flip-Flop (Chaos in Motion)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/03-Alternative_IDs.html">Life After Cookies (Other Ways to Identify Yourself)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/04-Device_vs_People.html">Device IDs vs. People IDs: Who Are We Even Following?</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 2 - Programmatic Advertising &amp; Data Activation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05-Programmatic_Intro/index.html">Chapter 5: Introduction to Programmatic Advertising</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/01-What_is_Programmatic.html">What is Programmatic Advertising?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/02-RTB.html">The Millisecond Auction: Bidding in Real Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/03-Programmatic_Players.html">DSPs, SSPs, Ad Exchanges, and DMPs</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06-Data_In_AdTech/index.html">Chapter 6: Data in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/01-Data_Types.html">Data Types in AdTech (First, Second, and Third-Party)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/02-DMPs.html">DMPs (Data Management Platforms) - The Old Guard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/03-CDPs.html">CDPs (Customer Data Platforms)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/04-Segmentation_Targeting.html">Targeting and Segmentation</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 3 - Modern Challenges &amp; Future Trends</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Chapter 7: Privacy and Regulation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01-Privacy_Concerns.html">Privacy Issues in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-Regulations.html">Privacy Rules (The Laws With Teeth)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-CMPs.html">CMPs (Platforms for Managing Consent)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Privacy by Design in Action (Patterns for Engineers)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08-Programming_in_AdTech/index.html">Chapter 8: Programming in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/01-Introduction.html">Programming in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/02-Adserver.html">Basic Ad Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/03-Header%20Bidding%20Basics.html">Header Bidding Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/04-Real%20Time%20Bidding.html">Real Time Bidding (RTB) Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/05-Creative%20AB%20Testing.html">Creative A/B Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/06-Deal%20IDs%20%26%20Private%20Marketplace%20%28PMP%29.html">Deal IDs &amp; Private Marketplace (PMP)</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/07-Client%20%26%20Server%20Side%20Tagging.html">Client-Side vs Server-Side Tagging</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09-AI_ML/index.html">AI &amp; Machine Learning in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/01-AI_Applications.html">AI Applications in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/02-Algorithmic_Bidding.html">Algorithmic Bidding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/03-Predictive_Analytics.html">Predictive Analytics in AdTech</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Conclusion.html">Conclusion: The AdTech Evolution Continues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendix.html">Appendix: Resources, Tools &amp; Further Reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/07-Privacy_Regulation/04-Privacy_by_Design.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Privacy by Design in Action (Patterns for Engineers)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimizing-data"><strong>Minimizing Data</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudonymization"><strong>Pseudonymization</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-encryption"><strong>Data Encryption</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access-controls"><strong>Access Controls</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#policies-for-keeping-data"><strong>Policies for Keeping Data</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#right-to-access-data-export"><strong>Right to Access (Data Export)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#right-to-deletion-right-to-be-forgotten"><strong>Right to Deletion (Right to Be Forgotten)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consent-management"><strong>Consent Management</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#privacy-impact-assessments-pias">Privacy Impact Assessments (PIAs)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="privacy-by-design-in-action-patterns-for-engineers">
+<h1>Privacy by Design in Action (Patterns for Engineers)<a class="headerlink" href="#privacy-by-design-in-action-patterns-for-engineers" title="Link to this heading">#</a></h1>
+<p>Here are some design patterns that show how Privacy by Design works:</p>
+<section id="minimizing-data">
+<h2><strong>Minimizing Data</strong><a class="headerlink" href="#minimizing-data" title="Link to this heading">#</a></h2>
+<p><strong>Rule:</strong> Only gather what you need.  Don’t keep things you don’t need.</p>
+<p><strong>For example:</strong></p>
+<ul class="simple">
+<li><p>Instead of storing plaintext emails, store hashed ones. - Before storing data, combine it (no raw events).</p></li>
+<li><p>If you only need the country, don’t collect IP addresses. - Delete them after 90 days if you don’t need them for business. -level location</p></li>
+<li><p>Minimize or eliminate PII relentlessly</p></li>
+</ul>
+<p><strong>Code example (bad):</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Storing everything &quot;just in case&quot;</span>
+<span class="n">user_event</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;12345&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;user@example.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ip_address&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.1.1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;user_agent&quot;</span><span class="p">:</span> <span class="s2">&quot;Mozilla/5.0...&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;location&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;lat&quot;</span><span class="p">:</span> <span class="mf">47.6062</span><span class="p">,</span> <span class="s2">&quot;lon&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">122.3321</span><span class="p">},</span>
+    <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-01-15T17:32:11Z&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;page&quot;</span><span class="p">:</span> <span class="s2">&quot;/products/guitar&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;referrer&quot;</span><span class="p">:</span> <span class="s2">&quot;https://google.com/search?q=guitar&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;session_duration&quot;</span><span class="p">:</span> <span class="mi">342</span><span class="p">,</span>
+    <span class="s2">&quot;previous_pages&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="s2">&quot;/products&quot;</span><span class="p">,</span> <span class="s2">&quot;/products/guitar&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Code example (better):</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Store only what you need for analytics</span>
+<span class="n">page_view</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;anonymous_id&quot;</span><span class="p">:</span> <span class="nb">hash</span><span class="p">(</span><span class="n">user_id</span><span class="p">),</span>  <span class="c1"># One-way hash, can&#39;t reverse</span>
+    <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span>  <span class="c1"># No precise location</span>
+    <span class="s2">&quot;device_type&quot;</span><span class="p">:</span> <span class="s2">&quot;mobile&quot;</span><span class="p">,</span>  <span class="c1"># Simplified user agent</span>
+    <span class="s2">&quot;page&quot;</span><span class="p">:</span> <span class="s2">&quot;/products/guitar&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;referrer_domain&quot;</span><span class="p">:</span> <span class="s2">&quot;google.com&quot;</span><span class="p">,</span>  <span class="c1"># Drop query params</span>
+    <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-01-15T17:00:00Z&quot;</span>  <span class="c1"># Rounded to hour</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can still do analytics. You just can’t personally identify or track individuals.</p>
+</section>
+<section id="pseudonymization">
+<h2><strong>Pseudonymization</strong><a class="headerlink" href="#pseudonymization" title="Link to this heading">#</a></h2>
+<p><strong>Principle:</strong> Replace identifying information with pseudonyms.</p>
+<p><strong>For example:</strong></p>
+<ul class="simple">
+<li><p>Hash email addresses before saving them - Hashing has some drawbacks when sharing data with other people (for example, they might have a bigger database and be able to reverse the hash or match it to the original email address)</p></li>
+<li><p>Use random UUIDs instead of IDs that go in order</p></li>
+<li><p>Separate behavioral data from PII</p></li>
+</ul>
+<p><strong>Architecture:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>User Service (stores PII)
+user_id: &quot;uuid-abc-123&quot; └── email: &quot;zakk@example.com&quot;
+    Name: &quot;Zakk Mild&quot; Address: &quot;123 Rock St&quot;
+
+Analytics Service (keeps track of behavior)
+└── anonymous_id: &quot;hash-xyz-789&quot;   #  Can&#39;t be undone
+    ├── last_visit: &quot;2025-01-15&quot; ─── page_views: 47
+    └── favorite_category: &quot;guitar&quot;
+</pre></div>
+</div>
+<p>Hackers can get behavioral data from the analytics database, but they can’t link it to real people.</p>
+</section>
+<section id="data-encryption">
+<h2><strong>Data Encryption</strong><a class="headerlink" href="#data-encryption" title="Link to this heading">#</a></h2>
+<p><strong>Principle:</strong> Protect data at rest and in transit.</p>
+<p><strong>In practice:</strong></p>
+<ul class="simple">
+<li><p>HTTPS for all traffic (not just login pages)</p></li>
+<li><p>Database encryption (PostgreSQL, MySQL and other databases support this)</p></li>
+<li><p>Encrypted backups</p></li>
+<li><p>Application-level encryption for sensitive fields</p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Encrypting sensitive data before storage</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cryptography.fernet</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fernet</span>
+
+<span class="n">key</span> <span class="o">=</span> <span class="n">Fernet</span><span class="o">.</span><span class="n">generate_key</span><span class="p">()</span>
+<span class="n">cipher</span> <span class="o">=</span> <span class="n">Fernet</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<span class="c1"># Store encrypted</span>
+<span class="n">email_encrypted</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;zakk@example.com&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">email_encrypted</span><span class="p">)</span>
+
+<span class="c1"># Retrieve and decrypt only when needed</span>
+<span class="n">email_encrypted</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+<span class="n">email</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">email_encrypted</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="access-controls">
+<h2><strong>Access Controls</strong><a class="headerlink" href="#access-controls" title="Link to this heading">#</a></h2>
+<p><strong>Principle:</strong> Only certain people should be able to see user data.</p>
+<p><strong>In practice:</strong></p>
+<ul class="simple">
+<li><p>Role-based access control (RBAC) - Principle of least privilege (give the least amount of access needed)</p></li>
+<li><p>Audit logs (keep track of who accessed what)</p></li>
+<li><p>Protect sensitive data with more than one form of authentication</p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<ul class="simple">
+<li><p><strong>Engineers:</strong> Can look at anonymized analytics but not PII - <strong>Support team:</strong> Can see user emails and order history (with audit logging)</p></li>
+<li><p><strong>Team in charge of money:</strong>  Can see payment information but not browsing history</p></li>
+</ul>
+</section>
+<section id="policies-for-keeping-data">
+<h2><strong>Policies for Keeping Data</strong><a class="headerlink" href="#policies-for-keeping-data" title="Link to this heading">#</a></h2>
+<p><strong>Rule:</strong> Don’t keep data forever.  If you don’t need it anymore, delete it.</p>
+<p><strong>In real life:</strong></p>
+<ul class="simple">
+<li><p>Set retention periods for each type of data - Set up automated deletion jobs - Follow legal hold rules (don’t delete data if it’s being investigated)</p></li>
+</ul>
+<p><strong>Policy example:</strong></p>
+<ul class="simple">
+<li><p><strong>User account data:</strong> Kept while the account is active and deleted 90 days after it is closed. - <strong>Analytics data:</strong> Kept for 13 months, then deleted along with the raw data. - <strong>Customer support tickets:</strong> Kept for 3 years, then archived. - <strong>Financial records:</strong> Kept for 7 years (a legal requirement).</p></li>
+</ul>
+<p><strong>Implementation:</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Automated cleanup job</span>
+<span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">events</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">INTERVAL</span><span class="w"> </span><span class="s1">&#39;13 months&#39;</span><span class="p">;</span>
+
+<span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">user_sessions</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">last_activity</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">INTERVAL</span><span class="w"> </span><span class="s1">&#39;90 days&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="right-to-access-data-export">
+<h2><strong>Right to Access (Data Export)</strong><a class="headerlink" href="#right-to-access-data-export" title="Link to this heading">#</a></h2>
+<p><strong>Principle:</strong> Users can request all data you have about them.</p>
+<p><strong>In practice:</strong></p>
+<ul class="simple">
+<li><p>Build data export tools</p></li>
+<li><p>Package data in readable format (JSON, CSV)</p></li>
+<li><p>Respond within legal timeframe (30 days GDPR, 45 days CCPA)</p></li>
+</ul>
+<p><strong>Example implementation:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">export_user_data</span><span class="p">(</span><span class="n">user_id</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate complete data export for user&quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;profile&quot;</span><span class="p">:</span> <span class="n">get_profile</span><span class="p">(</span><span class="n">user_id</span><span class="p">),</span>
+        <span class="s2">&quot;purchase_history&quot;</span><span class="p">:</span> <span class="n">get_purchases</span><span class="p">(</span><span class="n">user_id</span><span class="p">),</span>
+        <span class="s2">&quot;browsing_history&quot;</span><span class="p">:</span> <span class="n">get_page_views</span><span class="p">(</span><span class="n">user_id</span><span class="p">),</span>
+        <span class="s2">&quot;preferences&quot;</span><span class="p">:</span> <span class="n">get_settings</span><span class="p">(</span><span class="n">user_id</span><span class="p">),</span>
+        <span class="s2">&quot;consent_records&quot;</span><span class="p">:</span> <span class="n">get_consent_history</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="c1"># Create downloadable file</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;user_data_</span><span class="si">{</span><span class="n">user_id</span><span class="si">}</span><span class="s2">.json&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="c1"># Send download link to user</span>
+    <span class="n">send_email</span><span class="p">(</span><span class="n">user_email</span><span class="p">,</span> <span class="n">download_link</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="right-to-deletion-right-to-be-forgotten">
+<h2><strong>Right to Deletion (Right to Be Forgotten)</strong><a class="headerlink" href="#right-to-deletion-right-to-be-forgotten" title="Link to this heading">#</a></h2>
+<p><strong>Rule:</strong> Users can ask for their data to be deleted.</p>
+<p><strong>In real life:</strong></p>
+<ul class="simple">
+<li><p>Find all the places where data is stored (backups, databases, logs, caches) - Create workflows for deleting data</p></li>
+<li><p>Use pseudonymization instead of hard deletion for legal or audit reasons</p></li>
+<li><p>Tell third parties you shared data with that you deleted it</p></li>
+</ul>
+<p><strong>Example implementation:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">delete_user_data</span><span class="p">(</span><span class="n">user_id</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Delete all user data across systems&quot;&quot;&quot;</span>
+    
+    <span class="c1"># Delete from primary databases</span>
+    <span class="n">users_db</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+    <span class="n">analytics_db</span><span class="o">.</span><span class="n">delete_where</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">user_id</span><span class="p">)</span>
+    
+    <span class="c1"># Purge from caches</span>
+    <span class="n">redis</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;user:</span><span class="si">{</span><span class="n">user_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Anonymize in logs (can&#39;t delete logs, but remove PII)</span>
+    <span class="n">logs_db</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+        <span class="p">{</span><span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="n">user_id</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;deleted_user&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;[deleted]&quot;</span><span class="p">}</span>
+    <span class="p">)</span>
+    
+    <span class="c1"># Notify third parties</span>
+    <span class="n">notify_deletion_to_partners</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+    
+    <span class="c1"># Log deletion for audit trail</span>
+    <span class="n">audit_log</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Deleted user </span><span class="si">{</span><span class="n">user_id</span><span class="si">}</span><span class="s2"> per GDPR request&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="consent-management">
+<h2><strong>Consent Management</strong><a class="headerlink" href="#consent-management" title="Link to this heading">#</a></h2>
+<p><strong>Principle:</strong> Track what users consented to, enforce those choices.</p>
+<p><strong>In practice:</strong></p>
+<ul class="simple">
+<li><p>Store granular consent records (not just yes/no)</p></li>
+<li><p>Check consent before processing data</p></li>
+<li><p>Update consent when laws or policies change</p></li>
+</ul>
+<p><strong>Example schema:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">consent_record</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;12345&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-01-15T10:30:00Z&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;2.1&quot;</span><span class="p">,</span>  <span class="c1"># Privacy policy version</span>
+    <span class="s2">&quot;consents&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;analytics&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;marketing_emails&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;personalized_ads&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;third_party_sharing&quot;</span><span class="p">:</span> <span class="kc">False</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;ip_address&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.1.1&quot;</span><span class="p">,</span>  <span class="c1"># For audit trail</span>
+    <span class="s2">&quot;consent_method&quot;</span><span class="p">:</span> <span class="s2">&quot;explicit_checkbox&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Enforcement:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">can_process_for_ads</span><span class="p">(</span><span class="n">user_id</span><span class="p">):</span>
+    <span class="n">consent</span> <span class="o">=</span> <span class="n">get_latest_consent</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">consent</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;personalized_ads&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Before showing personalized ad</span>
+<span class="k">if</span> <span class="n">can_process_for_ads</span><span class="p">(</span><span class="n">user_id</span><span class="p">):</span>
+    <span class="n">show_targeted_ad</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">show_contextual_ad</span><span class="p">()</span>  <span class="c1"># No tracking required</span>
+</pre></div>
+</div>
+</section>
+<section id="privacy-impact-assessments-pias">
+<h2>Privacy Impact Assessments (PIAs)<a class="headerlink" href="#privacy-impact-assessments-pias" title="Link to this heading">#</a></h2>
+<p>A <strong>Privacy Impact Assessment</strong> is a way to find and lower privacy risks before a feature goes live.</p>
+<p><strong>When to do a PIA:</strong></p>
+<ul class="simple">
+<li><p>A new product or feature that handles personal data - Changes to how data is processed - The use of new technology (AI, biometrics, etc.)</p></li>
+<li><p>Whenever you try something new or risky</p></li>
+</ul>
+<p><strong>Template for PIA:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>What information will be gathered?</strong> (Write down everything)</p></li>
+<li><p><strong>Why is it needed?</strong> (Explain each data point)</p></li>
+<li><p><strong>Who will be able to get in?</strong> (Teams inside the company and outside of it)</p></li>
+<li><p><strong>How will it be protected?</strong> (Encryption and access controls)</p></li>
+<li><p>How long will it be kept?** (Time to keep)</p></li>
+<li><p><strong>What are the dangers?</strong> (Violations, abuse, and bias)</p></li>
+<li><p><strong>How will you lower the risks?</strong> (Specific controls)</p></li>
+<li><p><strong>What rights do users have?</strong> (Get in, delete, or opt-out)</p></li>
+<li><p>What is the legal basis?**  (Consent, contract, and legitimate interest)</p></li>
+<li><p><strong>Processors from other companies?</strong>  (Vendors, sharing data)</p></li>
+</ol>
+<p><strong>Output:</strong> Write down the decisions, get the privacy/legal team to agree, and put the controls in place.</p>
+<p>GDPR says that high-risk processing needs PIAs (also known as DPIAs, or Data Protection Impact Assessments).  Good practice even if the law doesn’t require it.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./07-Privacy_Regulation"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03-CMPs.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">CMPs (Platforms for Managing Consent)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../08-Programming_in_AdTech/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 8: Programming in AdTech</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimizing-data"><strong>Minimizing Data</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudonymization"><strong>Pseudonymization</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-encryption"><strong>Data Encryption</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access-controls"><strong>Access Controls</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#policies-for-keeping-data"><strong>Policies for Keeping Data</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#right-to-access-data-export"><strong>Right to Access (Data Export)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#right-to-deletion-right-to-be-forgotten"><strong>Right to Deletion (Right to Be Forgotten)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consent-management"><strong>Consent Management</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#privacy-impact-assessments-pias">Privacy Impact Assessments (PIAs)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Vishwanath Subramanian
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright © 2025 Vishwanath Subramanian. Licensed under CC BY-NC-ND 4.0..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

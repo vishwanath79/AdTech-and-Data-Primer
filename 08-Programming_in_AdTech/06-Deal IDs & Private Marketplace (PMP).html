@@ -1,0 +1,1133 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Deal IDs &amp; Private Marketplace (PMP) &#8212; AdTech for the data Professional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '08-Programming_in_AdTech/06-Deal IDs & Private Marketplace (PMP)';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Client-Side vs Server-Side Tagging" href="07-Client%20%26%20Server%20Side%20Tagging.html" />
+    <link rel="prev" title="Creative A/B Testing" href="05-Creative%20AB%20Testing.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../00-Preface.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AdTech for the data Professional</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 1 - Foundations of Digital Advertising &amp; Measurement</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../About.html">About the Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Introduction/index.html">Introduction</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-Core_Concepts/index.html">Chapter 2: Core Concepts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/01-What_is_AdTech.html">What is AdTech?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/02-Key_Dataflows.html">How Data Moves in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/03-Impressions_Clicks_Conversions.html">Important Numbers for Online Ads</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-Measurement_Fundamentals/index.html">Chapter 3: Measurement Fundamentals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/01-Importance_of_Measurement.html">Why It’s Important to Measure (and Why It’s Harder Than You Think)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/02-Counting_Impressions.html">Counting Impressions: Tags, Pixels, and Logs</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/03-Measurement_Challenges.html">The Messy Truth About Measuring ROI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-User_Identification/index.html">Chapter 4: User Identification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/01-Cookies.html">Cookies (Not the Good Kind)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/02-Crumbling_Cookies.html">The Great Cookie Flip-Flop (Chaos in Motion)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/03-Alternative_IDs.html">Life After Cookies (Other Ways to Identify Yourself)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/04-Device_vs_People.html">Device IDs vs. People IDs: Who Are We Even Following?</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 2 - Programmatic Advertising &amp; Data Activation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05-Programmatic_Intro/index.html">Chapter 5: Introduction to Programmatic Advertising</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/01-What_is_Programmatic.html">What is Programmatic Advertising?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/02-RTB.html">The Millisecond Auction: Bidding in Real Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/03-Programmatic_Players.html">DSPs, SSPs, Ad Exchanges, and DMPs</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06-Data_In_AdTech/index.html">Chapter 6: Data in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/01-Data_Types.html">Data Types in AdTech (First, Second, and Third-Party)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/02-DMPs.html">DMPs (Data Management Platforms) - The Old Guard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/03-CDPs.html">CDPs (Customer Data Platforms)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/04-Segmentation_Targeting.html">Targeting and Segmentation</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 3 - Modern Challenges &amp; Future Trends</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07-Privacy_Regulation/index.html">Chapter 7: Privacy and Regulation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/01-Privacy_Concerns.html">Privacy Issues in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/02-Regulations.html">Privacy Rules (The Laws With Teeth)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/03-CMPs.html">CMPs (Platforms for Managing Consent)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/04-Privacy_by_Design.html">Privacy by Design in Action (Patterns for Engineers)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Chapter 8: Programming in AdTech</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01-Introduction.html">Programming in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-Adserver.html">Basic Ad Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-Header%20Bidding%20Basics.html">Header Bidding Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-Real%20Time%20Bidding.html">Real Time Bidding (RTB) Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-Creative%20AB%20Testing.html">Creative A/B Testing</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Deal IDs &amp; Private Marketplace (PMP)</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="07-Client%20%26%20Server%20Side%20Tagging.html">Client-Side vs Server-Side Tagging</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09-AI_ML/index.html">AI &amp; Machine Learning in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/01-AI_Applications.html">AI Applications in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/02-Algorithmic_Bidding.html">Algorithmic Bidding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/03-Predictive_Analytics.html">Predictive Analytics in AdTech</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Conclusion.html">Conclusion: The AdTech Evolution Continues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendix.html">Appendix: Resources, Tools &amp; Further Reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/08-Programming_in_AdTech/06-Deal IDs & Private Marketplace (PMP).md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Deal IDs & Private Marketplace (PMP)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Deal IDs &amp; Private Marketplace (PMP)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-a-private-marketplace-really">What’s a Private Marketplace, Really?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pmp-vs-open-exchange-the-difference">PMP vs Open Exchange (The Difference)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#three-flavors-of-pmp-deals">Three Flavors of PMP Deals</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preferred-deals-first-dibs-no-promises">1. Preferred Deals (First Dibs, No Promises)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmatic-guaranteed-reserved-seats">2. Programmatic Guaranteed (Reserved Seats)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#private-auction-closed-bidding-war">3. Private Auction (Closed Bidding War)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-deal-ids-travel-the-technical-bit">How Deal IDs Travel (The Technical Bit)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-pmp-deals-the-code">Managing PMP Deals (The Code)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dsp-bidding-logic-with-deals">DSP Bidding Logic (With Deals)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-deal-performance">Tracking Deal Performance</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bottom-line">The Bottom Line</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="deal-ids-private-marketplace-pmp">
+<h1>Deal IDs &amp; Private Marketplace (PMP)<a class="headerlink" href="#deal-ids-private-marketplace-pmp" title="Link to this heading">#</a></h1>
+<p>Ever notice how the ads on The New York Times or Wall Street Journal never seem to be for sketchy weight-loss pills or “one weird trick” scams? That’s Private Marketplace deals at work—the VIP lounge of programmatic advertising where publishers get to pick who shows up to the party.</p>
+<p>Unlike the open exchange (which is basically the digital equivalent of selling ad space on Craigslist), PMP lets premium publishers say “you, you, and you can bid—but the rest of you tech bros, not today.”</p>
+</section>
+<section id="what-s-a-private-marketplace-really">
+<h1>What’s a Private Marketplace, Really?<a class="headerlink" href="#what-s-a-private-marketplace-really" title="Link to this heading">#</a></h1>
+<p>Think of it like Costco, but for ads. You need a membership to get in, and once you’re inside, you get access to the good stuff at prices that were negotiated upfront. No surprise $47 CPMs at 2 AM.</p>
+<p>Publishers love PMPs because they:</p>
+<ul class="simple">
+<li><p><strong>Control who sees their inventory</strong> (no sketchy advertisers next to their Pulitzer-winning journalism)</p></li>
+<li><p><strong>Lock in better prices</strong> ($5-$20 CPMs vs the $0.50-$2 wasteland of open exchanges)</p></li>
+<li><p><strong>Guarantee brand safety</strong> (Nike doesn’t want to appear next to conspiracy theories or adult content)</p></li>
+<li><p><strong>Build actual relationships</strong> with advertisers instead of treating everyone like a random bidder on eBay</p></li>
+</ul>
+<section id="pmp-vs-open-exchange-the-difference">
+<h2>PMP vs Open Exchange (The Difference)<a class="headerlink" href="#pmp-vs-open-exchange-the-difference" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Open Exchange</p></th>
+<th class="head"><p>Private Marketplace</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Access</p></td>
+<td><p>Anyone with a credit card</p></td>
+<td><p>Invitation only</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pricing</p></td>
+<td><p>Whatever chaos dictates</p></td>
+<td><p>Pre-negotiated</p></td>
+</tr>
+<tr class="row-even"><td><p>Inventory</p></td>
+<td><p>The leftover pizza</p></td>
+<td><p>The good stuff</p></td>
+</tr>
+<tr class="row-odd"><td><p>Transparency</p></td>
+<td><p>“Trust us”</p></td>
+<td><p>Actual contracts</p></td>
+</tr>
+<tr class="row-even"><td><p>Brand Safety</p></td>
+<td><p>Roll the dice</p></td>
+<td><p>Guaranteed</p></td>
+</tr>
+<tr class="row-odd"><td><p>Floor Price</p></td>
+<td><p>$0.50-$2 (yikes)</p></td>
+<td><p>$5-$20+ (worth it)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="three-flavors-of-pmp-deals">
+<h1>Three Flavors of PMP Deals<a class="headerlink" href="#three-flavors-of-pmp-deals" title="Link to this heading">#</a></h1>
+<section id="preferred-deals-first-dibs-no-promises">
+<h2>1. Preferred Deals (First Dibs, No Promises)<a class="headerlink" href="#preferred-deals-first-dibs-no-promises" title="Link to this heading">#</a></h2>
+<p>This is like being first in line at a yard sale. You get to see the inventory before it goes to auction, at a fixed price. But if you don’t want it? No problem—publisher moves on to the next buyer.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">preferred_deal</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;deal_id&quot;</span><span class="p">:</span> <span class="s2">&quot;PREF-12345&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;deal_type&quot;</span><span class="p">:</span> <span class="s2">&quot;preferred&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;publisher&quot;</span><span class="p">:</span> <span class="s2">&quot;Premium News Publisher&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;buyer_seat_id&quot;</span><span class="p">:</span> <span class="s2">&quot;DSP-BRAND-001&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mf">8.50</span><span class="p">,</span>  <span class="c1"># Fixed CPM - take it or leave it</span>
+    <span class="s2">&quot;currency&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;guaranteed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>  <span class="c1"># Not guaranteed to fill</span>
+    <span class="s2">&quot;priority&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>  <span class="c1"># You get first look</span>
+    <span class="s2">&quot;inventory&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;site&quot;</span><span class="p">:</span> <span class="s2">&quot;premium-news.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sections&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;/business&quot;</span><span class="p">,</span> <span class="s2">&quot;/technology&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;ad_sizes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;728x90&quot;</span><span class="p">,</span> <span class="s2">&quot;300x250&quot;</span><span class="p">,</span> <span class="s2">&quot;970x250&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="s2">&quot;above_fold&quot;</span>  <span class="c1"># The primo real estate</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;terms&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-01-01&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-12-31&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;viewability_guarantee&quot;</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>  <span class="c1"># 70% of impressions must be viewable</span>
+        <span class="s2">&quot;brand_safety&quot;</span><span class="p">:</span> <span class="kc">True</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="programmatic-guaranteed-reserved-seats">
+<h2>2. Programmatic Guaranteed (Reserved Seats)<a class="headerlink" href="#programmatic-guaranteed-reserved-seats" title="Link to this heading">#</a></h2>
+<p>This is the airline’s first-class section—you paid for it, you’re getting it. Publisher guarantees you a specific number of impressions at a fixed price. Like a traditional insertion order (IO) but without the endless email chains and PDF attachments.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">programmatic_guaranteed</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;deal_id&quot;</span><span class="p">:</span> <span class="s2">&quot;PG-67890&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;deal_type&quot;</span><span class="p">:</span> <span class="s2">&quot;programmatic_guaranteed&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;publisher&quot;</span><span class="p">:</span> <span class="s2">&quot;Premium Lifestyle Magazine&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;buyer_seat_id&quot;</span><span class="p">:</span> <span class="s2">&quot;AGENCY-ATD-001&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mf">12.00</span><span class="p">,</span>  <span class="c1"># Premium inventory = premium price</span>
+    <span class="s2">&quot;currency&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;guaranteed&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># You WILL get these impressions</span>
+    <span class="s2">&quot;guaranteed_impressions&quot;</span><span class="p">:</span> <span class="mi">1000000</span><span class="p">,</span>  <span class="c1"># 1M impressions or bust</span>
+    <span class="s2">&quot;daily_cap&quot;</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
+    <span class="s2">&quot;inventory&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;site&quot;</span><span class="p">:</span> <span class="s2">&quot;lifestyle-magazine.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sections&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;/homepage&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;ad_sizes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;970x250&quot;</span><span class="p">],</span>  <span class="c1"># Homepage takeover</span>
+        <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;display&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;terms&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-06-01&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-08-31&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;billing&quot;</span><span class="p">:</span> <span class="s2">&quot;CPM&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;makegoods&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># If they underdeliver, they comp you</span>
+        <span class="s2">&quot;cancellation_notice&quot;</span><span class="p">:</span> <span class="s2">&quot;30_days&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;delivered_impressions&quot;</span><span class="p">:</span> <span class="mi">0</span>  <span class="c1"># Track actual delivery</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="private-auction-closed-bidding-war">
+<h2>3. Private Auction (Closed Bidding War)<a class="headerlink" href="#private-auction-closed-bidding-war" title="Link to this heading">#</a></h2>
+<p>Multiple invited buyers compete, but it’s not a free-for-all. Publisher sets a floor price and only lets in the brands they trust. Think silent auction at a charity gala, not a mob scene at a Black Friday sale.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">private_auction</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;deal_id&quot;</span><span class="p">:</span> <span class="s2">&quot;PA-11223&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;deal_type&quot;</span><span class="p">:</span> <span class="s2">&quot;private_auction&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;publisher&quot;</span><span class="p">:</span> <span class="s2">&quot;Sports Network&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;invited_buyers&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;DSP-001&quot;</span><span class="p">,</span>  <span class="c1"># Only these four get to bid</span>
+        <span class="s2">&quot;DSP-002&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;DSP-003&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;DSP-004&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;floor_price&quot;</span><span class="p">:</span> <span class="mf">5.00</span><span class="p">,</span>  <span class="c1"># Don&#39;t even think about bidding lower</span>
+    <span class="s2">&quot;currency&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;auction_type&quot;</span><span class="p">:</span> <span class="s2">&quot;second_price&quot;</span><span class="p">,</span>  <span class="c1"># Winner pays second-highest bid</span>
+    <span class="s2">&quot;inventory&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;site&quot;</span><span class="p">:</span> <span class="s2">&quot;sports-network.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;sports&quot;</span><span class="p">,</span> <span class="s2">&quot;fitness&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;ad_sizes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;300x600&quot;</span><span class="p">,</span> <span class="s2">&quot;300x250&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;device_types&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;desktop&quot;</span><span class="p">,</span> <span class="s2">&quot;mobile&quot;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;terms&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-03-01&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-05-31&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;viewability_guarantee&quot;</span><span class="p">:</span> <span class="mi">65</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="how-deal-ids-travel-the-technical-bit">
+<h1>How Deal IDs Travel (The Technical Bit)<a class="headerlink" href="#how-deal-ids-travel-the-technical-bit" title="Link to this heading">#</a></h1>
+<p>Deal IDs live inside the bid request in a <code class="docutils literal notranslate"><span class="pre">pmp</span></code> object. It’s like a secret handshake—if you’ve got the right deal ID, you get access to the premium inventory. No deal ID? Enjoy the open auction with everyone else.</p>
+<p>Here’s what it looks like in OpenRTB 2.5:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bid request with PMP deal</span>
+<span class="n">bid_request_with_pmp</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;abc123&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;imp&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;banner&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;w&quot;</span><span class="p">:</span> <span class="mi">728</span><span class="p">,</span>
+            <span class="s2">&quot;h&quot;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+            <span class="s2">&quot;pos&quot;</span><span class="p">:</span> <span class="mi">1</span>  <span class="c1"># Above the fold = more expensive</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;pmp&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;private_auction&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>  <span class="c1"># 1 = deals only, no open auction fallback</span>
+            <span class="s2">&quot;deals&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;PREF-12345&quot;</span><span class="p">,</span>  <span class="c1"># The magic ticket</span>
+                    <span class="s2">&quot;bidfloor&quot;</span><span class="p">:</span> <span class="mf">8.50</span><span class="p">,</span>     <span class="c1"># Minimum bid for this deal</span>
+                    <span class="s2">&quot;bidfloorcur&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;at&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>              <span class="c1"># 1=first price, 2=second price</span>
+                    <span class="s2">&quot;wseat&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;DSP-BRAND-001&quot;</span><span class="p">],</span>  <span class="c1"># Who&#39;s allowed to bid</span>
+                    <span class="s2">&quot;wadomain&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;brand.com&quot;</span><span class="p">],</span>   <span class="c1"># Advertiser whitelist</span>
+                    <span class="s2">&quot;ext&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">&quot;priority&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="s2">&quot;deal_type&quot;</span><span class="p">:</span> <span class="s2">&quot;preferred&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;bidfloor&quot;</span><span class="p">:</span> <span class="mf">2.00</span><span class="p">,</span>  <span class="c1"># Open auction floor (way cheaper)</span>
+        <span class="s2">&quot;bidfloorcur&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span>
+    <span class="p">}],</span>
+    <span class="s2">&quot;site&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;site123&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Premium News Publisher&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;domain&quot;</span><span class="p">:</span> <span class="s2">&quot;premium-news.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;cat&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;IAB12&quot;</span><span class="p">]</span>  <span class="c1"># News category</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;user456&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;device&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;ua&quot;</span><span class="p">:</span> <span class="s2">&quot;Mozilla/5.0...&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ip&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.1.1&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="managing-pmp-deals-the-code">
+<h1>Managing PMP Deals (The Code)<a class="headerlink" href="#managing-pmp-deals-the-code" title="Link to this heading">#</a></h1>
+<p>Here’s how to match deals to buyers and track which ones are eligible:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">PMPDealManager</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Manage your PMP deals without losing your mind&quot;&quot;&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deals</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_deal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deal</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a new deal to the system&quot;&quot;&quot;</span>
+        <span class="c1"># Basic validation - don&#39;t skip this or you&#39;ll regret it later</span>
+        <span class="n">required_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;deal_id&#39;</span><span class="p">,</span> <span class="s1">&#39;deal_type&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="s1">&#39;buyer_seat_id&#39;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">required_fields</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">field</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">deal</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Missing required field: </span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">deals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">deal</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Added deal: </span><span class="si">{</span><span class="n">deal</span><span class="p">[</span><span class="s1">&#39;deal_id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">find_eligible_deals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bid_request</span><span class="p">,</span> <span class="n">buyer_seat_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Find which deals this buyer can actually access</span>
+<span class="sd">        Returns the good stuff first (guaranteed &gt; preferred &gt; private auction)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">eligible</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">imp</span> <span class="o">=</span> <span class="n">bid_request</span><span class="p">[</span><span class="s1">&#39;imp&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">site</span> <span class="o">=</span> <span class="n">bid_request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;site&#39;</span><span class="p">,</span> <span class="p">{})</span>
+        
+        <span class="k">for</span> <span class="n">deal</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">deals</span><span class="p">:</span>
+            <span class="c1"># Active date range check</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_active</span><span class="p">(</span><span class="n">deal</span><span class="p">):</span>
+                <span class="k">continue</span>
+            
+            <span class="c1"># Is this buyer even invited?</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_buyer_eligible</span><span class="p">(</span><span class="n">deal</span><span class="p">,</span> <span class="n">buyer_seat_id</span><span class="p">):</span>
+                <span class="k">continue</span>
+            
+            <span class="c1"># Does the inventory match what they&#39;re looking for?</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_matches_inventory</span><span class="p">(</span><span class="n">deal</span><span class="p">,</span> <span class="n">imp</span><span class="p">,</span> <span class="n">site</span><span class="p">):</span>
+                <span class="k">continue</span>
+            
+            <span class="c1"># For guaranteed deals, check if we still have capacity</span>
+            <span class="k">if</span> <span class="n">deal</span><span class="p">[</span><span class="s1">&#39;deal_type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;programmatic_guaranteed&#39;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_capacity</span><span class="p">(</span><span class="n">deal</span><span class="p">):</span>
+                    <span class="k">continue</span>
+            
+            <span class="n">eligible</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">deal</span><span class="p">)</span>
+        
+        <span class="c1"># Sort by what matters: guaranteed first, then by price</span>
+        <span class="n">eligible</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">(</span>
+            <span class="n">d</span><span class="p">[</span><span class="s1">&#39;deal_type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;programmatic_guaranteed&#39;</span><span class="p">,</span>
+            <span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;priority&#39;</span><span class="p">,</span> <span class="mi">99</span><span class="p">),</span>
+            <span class="o">-</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">]</span>
+        <span class="p">))</span>
+        
+        <span class="k">return</span> <span class="n">eligible</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_is_active</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deal</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if deal is still valid (not expired)&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="s1">&#39;terms&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">deal</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        
+        <span class="n">terms</span> <span class="o">=</span> <span class="n">deal</span><span class="p">[</span><span class="s1">&#39;terms&#39;</span><span class="p">]</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        
+        <span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">terms</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;start_date&#39;</span><span class="p">,</span> <span class="s1">&#39;2020-01-01&#39;</span><span class="p">))</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">terms</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;end_date&#39;</span><span class="p">,</span> <span class="s1">&#39;2099-12-31&#39;</span><span class="p">))</span>
+        
+        <span class="k">return</span> <span class="n">start</span> <span class="o">&lt;=</span> <span class="n">now</span> <span class="o">&lt;=</span> <span class="n">end</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_is_buyer_eligible</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deal</span><span class="p">,</span> <span class="n">buyer_seat_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if this buyer is on the list&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">deal</span><span class="p">[</span><span class="s1">&#39;deal_type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;private_auction&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">buyer_seat_id</span> <span class="ow">in</span> <span class="n">deal</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;invited_buyers&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">deal</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;buyer_seat_id&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">buyer_seat_id</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_matches_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deal</span><span class="p">,</span> <span class="n">imp</span><span class="p">,</span> <span class="n">site</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if the ad size and site match the deal terms&quot;&quot;&quot;</span>
+        <span class="n">inventory</span> <span class="o">=</span> <span class="n">deal</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;inventory&#39;</span><span class="p">,</span> <span class="p">{})</span>
+        
+        <span class="c1"># Site domain must match</span>
+        <span class="k">if</span> <span class="s1">&#39;site&#39;</span> <span class="ow">in</span> <span class="n">inventory</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">site</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;domain&#39;</span><span class="p">)</span> <span class="o">!=</span> <span class="n">inventory</span><span class="p">[</span><span class="s1">&#39;site&#39;</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        
+        <span class="c1"># Ad size must match</span>
+        <span class="k">if</span> <span class="s1">&#39;banner&#39;</span> <span class="ow">in</span> <span class="n">imp</span> <span class="ow">and</span> <span class="s1">&#39;ad_sizes&#39;</span> <span class="ow">in</span> <span class="n">inventory</span><span class="p">:</span>
+            <span class="n">size</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">imp</span><span class="p">[</span><span class="s1">&#39;banner&#39;</span><span class="p">][</span><span class="s1">&#39;w&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">x</span><span class="si">{</span><span class="n">imp</span><span class="p">[</span><span class="s1">&#39;banner&#39;</span><span class="p">][</span><span class="s1">&#39;h&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">if</span> <span class="n">size</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">inventory</span><span class="p">[</span><span class="s1">&#39;ad_sizes&#39;</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        
+        <span class="k">return</span> <span class="kc">True</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_has_capacity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deal</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if guaranteed deal hasn&#39;t hit its cap yet&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="s1">&#39;guaranteed_impressions&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">deal</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        
+        <span class="n">delivered</span> <span class="o">=</span> <span class="n">deal</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;delivered_impressions&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="n">deal</span><span class="p">[</span><span class="s1">&#39;guaranteed_impressions&#39;</span><span class="p">]</span>
+        
+        <span class="k">return</span> <span class="n">delivered</span> <span class="o">&lt;</span> <span class="n">total</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">record_win</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deal_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Track impression delivery (important for guaranteed deals)&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">deal</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">deals</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">deal</span><span class="p">[</span><span class="s1">&#39;deal_id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">deal_id</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s1">&#39;delivered_impressions&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">deal</span><span class="p">:</span>
+                    <span class="n">deal</span><span class="p">[</span><span class="s1">&#39;delivered_impressions&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">deal</span><span class="p">[</span><span class="s1">&#39;delivered_impressions&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+<span class="c1"># Usage example</span>
+<span class="n">pmp_manager</span> <span class="o">=</span> <span class="n">PMPDealManager</span><span class="p">()</span>
+
+<span class="c1"># Add your deals</span>
+<span class="n">pmp_manager</span><span class="o">.</span><span class="n">add_deal</span><span class="p">(</span><span class="n">preferred_deal</span><span class="p">)</span>
+<span class="n">pmp_manager</span><span class="o">.</span><span class="n">add_deal</span><span class="p">(</span><span class="n">programmatic_guaranteed</span><span class="p">)</span>
+<span class="n">pmp_manager</span><span class="o">.</span><span class="n">add_deal</span><span class="p">(</span><span class="n">private_auction</span><span class="p">)</span>
+
+<span class="c1"># Find what this buyer can access</span>
+<span class="n">eligible</span> <span class="o">=</span> <span class="n">pmp_manager</span><span class="o">.</span><span class="n">find_eligible_deals</span><span class="p">(</span>
+    <span class="n">bid_request_with_pmp</span><span class="p">,</span>
+    <span class="n">buyer_seat_id</span><span class="o">=</span><span class="s2">&quot;DSP-BRAND-001&quot;</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">eligible</span><span class="p">)</span><span class="si">}</span><span class="s2"> eligible deals:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">deal</span> <span class="ow">in</span> <span class="n">eligible</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - </span><span class="si">{</span><span class="n">deal</span><span class="p">[</span><span class="s1">&#39;deal_id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">deal</span><span class="p">[</span><span class="s1">&#39;deal_type&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> @ $</span><span class="si">{</span><span class="n">deal</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> CPM&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="dsp-bidding-logic-with-deals">
+<h1>DSP Bidding Logic (With Deals)<a class="headerlink" href="#dsp-bidding-logic-with-deals" title="Link to this heading">#</a></h1>
+<p>DSPs prioritize deals over open auctions—better inventory, better performance, happier clients.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">DSPWithDeals</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;DSP that knows how to play the PMP game&quot;&quot;&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seat_id</span><span class="p">,</span> <span class="n">budget</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seat_id</span> <span class="o">=</span> <span class="n">seat_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">budget</span> <span class="o">=</span> <span class="n">budget</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spent</span> <span class="o">=</span> <span class="mf">0.0</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_bid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bid_request</span><span class="p">,</span> <span class="n">eligible_deals</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Bid on deals first, fall back to open auction if necessary</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">imp</span> <span class="o">=</span> <span class="n">bid_request</span><span class="p">[</span><span class="s1">&#39;imp&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        
+        <span class="c1"># Got deals? Use &#39;em</span>
+        <span class="k">if</span> <span class="n">eligible_deals</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bid_on_deal</span><span class="p">(</span><span class="n">bid_request</span><span class="p">,</span> <span class="n">eligible_deals</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        
+        <span class="c1"># Check if open auction is even allowed</span>
+        <span class="n">pmp</span> <span class="o">=</span> <span class="n">imp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pmp&#39;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="k">if</span> <span class="n">pmp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;private_auction&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c1"># Nope, deals only</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bid_open_auction</span><span class="p">(</span><span class="n">bid_request</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_bid_on_deal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bid_request</span><span class="p">,</span> <span class="n">deal</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Bid on a PMP deal at the agreed price&quot;&quot;&quot;</span>
+        <span class="n">imp</span> <span class="o">=</span> <span class="n">bid_request</span><span class="p">[</span><span class="s1">&#39;imp&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">bid_price</span> <span class="o">=</span> <span class="n">deal</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">]</span>
+        
+        <span class="c1"># Budget check (important!)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">spent</span> <span class="o">+</span> <span class="p">(</span><span class="n">bid_price</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">budget</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        
+        <span class="c1"># Create bid response with the deal ID</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">bid_request</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+            <span class="s2">&quot;seatbid&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                <span class="s2">&quot;seat&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">seat_id</span><span class="p">,</span>
+                <span class="s2">&quot;bid&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;bid_</span><span class="si">{</span><span class="n">deal</span><span class="p">[</span><span class="s1">&#39;deal_id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;impid&quot;</span><span class="p">:</span> <span class="n">imp</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                    <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="n">bid_price</span><span class="p">,</span>
+                    <span class="s2">&quot;dealid&quot;</span><span class="p">:</span> <span class="n">deal</span><span class="p">[</span><span class="s1">&#39;deal_id&#39;</span><span class="p">],</span>  <span class="c1"># Critical: include this</span>
+                    <span class="s2">&quot;adm&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;&lt;div&gt;Premium ad for </span><span class="si">{</span><span class="n">deal</span><span class="p">[</span><span class="s1">&#39;deal_id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/div&gt;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;crid&quot;</span><span class="p">:</span> <span class="s2">&quot;creative_premium_001&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;w&quot;</span><span class="p">:</span> <span class="n">imp</span><span class="p">[</span><span class="s1">&#39;banner&#39;</span><span class="p">][</span><span class="s1">&#39;w&#39;</span><span class="p">],</span>
+                    <span class="s2">&quot;h&quot;</span><span class="p">:</span> <span class="n">imp</span><span class="p">[</span><span class="s1">&#39;banner&#39;</span><span class="p">][</span><span class="s1">&#39;h&#39;</span><span class="p">]</span>
+                <span class="p">}]</span>
+            <span class="p">}],</span>
+            <span class="s2">&quot;cur&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span>
+        <span class="p">}</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_bid_open_auction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bid_request</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fall back to open auction if no deals available&quot;&quot;&quot;</span>
+        <span class="n">imp</span> <span class="o">=</span> <span class="n">bid_request</span><span class="p">[</span><span class="s1">&#39;imp&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">floor</span> <span class="o">=</span> <span class="n">imp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;bidfloor&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">bid_price</span> <span class="o">=</span> <span class="n">floor</span> <span class="o">*</span> <span class="mf">1.2</span>  <span class="c1"># Bid slightly above floor</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">spent</span> <span class="o">+</span> <span class="p">(</span><span class="n">bid_price</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">budget</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">bid_request</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+            <span class="s2">&quot;seatbid&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                <span class="s2">&quot;seat&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">seat_id</span><span class="p">,</span>
+                <span class="s2">&quot;bid&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;bid_open_001&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;impid&quot;</span><span class="p">:</span> <span class="n">imp</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                    <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="n">bid_price</span><span class="p">,</span>
+                    <span class="c1"># No dealid for open auction</span>
+                    <span class="s2">&quot;adm&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;div&gt;Standard ad&lt;/div&gt;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;crid&quot;</span><span class="p">:</span> <span class="s2">&quot;creative_standard_001&quot;</span>
+                <span class="p">}]</span>
+            <span class="p">}],</span>
+            <span class="s2">&quot;cur&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span>
+        <span class="p">}</span>
+
+<span class="c1"># Example: Bid on available deals</span>
+<span class="n">dsp</span> <span class="o">=</span> <span class="n">DSPWithDeals</span><span class="p">(</span><span class="n">seat_id</span><span class="o">=</span><span class="s2">&quot;DSP-BRAND-001&quot;</span><span class="p">,</span> <span class="n">budget</span><span class="o">=</span><span class="mf">10000.0</span><span class="p">)</span>
+
+<span class="n">eligible</span> <span class="o">=</span> <span class="n">pmp_manager</span><span class="o">.</span><span class="n">find_eligible_deals</span><span class="p">(</span>
+    <span class="n">bid_request_with_pmp</span><span class="p">,</span>
+    <span class="n">buyer_seat_id</span><span class="o">=</span><span class="s2">&quot;DSP-BRAND-001&quot;</span>
+<span class="p">)</span>
+
+<span class="n">bid_response</span> <span class="o">=</span> <span class="n">dsp</span><span class="o">.</span><span class="n">create_bid</span><span class="p">(</span><span class="n">bid_request_with_pmp</span><span class="p">,</span> <span class="n">eligible</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">bid_response</span><span class="p">:</span>
+    <span class="n">bid</span> <span class="o">=</span> <span class="n">bid_response</span><span class="p">[</span><span class="s1">&#39;seatbid&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;bid&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">deal_id</span> <span class="o">=</span> <span class="n">bid</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;dealid&#39;</span><span class="p">,</span> <span class="s1">&#39;Open Auction&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Bid created:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Deal ID: </span><span class="si">{</span><span class="n">deal_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Price: $</span><span class="si">{</span><span class="n">bid</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> CPM&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="tracking-deal-performance">
+<h1>Tracking Deal Performance<a class="headerlink" href="#tracking-deal-performance" title="Link to this heading">#</a></h1>
+<p>You need to know if your PMP deals are actually worth the premium prices. Spoiler: they usually are, but you should verify.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">DealPerformanceTracker</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Track which deals are pulling their weight&quot;&quot;&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stats</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">record_impression</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deal_id</span><span class="p">,</span> <span class="n">price</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Track impression delivery&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">deal_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">[</span><span class="n">deal_id</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;impressions&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;clicks&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;conversions&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;spend&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                <span class="s2">&quot;revenue&quot;</span><span class="p">:</span> <span class="mf">0.0</span>
+            <span class="p">}</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">[</span><span class="n">deal_id</span><span class="p">][</span><span class="s1">&#39;impressions&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">[</span><span class="n">deal_id</span><span class="p">][</span><span class="s1">&#39;spend&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">price</span> <span class="o">/</span> <span class="mi">1000</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">record_click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deal_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Track clicks&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">deal_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">[</span><span class="n">deal_id</span><span class="p">][</span><span class="s1">&#39;clicks&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">record_conversion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deal_id</span><span class="p">,</span> <span class="n">revenue</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Track conversions and revenue&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">deal_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">[</span><span class="n">deal_id</span><span class="p">][</span><span class="s1">&#39;conversions&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">[</span><span class="n">deal_id</span><span class="p">][</span><span class="s1">&#39;revenue&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">revenue</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_report</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate performance report (sorted by ROAS)&quot;&quot;&quot;</span>
+        <span class="n">report</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">for</span> <span class="n">deal_id</span><span class="p">,</span> <span class="n">stats</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">impr</span> <span class="o">=</span> <span class="n">stats</span><span class="p">[</span><span class="s1">&#39;impressions&#39;</span><span class="p">]</span>
+            <span class="n">clicks</span> <span class="o">=</span> <span class="n">stats</span><span class="p">[</span><span class="s1">&#39;clicks&#39;</span><span class="p">]</span>
+            <span class="n">conv</span> <span class="o">=</span> <span class="n">stats</span><span class="p">[</span><span class="s1">&#39;conversions&#39;</span><span class="p">]</span>
+            <span class="n">spend</span> <span class="o">=</span> <span class="n">stats</span><span class="p">[</span><span class="s1">&#39;spend&#39;</span><span class="p">]</span>
+            <span class="n">revenue</span> <span class="o">=</span> <span class="n">stats</span><span class="p">[</span><span class="s1">&#39;revenue&#39;</span><span class="p">]</span>
+            
+            <span class="n">ctr</span> <span class="o">=</span> <span class="p">(</span><span class="n">clicks</span> <span class="o">/</span> <span class="n">impr</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="k">if</span> <span class="n">impr</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
+            <span class="n">cvr</span> <span class="o">=</span> <span class="p">(</span><span class="n">conv</span> <span class="o">/</span> <span class="n">clicks</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="k">if</span> <span class="n">clicks</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
+            <span class="n">cpa</span> <span class="o">=</span> <span class="p">(</span><span class="n">spend</span> <span class="o">/</span> <span class="n">conv</span><span class="p">)</span> <span class="k">if</span> <span class="n">conv</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
+            <span class="n">roas</span> <span class="o">=</span> <span class="p">(</span><span class="n">revenue</span> <span class="o">/</span> <span class="n">spend</span><span class="p">)</span> <span class="k">if</span> <span class="n">spend</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
+            
+            <span class="n">report</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s2">&quot;deal_id&quot;</span><span class="p">:</span> <span class="n">deal_id</span><span class="p">,</span>
+                <span class="s2">&quot;impressions&quot;</span><span class="p">:</span> <span class="n">impr</span><span class="p">,</span>
+                <span class="s2">&quot;clicks&quot;</span><span class="p">:</span> <span class="n">clicks</span><span class="p">,</span>
+                <span class="s2">&quot;conversions&quot;</span><span class="p">:</span> <span class="n">conv</span><span class="p">,</span>
+                <span class="s2">&quot;ctr&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">ctr</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+                <span class="s2">&quot;cvr&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">cvr</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+                <span class="s2">&quot;cpa&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">cpa</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+                <span class="s2">&quot;spend&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">spend</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+                <span class="s2">&quot;revenue&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">revenue</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+                <span class="s2">&quot;roas&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">roas</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="p">})</span>
+        
+        <span class="c1"># Best ROAS first</span>
+        <span class="n">report</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;roas&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">report</span>
+
+<span class="c1"># Example: Compare deal performance vs open exchange</span>
+<span class="n">tracker</span> <span class="o">=</span> <span class="n">DealPerformanceTracker</span><span class="p">()</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="c1"># Simulate preferred deal traffic</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">tracker</span><span class="o">.</span><span class="n">record_impression</span><span class="p">(</span><span class="s2">&quot;PREF-12345&quot;</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mf">8.50</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.025</span><span class="p">:</span>  <span class="c1"># 2.5% CTR</span>
+        <span class="n">tracker</span><span class="o">.</span><span class="n">record_click</span><span class="p">(</span><span class="s2">&quot;PREF-12345&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>  <span class="c1"># 5% CVR</span>
+            <span class="n">tracker</span><span class="o">.</span><span class="n">record_conversion</span><span class="p">(</span><span class="s2">&quot;PREF-12345&quot;</span><span class="p">,</span> <span class="n">revenue</span><span class="o">=</span><span class="mf">30.0</span><span class="p">)</span>
+
+<span class="c1"># Simulate programmatic guaranteed</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">):</span>
+    <span class="n">tracker</span><span class="o">.</span><span class="n">record_impression</span><span class="p">(</span><span class="s2">&quot;PG-67890&quot;</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mf">12.00</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.032</span><span class="p">:</span>  <span class="c1"># 3.2% CTR (better quality)</span>
+        <span class="n">tracker</span><span class="o">.</span><span class="n">record_click</span><span class="p">(</span><span class="s2">&quot;PG-67890&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.06</span><span class="p">:</span>  <span class="c1"># 6% CVR</span>
+            <span class="n">tracker</span><span class="o">.</span><span class="n">record_conversion</span><span class="p">(</span><span class="s2">&quot;PG-67890&quot;</span><span class="p">,</span> <span class="n">revenue</span><span class="o">=</span><span class="mf">40.0</span><span class="p">)</span>
+
+<span class="c1"># Simulate open exchange (for comparison)</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">):</span>
+    <span class="n">tracker</span><span class="o">.</span><span class="n">record_impression</span><span class="p">(</span><span class="s2">&quot;Open Exchange&quot;</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mf">2.50</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.015</span><span class="p">:</span>  <span class="c1"># 1.5% CTR (worse quality)</span>
+        <span class="n">tracker</span><span class="o">.</span><span class="n">record_click</span><span class="p">(</span><span class="s2">&quot;Open Exchange&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.03</span><span class="p">:</span>  <span class="c1"># 3% CVR</span>
+            <span class="n">tracker</span><span class="o">.</span><span class="n">record_conversion</span><span class="p">(</span><span class="s2">&quot;Open Exchange&quot;</span><span class="p">,</span> <span class="n">revenue</span><span class="o">=</span><span class="mf">20.0</span><span class="p">)</span>
+
+<span class="c1"># See the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Deal Performance Report ===&quot;</span><span class="p">)</span>
+<span class="n">report</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">get_report</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">report</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;deal_id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Impressions: </span><span class="si">{</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;impressions&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  CTR: </span><span class="si">{</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;ctr&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Conversions: </span><span class="si">{</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;conversions&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  CPA: $</span><span class="si">{</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;cpa&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Spend: $</span><span class="si">{</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;spend&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">,.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Revenue: $</span><span class="si">{</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;revenue&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">,.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ROAS: </span><span class="si">{</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;roas&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">x&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="the-bottom-line">
+<h1>The Bottom Line<a class="headerlink" href="#the-bottom-line" title="Link to this heading">#</a></h1>
+<p>Private Marketplace deals are how premium publishers survive in programmatic advertising. Instead of racing to the bottom on price (looking at you, open exchanges), they lock in relationships with quality advertisers at fair prices.</p>
+<p><strong>Why PMPs matter:</strong></p>
+<ul class="simple">
+<li><p>Better inventory = better performance</p></li>
+<li><p>Pre-negotiated prices = no surprise bills</p></li>
+<li><p>Brand safety guarantees = sleep better at night</p></li>
+<li><p>Direct relationships = actual humans you can call when things break</p></li>
+</ul>
+<p><strong>Three deal types to remember:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Preferred</strong>: First look, fixed price, non-guaranteed</p></li>
+<li><p><strong>Programmatic Guaranteed</strong>: Reserved inventory, contracted volume</p></li>
+<li><p><strong>Private Auction</strong>: Multiple invited buyers, competitive but controlled</p></li>
+</ol>
+<p><strong>Technical implementation:</strong></p>
+<ul class="simple">
+<li><p>Deal IDs travel in the <code class="docutils literal notranslate"><span class="pre">pmp.deals[]</span></code> array in OpenRTB</p></li>
+<li><p>Match deals to buyers using seat IDs</p></li>
+<li><p>Always prioritize deals over open auction</p></li>
+<li><p>Track performance by deal ID to prove ROI</p></li>
+</ul>
+<p>In my experience working with both sides, PMPs are usually worth the premium. Higher CPMs, sure, but the quality difference is like comparing a Tesla to a ‘92 Civic—you get what you pay for.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./08-Programming_in_AdTech"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="05-Creative%20AB%20Testing.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Creative A/B Testing</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="07-Client%20%26%20Server%20Side%20Tagging.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Client-Side vs Server-Side Tagging</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Deal IDs &amp; Private Marketplace (PMP)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-a-private-marketplace-really">What’s a Private Marketplace, Really?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pmp-vs-open-exchange-the-difference">PMP vs Open Exchange (The Difference)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#three-flavors-of-pmp-deals">Three Flavors of PMP Deals</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preferred-deals-first-dibs-no-promises">1. Preferred Deals (First Dibs, No Promises)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmatic-guaranteed-reserved-seats">2. Programmatic Guaranteed (Reserved Seats)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#private-auction-closed-bidding-war">3. Private Auction (Closed Bidding War)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-deal-ids-travel-the-technical-bit">How Deal IDs Travel (The Technical Bit)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-pmp-deals-the-code">Managing PMP Deals (The Code)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dsp-bidding-logic-with-deals">DSP Bidding Logic (With Deals)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-deal-performance">Tracking Deal Performance</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bottom-line">The Bottom Line</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Vishwanath Subramanian
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright © 2025 Vishwanath Subramanian. Licensed under CC BY-NC-ND 4.0..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

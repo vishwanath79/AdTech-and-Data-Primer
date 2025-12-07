@@ -1,0 +1,1169 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Algorithmic Bidding &#8212; AdTech for the data Professional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '09-AI_ML/02-Algorithmic_Bidding';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Predictive Analytics in AdTech" href="03-Predictive_Analytics.html" />
+    <link rel="prev" title="AI Applications in AdTech" href="01-AI_Applications.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../00-Preface.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AdTech for the data Professional</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 1 - Foundations of Digital Advertising &amp; Measurement</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../About.html">About the Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Introduction/index.html">Introduction</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-Core_Concepts/index.html">Chapter 2: Core Concepts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/01-What_is_AdTech.html">What is AdTech?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/02-Key_Dataflows.html">How Data Moves in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/03-Impressions_Clicks_Conversions.html">Important Numbers for Online Ads</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-Measurement_Fundamentals/index.html">Chapter 3: Measurement Fundamentals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/01-Importance_of_Measurement.html">Why It’s Important to Measure (and Why It’s Harder Than You Think)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/02-Counting_Impressions.html">Counting Impressions: Tags, Pixels, and Logs</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/03-Measurement_Challenges.html">The Messy Truth About Measuring ROI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-User_Identification/index.html">Chapter 4: User Identification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/01-Cookies.html">Cookies (Not the Good Kind)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/02-Crumbling_Cookies.html">The Great Cookie Flip-Flop (Chaos in Motion)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/03-Alternative_IDs.html">Life After Cookies (Other Ways to Identify Yourself)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/04-Device_vs_People.html">Device IDs vs. People IDs: Who Are We Even Following?</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 2 - Programmatic Advertising &amp; Data Activation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05-Programmatic_Intro/index.html">Chapter 5: Introduction to Programmatic Advertising</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/01-What_is_Programmatic.html">What is Programmatic Advertising?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/02-RTB.html">The Millisecond Auction: Bidding in Real Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/03-Programmatic_Players.html">DSPs, SSPs, Ad Exchanges, and DMPs</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06-Data_In_AdTech/index.html">Chapter 6: Data in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/01-Data_Types.html">Data Types in AdTech (First, Second, and Third-Party)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/02-DMPs.html">DMPs (Data Management Platforms) - The Old Guard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/03-CDPs.html">CDPs (Customer Data Platforms)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/04-Segmentation_Targeting.html">Targeting and Segmentation</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 3 - Modern Challenges &amp; Future Trends</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07-Privacy_Regulation/index.html">Chapter 7: Privacy and Regulation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/01-Privacy_Concerns.html">Privacy Issues in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/02-Regulations.html">Privacy Rules (The Laws With Teeth)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/03-CMPs.html">CMPs (Platforms for Managing Consent)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/04-Privacy_by_Design.html">Privacy by Design in Action (Patterns for Engineers)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08-Programming_in_AdTech/index.html">Chapter 8: Programming in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/01-Introduction.html">Programming in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/02-Adserver.html">Basic Ad Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/03-Header%20Bidding%20Basics.html">Header Bidding Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/04-Real%20Time%20Bidding.html">Real Time Bidding (RTB) Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/05-Creative%20AB%20Testing.html">Creative A/B Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/06-Deal%20IDs%20%26%20Private%20Marketplace%20%28PMP%29.html">Deal IDs &amp; Private Marketplace (PMP)</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/07-Client%20%26%20Server%20Side%20Tagging.html">Client-Side vs Server-Side Tagging</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">AI &amp; Machine Learning in AdTech</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01-AI_Applications.html">AI Applications in AdTech</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Algorithmic Bidding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-Predictive_Analytics.html">Predictive Analytics in AdTech</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Conclusion.html">Conclusion: The AdTech Evolution Continues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendix.html">Appendix: Resources, Tools &amp; Further Reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/09-AI_ML/02-Algorithmic_Bidding.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Algorithmic Bidding</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-algorithmic-bidding-exists">Why Algorithmic Bidding Exists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-actually-works">How It Actually Works</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-bidding-algorithm">Basic Bidding Algorithm</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#imports-and-class-definition">Imports and Class Definition</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-extraction">Feature Extraction</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model-training">Model Training</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-probability-prediction">Conversion Probability Prediction</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bid-calculation">Bid Calculation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bid-decision-logic">Bid Decision Logic</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-usage">Example Usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bidding-strategies">Bidding Strategies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#target-cpa-cost-per-acquisition">Target CPA (Cost Per Acquisition)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#target-roas-return-on-ad-spend">Target ROAS (Return on Ad Spend)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximize-conversions">Maximize Conversions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximize-conversion-value">Maximize Conversion Value</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-armed-bandit-approach">Multi-Armed Bandit Approach</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bandit-bidder-implementation">Bandit Bidder Implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bid-selection-with-thompson-sampling">Bid Selection with Thompson Sampling</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-beliefs">Updating Beliefs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-statistics">Performance Statistics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bandit-example-usage">Bandit Example Usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-time-bid-adjustments">Real-Time Bid Adjustments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smart-bidder-implementation">Smart Bidder Implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#budget-pacing-adjustment">Budget Pacing Adjustment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#time-of-day-adjustment">Time-of-Day Adjustment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#audience-quality-adjustment">Audience Quality Adjustment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#competitive-adjustment">Competitive Adjustment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-algorithmic-bidding-fails">When Algorithmic Bidding Fails</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cold-start-problem">1. Cold Start Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-quality-issues">2. Data Quality Issues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#black-box-opacity">3. Black Box Opacity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#budget-constraints">4. Budget Constraints</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="algorithmic-bidding">
+<h1>Algorithmic Bidding<a class="headerlink" href="#algorithmic-bidding" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p><strong>Note:</strong> The code examples below are complete implementations you can run. For interactive experimentation, consider creating a Jupyter notebook based on these examples.</p>
+</div></blockquote>
+<p>Manual bidding is dead. Not dying—dead. If you’re still manually setting max CPCs in 2024, you’re bringing a knife to a drone fight.</p>
+<p>Algorithmic bidding uses machine learning to automatically adjust bids in real-time based on the likelihood of conversion. It’s faster, smarter, and frankly better at math than any human. But it’s also a black box that can burn your budget if you don’t understand what’s happening under the hood.</p>
+<section id="why-algorithmic-bidding-exists">
+<h2>Why Algorithmic Bidding Exists<a class="headerlink" href="#why-algorithmic-bidding-exists" title="Link to this heading">#</a></h2>
+<p>RTB auctions happen in milliseconds. There’s no time for a human to evaluate whether this specific user, on this specific page, at this specific time is worth $2.50 or $3.00. You need algorithms making thousands of bid decisions per second.</p>
+<p>The goal: bid high enough to win valuable impressions, low enough to not waste money on junk traffic.</p>
+</section>
+<section id="how-it-actually-works">
+<h2>How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Link to this heading">#</a></h2>
+<p>At its core, algorithmic bidding is a prediction problem: given features about this impression, what’s the probability it converts? Then bid accordingly.</p>
+<section id="basic-bidding-algorithm">
+<h3>Basic Bidding Algorithm<a class="headerlink" href="#basic-bidding-algorithm" title="Link to this heading">#</a></h3>
+<p>Here’s a simplified version of what platforms like Google Ads do. The implementation is broken into logical sections: class initialization, feature extraction, model training, prediction, and bid calculation.</p>
+<section id="imports-and-class-definition">
+<h4>Imports and Class Definition<a class="headerlink" href="#imports-and-class-definition" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">BiddingAlgorithm</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Simple ML-based bidding algorithm</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_cpa</span><span class="o">=</span><span class="mf">50.0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_cpa</span> <span class="o">=</span> <span class="n">target_cpa</span>  <span class="c1"># How much you&#39;re willing to pay per conversion</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_trained</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</section>
+<section id="feature-extraction">
+<h4>Feature Extraction<a class="headerlink" href="#feature-extraction" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">extract_features</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">impression_data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Extract features that predict conversion probability</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">features</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="c1"># User features</span>
+        <span class="n">features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">impression_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;user_previous_visits&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="n">features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">impression_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;user_previous_conversions&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="n">features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">impression_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;user_cart_value&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        
+        <span class="c1"># Context features</span>
+        <span class="n">features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">impression_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;hour_of_day&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="n">features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">impression_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;day_of_week&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="n">features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">impression_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;is_mobile&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        
+        <span class="c1"># Ad features</span>
+        <span class="n">features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">impression_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ad_relevance_score&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="n">features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">impression_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;landing_page_quality&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        
+        <span class="c1"># Site features</span>
+        <span class="n">features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">impression_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;site_category_match&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="n">features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">impression_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;site_quality_score&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">features</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="model-training">
+<h4>Model Training<a class="headerlink" href="#model-training" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">historical_impressions</span><span class="p">,</span> <span class="n">conversions</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Train the conversion prediction model</span>
+<span class="sd">        </span>
+<span class="sd">        historical_impressions: Past impression data with features</span>
+<span class="sd">        conversions: Binary labels (1 = converted, 0 = didn&#39;t convert)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="c1"># Extract features from historical data</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">extract_features</span><span class="p">(</span><span class="n">imp</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">imp</span> <span class="ow">in</span> <span class="n">historical_impressions</span>
+        <span class="p">])</span>
+        
+        <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">conversions</span><span class="p">)</span>
+        
+        <span class="c1"># Train model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_trained</span> <span class="o">=</span> <span class="kc">True</span>
+        
+        <span class="c1"># Evaluate</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model accuracy: </span><span class="si">{</span><span class="n">score</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span>
+</pre></div>
+</div>
+</section>
+<section id="conversion-probability-prediction">
+<h4>Conversion Probability Prediction<a class="headerlink" href="#conversion-probability-prediction" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">predict_conversion_probability</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">impression_data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Predict probability this impression will convert</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_trained</span><span class="p">:</span>
+            <span class="c1"># Cold start: use a default probability</span>
+            <span class="k">return</span> <span class="mf">0.01</span>
+        
+        <span class="n">features</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_features</span><span class="p">(</span><span class="n">impression_data</span><span class="p">)</span>
+        <span class="n">prob</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">features</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        
+        <span class="k">return</span> <span class="n">prob</span>
+</pre></div>
+</div>
+</section>
+<section id="bid-calculation">
+<h4>Bid Calculation<a class="headerlink" href="#bid-calculation" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">calculate_bid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">impression_data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate optimal bid for this impression</span>
+<span class="sd">        </span>
+<span class="sd">        Formula: bid = target_cpa × conversion_probability</span>
+<span class="sd">        </span>
+<span class="sd">        If conversion probability is 2% and target CPA is $50,</span>
+<span class="sd">        we should bid up to $1 (0.02 × $50)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">conv_prob</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict_conversion_probability</span><span class="p">(</span><span class="n">impression_data</span><span class="p">)</span>
+        
+        <span class="c1"># Calculate expected value</span>
+        <span class="n">bid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_cpa</span> <span class="o">*</span> <span class="n">conv_prob</span>
+        
+        <span class="c1"># Add some randomness for exploration (explore/exploit trade-off)</span>
+        <span class="n">bid_with_exploration</span> <span class="o">=</span> <span class="n">bid</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">bid_with_exploration</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="bid-decision-logic">
+<h4>Bid Decision Logic<a class="headerlink" href="#bid-decision-logic" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">should_bid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">impression_data</span><span class="p">,</span> <span class="n">floor_price</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Decide whether to bid at all</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">optimal_bid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_bid</span><span class="p">(</span><span class="n">impression_data</span><span class="p">)</span>
+        
+        <span class="c1"># Only bid if our calculated bid meets the floor price</span>
+        <span class="k">return</span> <span class="n">optimal_bid</span> <span class="o">&gt;=</span> <span class="n">floor_price</span>
+</pre></div>
+</div>
+</section>
+<section id="example-usage">
+<h4>Example Usage<a class="headerlink" href="#example-usage" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example usage</span>
+<span class="n">bidder</span> <span class="o">=</span> <span class="n">BiddingAlgorithm</span><span class="p">(</span><span class="n">target_cpa</span><span class="o">=</span><span class="mf">50.0</span><span class="p">)</span>
+
+<span class="c1"># Simulate training on historical data</span>
+<span class="n">historical_data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;user_previous_visits&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;user_previous_conversions&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;user_cart_value&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="s1">&#39;hour_of_day&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="s1">&#39;day_of_week&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;is_mobile&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="s1">&#39;ad_relevance_score&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;landing_page_quality&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+     <span class="s1">&#39;site_category_match&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;site_quality_score&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="p">]</span>
+<span class="n">conversions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>  <span class="c1"># 2% conversion rate</span>
+
+<span class="n">bidder</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">historical_data</span><span class="p">,</span> <span class="n">conversions</span><span class="p">)</span>
+
+<span class="c1"># Make a bid decision</span>
+<span class="n">new_impression</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;user_previous_visits&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;user_previous_conversions&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s1">&#39;user_cart_value&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s1">&#39;hour_of_day&#39;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="s1">&#39;day_of_week&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;is_mobile&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;ad_relevance_score&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="s1">&#39;landing_page_quality&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+    <span class="s1">&#39;site_category_match&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;site_quality_score&#39;</span><span class="p">:</span> <span class="mi">8</span>
+<span class="p">}</span>
+
+<span class="n">bid</span> <span class="o">=</span> <span class="n">bidder</span><span class="o">.</span><span class="n">calculate_bid</span><span class="p">(</span><span class="n">new_impression</span><span class="p">)</span>
+<span class="n">conv_prob</span> <span class="o">=</span> <span class="n">bidder</span><span class="o">.</span><span class="n">predict_conversion_probability</span><span class="p">(</span><span class="n">new_impression</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Conversion probability: </span><span class="si">{</span><span class="n">conv_prob</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Calculated bid: $</span><span class="si">{</span><span class="n">bid</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>That’s the basic logic. Real platforms use far more sophisticated models (neural networks, gradient boosting, contextual bandits), but the principle is the same: predict conversion probability, multiply by target CPA, bid accordingly.</p>
+</section>
+</section>
+</section>
+<section id="bidding-strategies">
+<h2>Bidding Strategies<a class="headerlink" href="#bidding-strategies" title="Link to this heading">#</a></h2>
+<p>Different platforms offer different algorithmic bidding strategies. Here’s what they actually mean:</p>
+<section id="target-cpa-cost-per-acquisition">
+<h3>Target CPA (Cost Per Acquisition)<a class="headerlink" href="#target-cpa-cost-per-acquisition" title="Link to this heading">#</a></h3>
+<p><strong>What it does:</strong> Algorithm tries to get conversions at your target cost per acquisition.</p>
+<p><strong>When to use:</strong> You know what a customer is worth and want predictable acquisition costs.</p>
+<p><strong>The catch:</strong> Needs conversion data (at least 30 conversions in 30 days) to work well. Cold start sucks.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">target_cpa_bidding</span><span class="p">(</span><span class="n">conv_probability</span><span class="p">,</span> <span class="n">target_cpa</span><span class="p">,</span> <span class="n">uncertainty_factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Bid to achieve target CPA</span>
+<span class="sd">    </span>
+<span class="sd">    uncertainty_factor: Adjust for confidence in prediction</span>
+<span class="sd">    - Early in campaign (low confidence): factor &gt; 1 (bid higher to explore)</span>
+<span class="sd">    - Mature campaign (high confidence): factor = 1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">base_bid</span> <span class="o">=</span> <span class="n">target_cpa</span> <span class="o">*</span> <span class="n">conv_probability</span>
+    <span class="n">adjusted_bid</span> <span class="o">=</span> <span class="n">base_bid</span> <span class="o">*</span> <span class="n">uncertainty_factor</span>
+    
+    <span class="k">return</span> <span class="n">adjusted_bid</span>
+
+<span class="c1"># Example</span>
+<span class="n">conv_prob</span> <span class="o">=</span> <span class="mf">0.02</span>  <span class="c1"># 2% chance of conversion</span>
+<span class="n">target_cpa</span> <span class="o">=</span> <span class="mi">50</span>   <span class="c1"># Willing to pay $50 per conversion</span>
+
+<span class="n">bid</span> <span class="o">=</span> <span class="n">target_cpa_bidding</span><span class="p">(</span><span class="n">conv_prob</span><span class="p">,</span> <span class="n">target_cpa</span><span class="p">,</span> <span class="n">uncertainty_factor</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bid: $</span><span class="si">{</span><span class="n">bid</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># $1.20</span>
+</pre></div>
+</div>
+</section>
+<section id="target-roas-return-on-ad-spend">
+<h3>Target ROAS (Return on Ad Spend)<a class="headerlink" href="#target-roas-return-on-ad-spend" title="Link to this heading">#</a></h3>
+<p><strong>What it does:</strong> Optimizes for revenue, not just conversions. Bids more for high-value conversions.</p>
+<p><strong>When to use:</strong> When conversion values vary (e.g., e-commerce with different product prices).</p>
+<p><strong>The catch:</strong> Requires passing conversion value data. Many advertisers screw this up.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">target_roas_bidding</span><span class="p">(</span><span class="n">conv_probability</span><span class="p">,</span> <span class="n">expected_revenue</span><span class="p">,</span> <span class="n">target_roas</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Bid to achieve target return on ad spend</span>
+<span class="sd">    </span>
+<span class="sd">    target_roas: Desired revenue/cost ratio (e.g., 4.0 = $4 revenue per $1 spent)</span>
+<span class="sd">    </span>
+<span class="sd">    If expected revenue is $200 and target ROAS is 4x,</span>
+<span class="sd">    we can spend up to $50 ($200 / 4)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">max_bid</span> <span class="o">=</span> <span class="n">expected_revenue</span> <span class="o">/</span> <span class="n">target_roas</span>
+    <span class="n">bid</span> <span class="o">=</span> <span class="n">max_bid</span> <span class="o">*</span> <span class="n">conv_probability</span>
+    
+    <span class="k">return</span> <span class="n">bid</span>
+
+<span class="c1"># Example</span>
+<span class="n">conv_prob</span> <span class="o">=</span> <span class="mf">0.03</span>           <span class="c1"># 3% conversion chance</span>
+<span class="n">expected_revenue</span> <span class="o">=</span> <span class="mi">200</span>     <span class="c1"># Expected order value</span>
+<span class="n">target_roas</span> <span class="o">=</span> <span class="mf">4.0</span>          <span class="c1"># Want $4 revenue per $1 ad spend</span>
+
+<span class="n">bid</span> <span class="o">=</span> <span class="n">target_roas_bidding</span><span class="p">(</span><span class="n">conv_prob</span><span class="p">,</span> <span class="n">expected_revenue</span><span class="p">,</span> <span class="n">target_roas</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bid: $</span><span class="si">{</span><span class="n">bid</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># $1.50</span>
+</pre></div>
+</div>
+</section>
+<section id="maximize-conversions">
+<h3>Maximize Conversions<a class="headerlink" href="#maximize-conversions" title="Link to this heading">#</a></h3>
+<p><strong>What it does:</strong> Spend your entire budget trying to get as many conversions as possible.</p>
+<p><strong>When to use:</strong> You have a fixed budget and want maximum volume.</p>
+<p><strong>The catch:</strong> Can drive up costs. If volume matters more than efficiency, great. Otherwise, risky.</p>
+</section>
+<section id="maximize-conversion-value">
+<h3>Maximize Conversion Value<a class="headerlink" href="#maximize-conversion-value" title="Link to this heading">#</a></h3>
+<p><strong>What it does:</strong> Like maximize conversions, but prioritizes high-value conversions.</p>
+<p><strong>When to use:</strong> E-commerce where you’d rather have one $500 sale than five $50 sales.</p>
+</section>
+</section>
+<section id="multi-armed-bandit-approach">
+<h2>Multi-Armed Bandit Approach<a class="headerlink" href="#multi-armed-bandit-approach" title="Link to this heading">#</a></h2>
+<p>A more sophisticated approach uses contextual bandits—balancing exploration (trying new bids to learn) with exploitation (using what you’ve learned to maximize performance).</p>
+<section id="bandit-bidder-implementation">
+<h3>Bandit Bidder Implementation<a class="headerlink" href="#bandit-bidder-implementation" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">BanditBidder</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Multi-armed bandit for bid optimization</span>
+<span class="sd">    Uses Thompson Sampling</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bid_options</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        bid_options: List of possible bid amounts to test</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bid_options</span> <span class="o">=</span> <span class="n">bid_options</span>
+        
+        <span class="c1"># Track successes and failures for each bid level</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">successes</span> <span class="o">=</span> <span class="p">{</span><span class="n">bid</span><span class="p">:</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">bid</span> <span class="ow">in</span> <span class="n">bid_options</span><span class="p">}</span>  <span class="c1"># Start with 1 (prior)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">failures</span> <span class="o">=</span> <span class="p">{</span><span class="n">bid</span><span class="p">:</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">bid</span> <span class="ow">in</span> <span class="n">bid_options</span><span class="p">}</span>
+</pre></div>
+</div>
+<section id="bid-selection-with-thompson-sampling">
+<h4>Bid Selection with Thompson Sampling<a class="headerlink" href="#bid-selection-with-thompson-sampling" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">select_bid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Select a bid using Thompson Sampling</span>
+<span class="sd">        </span>
+<span class="sd">        Sample from beta distribution for each bid option,</span>
+<span class="sd">        pick the one with highest sampled value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">sampled_values</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="k">for</span> <span class="n">bid</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">bid_options</span><span class="p">:</span>
+            <span class="c1"># Sample from Beta(successes, failures)</span>
+            <span class="n">sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">successes</span><span class="p">[</span><span class="n">bid</span><span class="p">],</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">failures</span><span class="p">[</span><span class="n">bid</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="n">sampled_values</span><span class="p">[</span><span class="n">bid</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample</span>
+        
+        <span class="c1"># Pick bid with highest sampled conversion rate</span>
+        <span class="n">best_bid</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">sampled_values</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">sampled_values</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">best_bid</span>
+</pre></div>
+</div>
+</section>
+<section id="updating-beliefs">
+<h4>Updating Beliefs<a class="headerlink" href="#updating-beliefs" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bid</span><span class="p">,</span> <span class="n">converted</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update our belief about this bid level based on outcome</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="k">if</span> <span class="n">converted</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">successes</span><span class="p">[</span><span class="n">bid</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">failures</span><span class="p">[</span><span class="n">bid</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="performance-statistics">
+<h4>Performance Statistics<a class="headerlink" href="#performance-statistics" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">get_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get current conversion rate estimates for each bid</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">stats</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="k">for</span> <span class="n">bid</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">bid_options</span><span class="p">:</span>
+            <span class="n">total</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">successes</span><span class="p">[</span><span class="n">bid</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">failures</span><span class="p">[</span><span class="n">bid</span><span class="p">]</span>
+            <span class="n">conv_rate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">successes</span><span class="p">[</span><span class="n">bid</span><span class="p">]</span> <span class="o">/</span> <span class="n">total</span>
+            
+            <span class="n">stats</span><span class="p">[</span><span class="n">bid</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;conversion_rate&#39;</span><span class="p">:</span> <span class="n">conv_rate</span><span class="p">,</span>
+                <span class="s1">&#39;impressions&#39;</span><span class="p">:</span> <span class="n">total</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span>  <span class="c1"># Subtract the prior</span>
+                <span class="s1">&#39;conversions&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">successes</span><span class="p">[</span><span class="n">bid</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="n">stats</span>
+</pre></div>
+</div>
+</section>
+<section id="bandit-example-usage">
+<h4>Bandit Example Usage<a class="headerlink" href="#bandit-example-usage" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example usage</span>
+<span class="n">bid_levels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.00</span><span class="p">,</span> <span class="mf">1.50</span><span class="p">,</span> <span class="mf">2.00</span><span class="p">,</span> <span class="mf">2.50</span><span class="p">,</span> <span class="mf">3.00</span><span class="p">]</span>
+<span class="n">bandit</span> <span class="o">=</span> <span class="n">BanditBidder</span><span class="p">(</span><span class="n">bid_levels</span><span class="p">)</span>
+
+<span class="c1"># Simulate 1000 auction decisions</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="c1"># Select bid</span>
+    <span class="n">bid</span> <span class="o">=</span> <span class="n">bandit</span><span class="o">.</span><span class="n">select_bid</span><span class="p">()</span>
+    
+    <span class="c1"># Simulate outcome (higher bids win more, win rate correlates with conversion)</span>
+    <span class="n">win_prob</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">bid</span> <span class="o">/</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">)</span>  <span class="c1"># Higher bids win more auctions</span>
+    <span class="n">won</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">win_prob</span>
+    
+    <span class="k">if</span> <span class="n">won</span><span class="p">:</span>
+        <span class="c1"># If we won, did it convert?</span>
+        <span class="n">conv_prob</span> <span class="o">=</span> <span class="mf">0.02</span>  <span class="c1"># 2% base conversion rate</span>
+        <span class="n">converted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">conv_prob</span>
+        <span class="n">bandit</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">bid</span><span class="p">,</span> <span class="n">converted</span><span class="p">)</span>
+
+<span class="c1"># See what we learned</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bid Performance:&quot;</span><span class="p">)</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">bandit</span><span class="o">.</span><span class="n">get_stats</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">bid</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  $</span><span class="si">{</span><span class="n">bid</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;conversions&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> conv / </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;impressions&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> impr &quot;</span>
+          <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;conversion_rate&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This approach automatically finds the sweet spot between bidding too low (missing conversions) and too high (wasting money).</p>
+</section>
+</section>
+</section>
+<section id="real-time-bid-adjustments">
+<h2>Real-Time Bid Adjustments<a class="headerlink" href="#real-time-bid-adjustments" title="Link to this heading">#</a></h2>
+<p>Smart bidders don’t just use a single model—they adjust bids in real-time based on multiple signals:</p>
+<section id="smart-bidder-implementation">
+<h3>Smart Bidder Implementation<a class="headerlink" href="#smart-bidder-implementation" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">SmartBidder</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Advanced bidder with real-time adjustments</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_bidder</span><span class="p">,</span> <span class="n">target_cpa</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_bidder</span> <span class="o">=</span> <span class="n">base_bidder</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_cpa</span> <span class="o">=</span> <span class="n">target_cpa</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate_bid_with_adjustments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">impression_data</span><span class="p">,</span> <span class="n">campaign_stats</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate bid with real-time adjustments</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="c1"># Get base bid from ML model</span>
+        <span class="n">base_bid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_bidder</span><span class="o">.</span><span class="n">calculate_bid</span><span class="p">(</span><span class="n">impression_data</span><span class="p">)</span>
+        
+        <span class="c1"># Apply adjustment modifiers</span>
+        <span class="n">bid</span> <span class="o">=</span> <span class="n">base_bid</span>
+        
+        <span class="c1"># 1. Budget pacing adjustment</span>
+        <span class="n">bid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_budget_pacing</span><span class="p">(</span><span class="n">bid</span><span class="p">,</span> <span class="n">campaign_stats</span><span class="p">)</span>
+        
+        <span class="c1"># 2. Time-of-day adjustment</span>
+        <span class="n">bid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_time_of_day_modifier</span><span class="p">(</span><span class="n">bid</span><span class="p">,</span> <span class="n">impression_data</span><span class="p">)</span>
+        
+        <span class="c1"># 3. Audience quality adjustment</span>
+        <span class="n">bid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_audience_modifier</span><span class="p">(</span><span class="n">bid</span><span class="p">,</span> <span class="n">impression_data</span><span class="p">)</span>
+        
+        <span class="c1"># 4. Competitive adjustment</span>
+        <span class="n">bid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_competitive_modifier</span><span class="p">(</span><span class="n">bid</span><span class="p">,</span> <span class="n">impression_data</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">bid</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="budget-pacing-adjustment">
+<h4>Budget Pacing Adjustment<a class="headerlink" href="#budget-pacing-adjustment" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">apply_budget_pacing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bid</span><span class="p">,</span> <span class="n">campaign_stats</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adjust bid based on budget pacing</span>
+<span class="sd">        </span>
+<span class="sd">        If we&#39;re under-pacing (spending too slowly), bid more aggressively</span>
+<span class="sd">        If we&#39;re over-pacing (burning through budget), pull back</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">spent_pct</span> <span class="o">=</span> <span class="n">campaign_stats</span><span class="p">[</span><span class="s1">&#39;spent&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">campaign_stats</span><span class="p">[</span><span class="s1">&#39;budget&#39;</span><span class="p">]</span>
+        <span class="n">time_pct</span> <span class="o">=</span> <span class="n">campaign_stats</span><span class="p">[</span><span class="s1">&#39;hours_elapsed&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">campaign_stats</span><span class="p">[</span><span class="s1">&#39;total_hours&#39;</span><span class="p">]</span>
+        
+        <span class="n">pacing_ratio</span> <span class="o">=</span> <span class="n">spent_pct</span> <span class="o">/</span> <span class="n">time_pct</span>
+        
+        <span class="k">if</span> <span class="n">pacing_ratio</span> <span class="o">&lt;</span> <span class="mf">0.8</span><span class="p">:</span>
+            <span class="c1"># Under-pacing: bid up to 20% more</span>
+            <span class="k">return</span> <span class="n">bid</span> <span class="o">*</span> <span class="mf">1.2</span>
+        <span class="k">elif</span> <span class="n">pacing_ratio</span> <span class="o">&gt;</span> <span class="mf">1.2</span><span class="p">:</span>
+            <span class="c1"># Over-pacing: bid up to 20% less</span>
+            <span class="k">return</span> <span class="n">bid</span> <span class="o">*</span> <span class="mf">0.8</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">bid</span>
+</pre></div>
+</div>
+</section>
+<section id="time-of-day-adjustment">
+<h4>Time-of-Day Adjustment<a class="headerlink" href="#time-of-day-adjustment" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">apply_time_of_day_modifier</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bid</span><span class="p">,</span> <span class="n">impression_data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adjust based on time of day performance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">hour</span> <span class="o">=</span> <span class="n">impression_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;hour_of_day&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+        
+        <span class="c1"># Prime hours (9-5): normal bidding</span>
+        <span class="c1"># Off hours (11pm-6am): reduce bids by 30%</span>
+        <span class="k">if</span> <span class="mi">6</span> <span class="o">&lt;=</span> <span class="n">hour</span> <span class="o">&lt;=</span> <span class="mi">22</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">bid</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">bid</span> <span class="o">*</span> <span class="mf">0.7</span>
+</pre></div>
+</div>
+</section>
+<section id="audience-quality-adjustment">
+<h4>Audience Quality Adjustment<a class="headerlink" href="#audience-quality-adjustment" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">apply_audience_modifier</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bid</span><span class="p">,</span> <span class="n">impression_data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adjust based on user quality signals</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="c1"># High-value signals</span>
+        <span class="k">if</span> <span class="n">impression_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;user_previous_conversions&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">bid</span> <span class="o">*</span> <span class="mf">1.5</span>  <span class="c1"># Past customer? Bid 50% more</span>
+        
+        <span class="k">if</span> <span class="n">impression_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;user_cart_value&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">bid</span> <span class="o">*</span> <span class="mf">1.3</span>  <span class="c1"># High cart value? Bid 30% more</span>
+        
+        <span class="k">return</span> <span class="n">bid</span>
+</pre></div>
+</div>
+</section>
+<section id="competitive-adjustment">
+<h4>Competitive Adjustment<a class="headerlink" href="#competitive-adjustment" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">apply_competitive_modifier</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bid</span><span class="p">,</span> <span class="n">impression_data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adjust based on competitive intensity</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">competition_level</span> <span class="o">=</span> <span class="n">impression_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;estimated_competition&#39;</span><span class="p">,</span> <span class="s1">&#39;medium&#39;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">competition_level</span> <span class="o">==</span> <span class="s1">&#39;high&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">bid</span> <span class="o">*</span> <span class="mf">1.1</span>  <span class="c1"># Bid slightly more in competitive auctions</span>
+        <span class="k">elif</span> <span class="n">competition_level</span> <span class="o">==</span> <span class="s1">&#39;low&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">bid</span> <span class="o">*</span> <span class="mf">0.9</span>  <span class="c1"># Bid less when competition is weak</span>
+        
+        <span class="k">return</span> <span class="n">bid</span>
+</pre></div>
+</div>
+<p>This multi-layered approach is closer to what enterprise platforms actually do—combine ML predictions with business logic and real-time constraints.</p>
+</section>
+</section>
+</section>
+<section id="when-algorithmic-bidding-fails">
+<h2>When Algorithmic Bidding Fails<a class="headerlink" href="#when-algorithmic-bidding-fails" title="Link to this heading">#</a></h2>
+<p>It’s not perfect. Here’s where it breaks:</p>
+<section id="cold-start-problem">
+<h3>1. Cold Start Problem<a class="headerlink" href="#cold-start-problem" title="Link to this heading">#</a></h3>
+<p>New campaigns have no data. The algorithm is guessing. Expect wild swings and wasted spend for the first few days while it learns.</p>
+<p><strong>Solution:</strong> Start with manual bidding or a conservative target CPA, then switch to algorithmic once you have 30+ conversions.</p>
+</section>
+<section id="data-quality-issues">
+<h3>2. Data Quality Issues<a class="headerlink" href="#data-quality-issues" title="Link to this heading">#</a></h3>
+<p>If your conversion tracking is broken (happens more than you’d think), the algorithm learns the wrong patterns. Garbage in, garbage out.</p>
+<p><strong>Solution:</strong> Audit your tracking religiously. Test conversions manually. Check for discrepancies.</p>
+</section>
+<section id="black-box-opacity">
+<h3>3. Black Box Opacity<a class="headerlink" href="#black-box-opacity" title="Link to this heading">#</a></h3>
+<p>Google’s Smart Bidding doesn’t tell you why it bid $3 instead of $2. You’re trusting the algorithm without visibility into its decisions.</p>
+<p><strong>Solution:</strong> Monitor performance closely. If results degrade, switch back to manual control and investigate.</p>
+</section>
+<section id="budget-constraints">
+<h3>4. Budget Constraints<a class="headerlink" href="#budget-constraints" title="Link to this heading">#</a></h3>
+<p>Algorithms optimize for your goal (conversions, ROAS), but they need budget headroom. If your budget is too tight, the algorithm can’t explore and learn effectively.</p>
+<p><strong>Solution:</strong> Give it enough budget to get statistically significant data (30+ conversions minimum).</p>
+</section>
+</section>
+<section id="key-takeaways">
+<h2>Key Takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h2>
+<p>Algorithmic bidding is mandatory at scale. The math is simple—predict conversion probability, calculate expected value, bid accordingly. But the implementation is complex, with multi-armed bandits, real-time adjustments, and cold start strategies.</p>
+<p>The platforms (Google, Facebook, Amazon) have sophisticated algorithms you can’t replicate easily. Use them. But understand what they’re doing so you can troubleshoot when things go sideways (and they will).</p>
+<p>The code above shows the fundamental concepts. In production, you’re adding ensemble models, contextual bandits, constrained optimization, and way more feature engineering. But the core logic stays the same: predict value, bid proportionally, adjust in real-time.</p>
+<p>Don’t fight the algorithms—learn to work with them.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./09-AI_ML"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01-AI_Applications.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">AI Applications in AdTech</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="03-Predictive_Analytics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Predictive Analytics in AdTech</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-algorithmic-bidding-exists">Why Algorithmic Bidding Exists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-actually-works">How It Actually Works</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-bidding-algorithm">Basic Bidding Algorithm</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#imports-and-class-definition">Imports and Class Definition</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-extraction">Feature Extraction</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model-training">Model Training</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-probability-prediction">Conversion Probability Prediction</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bid-calculation">Bid Calculation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bid-decision-logic">Bid Decision Logic</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-usage">Example Usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bidding-strategies">Bidding Strategies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#target-cpa-cost-per-acquisition">Target CPA (Cost Per Acquisition)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#target-roas-return-on-ad-spend">Target ROAS (Return on Ad Spend)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximize-conversions">Maximize Conversions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximize-conversion-value">Maximize Conversion Value</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-armed-bandit-approach">Multi-Armed Bandit Approach</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bandit-bidder-implementation">Bandit Bidder Implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bid-selection-with-thompson-sampling">Bid Selection with Thompson Sampling</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-beliefs">Updating Beliefs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-statistics">Performance Statistics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bandit-example-usage">Bandit Example Usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-time-bid-adjustments">Real-Time Bid Adjustments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smart-bidder-implementation">Smart Bidder Implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#budget-pacing-adjustment">Budget Pacing Adjustment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#time-of-day-adjustment">Time-of-Day Adjustment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#audience-quality-adjustment">Audience Quality Adjustment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#competitive-adjustment">Competitive Adjustment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-algorithmic-bidding-fails">When Algorithmic Bidding Fails</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cold-start-problem">1. Cold Start Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-quality-issues">2. Data Quality Issues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#black-box-opacity">3. Black Box Opacity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#budget-constraints">4. Budget Constraints</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Vishwanath Subramanian
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright © 2025 Vishwanath Subramanian. Licensed under CC BY-NC-ND 4.0..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

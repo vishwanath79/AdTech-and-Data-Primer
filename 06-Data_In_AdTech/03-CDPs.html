@@ -1,0 +1,834 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CDPs (Customer Data Platforms) &#8212; AdTech for the data Professional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06-Data_In_AdTech/03-CDPs';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Targeting and Segmentation" href="04-Segmentation_Targeting.html" />
+    <link rel="prev" title="DMPs (Data Management Platforms) - The Old Guard" href="02-DMPs.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../00-Preface.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AdTech for the data Professional</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 1 - Foundations of Digital Advertising &amp; Measurement</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../About.html">About the Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Introduction/index.html">Introduction</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-Core_Concepts/index.html">Chapter 2: Core Concepts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/01-What_is_AdTech.html">What is AdTech?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/02-Key_Dataflows.html">How Data Moves in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/03-Impressions_Clicks_Conversions.html">Important Numbers for Online Ads</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-Measurement_Fundamentals/index.html">Chapter 3: Measurement Fundamentals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/01-Importance_of_Measurement.html">Why It’s Important to Measure (and Why It’s Harder Than You Think)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/02-Counting_Impressions.html">Counting Impressions: Tags, Pixels, and Logs</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/03-Measurement_Challenges.html">The Messy Truth About Measuring ROI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-User_Identification/index.html">Chapter 4: User Identification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/01-Cookies.html">Cookies (Not the Good Kind)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/02-Crumbling_Cookies.html">The Great Cookie Flip-Flop (Chaos in Motion)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/03-Alternative_IDs.html">Life After Cookies (Other Ways to Identify Yourself)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/04-Device_vs_People.html">Device IDs vs. People IDs: Who Are We Even Following?</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 2 - Programmatic Advertising &amp; Data Activation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05-Programmatic_Intro/index.html">Chapter 5: Introduction to Programmatic Advertising</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/01-What_is_Programmatic.html">What is Programmatic Advertising?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/02-RTB.html">The Millisecond Auction: Bidding in Real Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/03-Programmatic_Players.html">DSPs, SSPs, Ad Exchanges, and DMPs</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Chapter 6: Data in AdTech</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01-Data_Types.html">Data Types in AdTech (First, Second, and Third-Party)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-DMPs.html">DMPs (Data Management Platforms) - The Old Guard</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">CDPs (Customer Data Platforms)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-Segmentation_Targeting.html">Targeting and Segmentation</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 3 - Modern Challenges &amp; Future Trends</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07-Privacy_Regulation/index.html">Chapter 7: Privacy and Regulation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/01-Privacy_Concerns.html">Privacy Issues in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/02-Regulations.html">Privacy Rules (The Laws With Teeth)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/03-CMPs.html">CMPs (Platforms for Managing Consent)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/04-Privacy_by_Design.html">Privacy by Design in Action (Patterns for Engineers)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08-Programming_in_AdTech/index.html">Chapter 8: Programming in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/01-Introduction.html">Programming in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/02-Adserver.html">Basic Ad Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/03-Header%20Bidding%20Basics.html">Header Bidding Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/04-Real%20Time%20Bidding.html">Real Time Bidding (RTB) Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/05-Creative%20AB%20Testing.html">Creative A/B Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/06-Deal%20IDs%20%26%20Private%20Marketplace%20%28PMP%29.html">Deal IDs &amp; Private Marketplace (PMP)</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/07-Client%20%26%20Server%20Side%20Tagging.html">Client-Side vs Server-Side Tagging</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09-AI_ML/index.html">AI &amp; Machine Learning in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/01-AI_Applications.html">AI Applications in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/02-Algorithmic_Bidding.html">Algorithmic Bidding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/03-Predictive_Analytics.html">Predictive Analytics in AdTech</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Conclusion.html">Conclusion: The AdTech Evolution Continues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendix.html">Appendix: Resources, Tools &amp; Further Reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/06-Data_In_AdTech/03-CDPs.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>CDPs (Customer Data Platforms)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-cdps-really-work">How CDPs Really Work</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-compliance-with-privacy-laws">4. **Built-In Compliance with Privacy Laws</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-commerce-getting-back-lost-carts"><strong>E-commerce: Getting Back Lost Carts</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saas-marketing-over-the-life-cycle">**SaaS: Marketing Over the Life Cycle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retail-keeping-customers-and-building-loyalty">**Retail: Keeping Customers and Building Loyalty</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cdp-landscape-who-to-think-about">The CDP Landscape: Who to Think About</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="cdps-customer-data-platforms">
+<h1>CDPs (Customer Data Platforms)<a class="headerlink" href="#cdps-customer-data-platforms" title="Link to this heading">#</a></h1>
+<p>DMPs were made for the time when third-party cookies were popular. CDPs (Customer Data Platforms) are made for the world we live in now, where first-party data is king, privacy is important, and you really need to know who your customers are.</p>
+<p>In a nutshell, CDPs are modern-day DMPs that work.  More real relationships with customers and less creepy tracking.</p>
+<p>What is a CDP?</p>
+<p>A <strong>Customer Data Platform</strong> is a piece of software that gathers, combines, and uses <strong>first-party customer data</strong> from all of your marketing and customer touchpoints.</p>
+<p>DMPs deal with anonymous cookies, but CDPs focus on <strong>known customers</strong>—people who have given you their email address, made an account, bought something, or otherwise identified themselves.</p>
+<p><strong>Main features:</strong> - Made for <strong>known users</strong> (email, customer ID, phone number)</p>
+<ul class="simple">
+<li><p>Safely handles <strong>personally identifiable information (PII)</strong></p></li>
+<li><p>Keeping data for a long time (years, not 90 days)</p></li>
+<li><p>Customer profiles that are the same across all channels</p></li>
+<li><p>Not just ads, but also marketing automation, email, personalization, and analytics</p></li>
+<li><p>Made for <strong>first-party data</strong> that you got directly</p></li>
+</ul>
+<p><strong>Big CDP companies:</strong></p>
+<ul class="simple">
+<li><p>Segment (Twilio)</p></li>
+<li><p>mParticle</p></li>
+<li><p>Treasure Data</p></li>
+<li><p>Adobe Real-Time CDP</p></li>
+<li><p>Salesforce CDP</p></li>
+<li><p>Tealium</p></li>
+<li><p>Lytics</p></li>
+<li><p>Insider</p></li>
+</ul>
+<section id="how-cdps-really-work">
+<h2>How CDPs Really Work<a class="headerlink" href="#how-cdps-really-work" title="Link to this heading">#</a></h2>
+<p><strong>Step 1: Get information from all the places customers talk to you</strong></p>
+<p><strong>Digital sources:</strong></p>
+<ul class="simple">
+<li><p>Visits to and browsing of websites</p></li>
+<li><p>Use of mobile apps</p></li>
+<li><p>Opens and clicks on emails</p></li>
+<li><p>Interactions on social media</p></li>
+<li><p>Chat logs for customer service</p></li>
+</ul>
+<p><strong>Sources of transactions:</strong></p>
+<ul class="simple">
+<li><p>Buying things online</p></li>
+<li><p>Data on subscriptions</p></li>
+<li><p>Carts that are left behind</p></li>
+<li><p>Returns and refunds</p></li>
+</ul>
+<p><strong>Sources that are not online:</strong></p>
+<ul class="simple">
+<li><p>Buying things in-store (with loyalty cards)</p></li>
+<li><p>Talking to someone at the call center</p></li>
+<li><p>Going to events</p></li>
+<li><p>Responses to direct mail</p></li>
+</ul>
+<p><strong>Platforms for marketing:</strong></p>
+<ul class="simple">
+<li><p>CRM (Salesforce, HubSpot)</p></li>
+<li><p>Email (Klaviyo, Mailchimp)</p></li>
+<li><p>Platforms for ads (Google, Facebook)</p></li>
+<li><p>Analytics (Mixpanel, Google Analytics)</p></li>
+</ul>
+<p>Step 2: Combine into one profile for each customer</p>
+<p>The CDP puts all of these touchpoints together into one view for each customer.</p>
+<p><strong>Example:</strong></p>
+<p>Customer: Zakk W.
+Email address: zakk&#64;wylde.com
+ID number for customer: CUST_98765
+Time frame:</p>
+<ul class="simple">
+<li><p>January 5: Signed up for the newsletter on the website</p></li>
+<li><p>January 8: Opened welcome email (Email service)</p></li>
+<li><p>January 8: Opened welcome email (Email service)</p></li>
+<li><p>Jan 12: Looked at cables on the website</p></li>
+<li><p>January 15: Put cables in the cart and then left (Website)</p></li>
+<li><p>January 16: Clicked on a Facebook ad for retargeting</p></li>
+<li><p>January 17: Bought cables for $129.99 on E-commerce</p></li>
+<li><p>January 20: Opened “Thanks for your purchase” email on Email service</p></li>
+<li><p>February 2: Went back to the site and looked at the new arrivals.</p></li>
+</ul>
+<p>The CDP knows that Zakk is one person across all channels, not seven different anonymous users.</p>
+<p>**Step 3: Break up and turn on</p>
+<p>You can do the following once you have unified profiles:</p>
+<p><strong>Make groups:</strong></p>
+<ul class="simple">
+<li><p>“Customers who spent $500 or more in the last 90 days”</p></li>
+<li><p>“People who left their carts in the last 7 days”
+— “Email subscribers who never bought anything”</p></li>
+<li><p>“Customers who haven’t bought anything in six months”</p></li>
+</ul>
+<p><strong>Activate on all channels:</strong></p>
+<ul class="simple">
+<li><p>Use Adobe to send personalized emails</p></li>
+<li><p>Use Google Ads to make custom audiences</p></li>
+<li><p>Send push notifications to your app</p></li>
+<li><p>Make website content more relevant to each user</p></li>
+<li><p>Stop ads for new customers from showing up to existing customers</p></li>
+<li><p>Send data to analytics for reporting</p></li>
+</ul>
+<p>Step 4: Measure and improve</p>
+<p>Find out which customer journeys lead to purchases, which segments convert, and which channels bring in the most value.</p>
+<p>DMPs focus on getting more ad clicks, but CDPs focus on <strong>customer lifetime value</strong>.</p>
+<p>The Detailed Version of CDP vs. DMP</p>
+<p>| Dimension | CDP | DMP |</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Data Type</strong></p></th>
+<th class="head"><p>First-party, known customers</p></th>
+<th class="head"><p>Third-party, anonymous users</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Identifiers</strong></p></td>
+<td><p>Email, phone, customer ID</p></td>
+<td><p>Cookie ID, device ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>———</p></td>
+<td><p>—–</p></td>
+<td><p>—–</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>PII Handling</strong></p></td>
+<td><p>Keeps PII safe</p></td>
+<td><p>Only anonymized</p></td>
+</tr>
+<tr class="row-odd"><td><p>———</p></td>
+<td><p>—–</p></td>
+<td><p>—–</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Data Retention</strong></p></td>
+<td><p>Years</p></td>
+<td><p>90 days is normal</p></td>
+</tr>
+<tr class="row-odd"><td><p>———</p></td>
+<td><p>—–</p></td>
+<td><p>—–</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Main Goal</strong></p></td>
+<td><p>Customer experience</p></td>
+<td><p>Ad targeting</p></td>
+</tr>
+<tr class="row-odd"><td><p>———</p></td>
+<td><p>—–</p></td>
+<td><p>—–</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Use Cases</strong></p></td>
+<td><p>Email, personalization, CRM</p></td>
+<td><p>Programmatic display</p></td>
+</tr>
+<tr class="row-odd"><td><p>———</p></td>
+<td><p>—–</p></td>
+<td><p>—–</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Privacy</strong></p></td>
+<td><p>User gave permission directly</p></td>
+<td><p>Inferred/tracked</p></td>
+</tr>
+<tr class="row-odd"><td><p>———</p></td>
+<td><p>—–</p></td>
+<td><p>—–</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Channels</strong></p></td>
+<td><p>All marketing channels</p></td>
+<td><p>Display ads</p></td>
+</tr>
+<tr class="row-odd"><td><p>———</p></td>
+<td><p>—–</p></td>
+<td><p>—–</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Depth</strong></p></td>
+<td><p>Deep profiles (purchase history, preferences)</p></td>
+<td><p>Shallow (segments, interests)</p></td>
+</tr>
+<tr class="row-odd"><td><p>———</p></td>
+<td><p>—–</p></td>
+<td><p>—–</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Future Viability</strong></p></td>
+<td><p>Getting bigger</p></td>
+<td><p>Getting smaller</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Easy rule:</strong>  Use a CDP if you know who they are (email, account).  You probably can’t track them anymore if they’re anonymous visitors (thanks to cookie deprecation).</p>
+<p>Why CDPs are winning</p>
+<ol class="arabic simple">
+<li><p>The only data you can trust is first-party data.</p></li>
+</ol>
+<p>Third-party tracking died because of privacy laws, changes to browsers, and limits on platforms. The only solid base is first-party data, which is data that users gave you directly.</p>
+<p>CDPs are made just for first-party data.  DMPs didn’t fit well.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Unified profiles are necessary for omnichannel marketing</strong></p></li>
+</ol>
+<p>Customers can talk to brands through email, their website, their app, in-store, social media, and customer service.  If you treat each touchpoint like a different person, you’re wasting money and making customers mad.</p>
+<p>For instance, sending someone an email saying “come back!” after they just bought something because your email platform doesn’t know what your e-commerce platform does.  CDPs take care of that.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Personalization &gt; Generic Ads</strong></p></li>
+</ol>
+<p>It’s lazy to show the same ad to everyone.  Personalizing based on how people browse, buy, and interact with your site works.</p>
+<p>CDPs make it possible to:</p>
+<ul class="simple">
+<li><p>Give personalized product suggestions</p></li>
+<li><p>Email content that changes based on what people do</p></li>
+<li><p>Website experiences that are unique to each user</p></li>
+<li><p>Showing them products they already looked at again</p></li>
+</ul>
+<section id="built-in-compliance-with-privacy-laws">
+<h3>4. **Built-In Compliance with Privacy Laws<a class="headerlink" href="#built-in-compliance-with-privacy-laws" title="Link to this heading">#</a></h3>
+<p>CDPs are made with privacy laws like the GDPR and CCPA in mind:</p>
+<ul class="simple">
+<li><p>Users agree to have their data collected.</p></li>
+<li><p>You can ask to have your data deleted (right to be forgotten).</p></li>
+<li><p>Data is kept safe and only certain people can get to it</p></li>
+<li><p>Audit trails show how data is used</p></li>
+</ul>
+<p>What are DMPs?  Not really.</p>
+<p>Real-Life Examples of CDP Use</p>
+</section>
+<section id="e-commerce-getting-back-lost-carts">
+<h3><strong>E-commerce: Getting Back Lost Carts</strong><a class="headerlink" href="#e-commerce-getting-back-lost-carts" title="Link to this heading">#</a></h3>
+<p>Paul puts $200 worth of things in his cart but doesn’t check out.</p>
+<p><strong>Without CDP:</strong> Paul might get a generic email saying “You left something behind!” 24 hours later.</p>
+<p><strong>With CDP:</strong></p>
+<ul class="simple">
+<li><p>An hour later:  Email sent automatically with the exact items Paul left behind</p></li>
+<li><p>6 hours later:  Push notification on his phone with a 10% discount.</p></li>
+<li><p>24 hours later:  Facebook retargeting ad showing those products</p></li>
+<li><p>48 hours later:  Text message with free shipping offer</p></li>
+</ul>
+<p>The CDP puts all of this together based on her single profile.</p>
+</section>
+<section id="saas-marketing-over-the-life-cycle">
+<h3>**SaaS: Marketing Over the Life Cycle<a class="headerlink" href="#saas-marketing-over-the-life-cycle" title="Link to this heading">#</a></h3>
+<p>John signs up for a free trial.</p>
+<p><strong>CDP divides him into groups:</strong> New trial user, day 0</p>
+<p>**Journey that happens on its own:</p>
+<ul class="simple">
+<li><p>Day 0: An email welcoming you and giving you a guide on how to get started</p></li>
+<li><p>Day 2: A message in the app that points out an important feature</p></li>
+<li><p>Day 5: Email with a case study that shows ROI</p></li>
+<li><p>Day 10: If he hasn’t turned on a feature, send a push notification.</p></li>
+<li><p>Day 14 (end of trial):  Offer to upgrade with a discount - After the purchase: onboarding sequence</p></li>
+</ul>
+<p>All tailored to his actual use (tracked by CDP).</p>
+</section>
+<section id="retail-keeping-customers-and-building-loyalty">
+<h3>**Retail: Keeping Customers and Building Loyalty<a class="headerlink" href="#retail-keeping-customers-and-building-loyalty" title="Link to this heading">#</a></h3>
+<p>Ringo is a member of a loyalty program and shops both in stores and online.</p>
+<p>**Profile of CDP:</p>
+<ul class="simple">
+<li><p>Last purchase: 45 days ago (in person)</p></li>
+<li><p>Favorite types of items: men’s clothes and home decor</p></li>
+<li><p>Value for life: $1,250</p></li>
+<li><p>Engagement: opens emails and uses the app</p></li>
+</ul>
+<p><strong>Automatic action:</strong></p>
+<ul class="simple">
+<li><p>Email: “We miss you!”  This is 20% off your next purchase.</p></li>
+<li><p>Customized to show his favorite types of products</p></li>
+<li><p>Don’t include in ads for new customers (save money)</p></li>
+</ul>
+<p>When You Need a CDP</p>
+<p>You should buy a CDP if:</p>
+<p>✅ You have more than one way for customers to get in touch with you (website, app, email, store)  Customer data is kept in separate places, like CRM, email, and analytics that don’t talk to each other.  You want to tailor experiences based on how people act. You are doing lifecycle marketing (onboarding, retention, reactivation).  You care about more than just one-time sales; you care about the lifetime value of your customers.  You have to follow the rules about privacy.  You don’t want to have to export and import CSVs by hand anymore.</p>
+<p>When You Don’t Need a CDP</p>
+<p>Don’t use the CDP if:</p>
+<p>❌ You run a small business with fewer than 10,000 customers (use a simple email platform instead)  All of your customers come through one channel (just use the tools that come with that platform)  You don’t get customer IDs or emails (what are you even doing?)
+❌  You only run performance ads and don’t care about keeping customers (short-sighted, but okay)</p>
+<p>You need to spend both money and time to set up CDPs.  Don’t buy one just because it’s in style.</p>
+</section>
+</section>
+<section id="the-cdp-landscape-who-to-think-about">
+<h2>The CDP Landscape: Who to Think About<a class="headerlink" href="#the-cdp-landscape-who-to-think-about" title="Link to this heading">#</a></h2>
+<p><strong>Segment</strong>: Good for tech companies, developer-friendly, and APIs-first.</p>
+<ul class="simple">
+<li><p><strong>mParticle</strong>  - Real-time data streaming that works on mobile devices</p></li>
+<li><p><strong>Adobe Real-Time CDP</strong>  - If you’re already using Adobe products</p></li>
+<li><p><strong>Salesforce CDP</strong>  - If you use Salesforce a lot,</p></li>
+<li><p><strong>Tealium</strong> is a tag management and CDP combo.</p></li>
+</ul>
+<p>Prices start at $10,000 per year for small business plans and go up to $500,000 or more per year for enterprise plans.  Usually, it takes 3 to 6 months to put into action.</p>
+<p>The Bottom Line</p>
+<p>DMPs were made to keep an eye on people you don’t know.  CDPs are made to help you manage your relationships with customers.</p>
+<p>In a world where: - Third-party cookies are no longer useful - Privacy rules are getting stricter - Customers want things to be unique to them - First-party data is the key to success</p>
+<p><strong>You need CDPs to build your infrastructure.</strong></p>
+<p>If you’re a data engineer joining an AdTech or MarTech team in 2025, you’ll spend a lot more time working with CDPs than DMPs.</p>
+<ul class="simple">
+<li><p>Get to know them.</p></li>
+<li><p>Put pipelines in them.</p></li>
+<li><p>Know how to turn on data from them.</p></li>
+</ul>
+<p>First-party, personalized, and consent-based marketing is the way of the future.  The platform that makes it work is CDPs.</p>
+<p>Next, let’s talk about how to use all of this information to target and segment.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./06-Data_In_AdTech"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02-DMPs.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">DMPs (Data Management Platforms) - The Old Guard</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="04-Segmentation_Targeting.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Targeting and Segmentation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-cdps-really-work">How CDPs Really Work</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-compliance-with-privacy-laws">4. **Built-In Compliance with Privacy Laws</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-commerce-getting-back-lost-carts"><strong>E-commerce: Getting Back Lost Carts</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saas-marketing-over-the-life-cycle">**SaaS: Marketing Over the Life Cycle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retail-keeping-customers-and-building-loyalty">**Retail: Keeping Customers and Building Loyalty</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cdp-landscape-who-to-think-about">The CDP Landscape: Who to Think About</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Vishwanath Subramanian
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright © 2025 Vishwanath Subramanian. Licensed under CC BY-NC-ND 4.0..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

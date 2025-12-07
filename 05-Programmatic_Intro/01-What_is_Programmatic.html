@@ -1,0 +1,639 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>What is Programmatic Advertising? &#8212; AdTech for the data Professional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '05-Programmatic_Intro/01-What_is_Programmatic';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Millisecond Auction: Bidding in Real Time" href="02-RTB.html" />
+    <link rel="prev" title="Chapter 5: Introduction to Programmatic Advertising" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../00-Preface.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AdTech for the data Professional</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 1 - Foundations of Digital Advertising &amp; Measurement</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../About.html">About the Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Introduction/index.html">Introduction</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-Core_Concepts/index.html">Chapter 2: Core Concepts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/01-What_is_AdTech.html">What is AdTech?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/02-Key_Dataflows.html">How Data Moves in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/03-Impressions_Clicks_Conversions.html">Important Numbers for Online Ads</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-Measurement_Fundamentals/index.html">Chapter 3: Measurement Fundamentals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/01-Importance_of_Measurement.html">Why It’s Important to Measure (and Why It’s Harder Than You Think)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/02-Counting_Impressions.html">Counting Impressions: Tags, Pixels, and Logs</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/03-Measurement_Challenges.html">The Messy Truth About Measuring ROI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-User_Identification/index.html">Chapter 4: User Identification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/01-Cookies.html">Cookies (Not the Good Kind)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/02-Crumbling_Cookies.html">The Great Cookie Flip-Flop (Chaos in Motion)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/03-Alternative_IDs.html">Life After Cookies (Other Ways to Identify Yourself)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/04-Device_vs_People.html">Device IDs vs. People IDs: Who Are We Even Following?</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 2 - Programmatic Advertising &amp; Data Activation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Chapter 5: Introduction to Programmatic Advertising</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">What is Programmatic Advertising?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-RTB.html">The Millisecond Auction: Bidding in Real Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-Programmatic_Players.html">DSPs, SSPs, Ad Exchanges, and DMPs</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06-Data_In_AdTech/index.html">Chapter 6: Data in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/01-Data_Types.html">Data Types in AdTech (First, Second, and Third-Party)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/02-DMPs.html">DMPs (Data Management Platforms) - The Old Guard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/03-CDPs.html">CDPs (Customer Data Platforms)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-Data_In_AdTech/04-Segmentation_Targeting.html">Targeting and Segmentation</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 3 - Modern Challenges &amp; Future Trends</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07-Privacy_Regulation/index.html">Chapter 7: Privacy and Regulation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/01-Privacy_Concerns.html">Privacy Issues in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/02-Regulations.html">Privacy Rules (The Laws With Teeth)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/03-CMPs.html">CMPs (Platforms for Managing Consent)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/04-Privacy_by_Design.html">Privacy by Design in Action (Patterns for Engineers)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08-Programming_in_AdTech/index.html">Chapter 8: Programming in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/01-Introduction.html">Programming in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/02-Adserver.html">Basic Ad Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/03-Header%20Bidding%20Basics.html">Header Bidding Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/04-Real%20Time%20Bidding.html">Real Time Bidding (RTB) Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/05-Creative%20AB%20Testing.html">Creative A/B Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/06-Deal%20IDs%20%26%20Private%20Marketplace%20%28PMP%29.html">Deal IDs &amp; Private Marketplace (PMP)</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/07-Client%20%26%20Server%20Side%20Tagging.html">Client-Side vs Server-Side Tagging</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09-AI_ML/index.html">AI &amp; Machine Learning in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/01-AI_Applications.html">AI Applications in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/02-Algorithmic_Bidding.html">Algorithmic Bidding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/03-Predictive_Analytics.html">Predictive Analytics in AdTech</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Conclusion.html">Conclusion: The AdTech Evolution Continues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendix.html">Appendix: Resources, Tools &amp; Further Reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/05-Programmatic_Intro/01-What_is_Programmatic.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>What is Programmatic Advertising?</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-who-s-who-of-the-programmatic-ecosystem">The Who’s who of the Programmatic Ecosystem:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ad-servers"><strong>Ad Servers</strong></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="what-is-programmatic-advertising">
+<h1>What is Programmatic Advertising?<a class="headerlink" href="#what-is-programmatic-advertising" title="Link to this heading">#</a></h1>
+<p>Picture this: It’s 2005. You’re a Nike marketing exec who wants to run ads on CNN. Here’s what you have to do:</p>
+<ol class="arabic simple">
+<li><p><strong>Call up CNN’s sales team</strong></p></li>
+<li><p><strong>Schedule meetings</strong> (multiple, because the first one never closes the deal)</p></li>
+<li><p><strong>Negotiate pricing</strong> (back and forth, lots of emails)</p></li>
+<li><p><strong>Sign contracts</strong> (legal reviews this for 3 weeks)</p></li>
+<li><p><strong>Create an Insertion Order</strong> (a PDF specifying creative, placement, schedule, targeting)</p></li>
+<li><p><strong>Email the IO</strong> to CNN’s ad ops team</p></li>
+<li><p><strong>Wait for them to manually upload your creative</strong> and schedule it</p></li>
+<li><p><strong>Hope they don’t screw it up</strong> (they sometimes did)</p></li>
+<li><p><strong>Wait weeks for performance reports</strong> (delivered as Excel spreadsheets)</p></li>
+</ol>
+<p>This process took weeks or months, involved multiple humans, and was error-prone at every step. For a single campaign. On one publisher.</p>
+<p>Now imagine doing that for 100 publishers. Or 1,000.</p>
+<p>You can’t.   That’s why they came up with ads that run on programs.</p>
+<p>Programmatic is the combination of automation and auctions.</p>
+<p><strong>Programmatic advertising</strong> is the use of software instead of people to buy and sell digital ad space automatically.</p>
+<p>Machines do the following instead of calling and putting orders: - Finding available inventory - Evaluating audience quality - Bidding on impressions - Serving ads - Tracking performance - Optimizing in real time</p>
+<p>It goes from “hire a sales team and negotiate deals for months” to “set a budget and targeting parameters and let the algorithm do the rest.”</p>
+<p>By 2025, <strong>~90% of digital display ads</strong> will be bought automatically.   It’s not a trend; it’s just how things are done in the business now.</p>
+<section id="the-who-s-who-of-the-programmatic-ecosystem">
+<h2>The Who’s who of the Programmatic Ecosystem:<a class="headerlink" href="#the-who-s-who-of-the-programmatic-ecosystem" title="Link to this heading">#</a></h2>
+<p><strong>Advertisers</strong>   (Buy Side)  Businesses and brands spend money to get in front of customers.   Nike, Coca-Cola, and even your neighborhood doctor all use Facebook ads to promote their businesses.</p>
+<p><strong>Publishers</strong> (The Sell Side)  Websites, apps, and streaming services that have advertising on them.     Publishers include CNN, The New York Times, mobile games, and podcast platforms.</p>
+<p><strong>Ad Networks</strong>     These companies buy ad space from a lot of different publishers and then sell it to companies that want to advertise.      Not as prevalent now that exchanges are around, but still there.</p>
+<p>Two examples are Google AdSense and Microsoft Advertising.</p>
+<p>Ad exchanges are websites where anyone may purchase and sell ad space in real time through auctions.</p>
+<p>AdX, OpenX, and PubMatic are examples of some of these players.</p>
+<p><strong>Platforms on the Supply Side (SSPs)</strong>   These are tools that enable <strong>publishers</strong> sell their stock to ad exchanges.  SSPs connect to multiple exchanges and help publishers make the maximum money.</p>
+<p>SSPs are essentially a sales team that works for the publisher.</p>
+<p>Google Ad Manager (GAM), Magnite, and PubMatic are among examples.</p>
+<p>Demand-Side Platforms (DSPs) are software that lets advertisers get ad space from ad exchanges.   DSPs connect to a lot of exchanges and help advertisers find the best content at the lowest price.</p>
+<p>You may think of DSPs as the automated media buyer for advertisers.</p>
+<p>Some examples are Google Display &amp; Video 360 (DV360), The Trade Desk, and Amazon DSP.</p>
+<p><strong>Interesting fact:</strong>  Some businesses are both SSP and DSP, which means they have two sides.    Google Ad Manager is both of these things.    This creates some interesting conflicts of interest that we’ll talk about later.</p>
+<p>Data Management Platforms (DMPs) help advertisers find the right people by gathering, storing, and analyzing data about their audience.    DMPs are still around, but CDPs (Customer Data Platforms) are slowly taking their place.</p>
+<p>Oracle BlueKai and Adobe Audience Manager are two examples.
+MOAT, DoubleVerify, and Integral Ad Science (IAS) are other examples.</p>
+</section>
+<section id="ad-servers">
+<h2><strong>Ad Servers</strong><a class="headerlink" href="#ad-servers" title="Link to this heading">#</a></h2>
+<p>These are the systems that keep track of ad creatives and choose which ad to show in which slot.</p>
+<p>Some examples are Google Campaign Manager 360, Flashtalking, and Sizmek.</p>
+<p>The Three Levels of Programmatic Deals</p>
+<p>Not every programmatic inventory is the same.  Publishers put transactions in order from most important to least important, selling the best inventory first and the rest last.</p>
+<ol class="arabic simple">
+<li><p>Programmatic Guaranteed (PG) - The Reserved Seats</p></li>
+</ol>
+<p>This is the most like regular insertion orders, except it’s automated.</p>
+<p>**What it does:</p>
+<ul class="simple">
+<li><p>The publisher promises a certain number of impressions to one advertiser. - The price is set and agreed upon ahead of time (typically high CPMs: $15–$30+).</p></li>
+<li><p>The inventory is set aside, so no one else can buy it.</p></li>
+</ul>
+<p><strong>For example:</strong>  Nike wants 10 million views on ESPN’s homepage over three months, with a cost of $25 per thousand views.  Nike is the only company that can use the inventory from ESPN.  The deal is done through a program, but it’s a direct interaction.</p>
+<p><strong>Why publishers love it:</strong> They know they’ll make money, they can charge a lot for ads, and they have a direct link with the brand.</p>
+<p><strong>Why advertisers use it:</strong> They can buy high-quality material that won’t be available in open auctions and know when it will be delivered.</p>
+<ol class="arabic simple" start="2">
+<li><p>Private Marketplace (PMP) - The VIP Room</p></li>
+</ol>
+<p>A publisher holds a private auction with a starting price for premium inventory and invites a small group of marketers to bid on it.</p>
+<p><strong>How it works:</strong> The publisher puts together extra content for some purchasers after PG agreements.  - They set a minimum price, say $5 CPM.</p>
+<ul class="simple">
+<li><p>Invited advertisers bid against each other in a closed auction. This is also known as “one-to-few” or “invitation-only” transactions.</p></li>
+</ul>
+<p><strong>For example:</strong>  After their guaranteed deals, the New York Times still has some stock remaining.  They let 20 high-end advertisers bid, starting at $10.  Only those 20 can bid, and the highest bidder wins.</p>
+<p><strong>Why publishers enjoy it:</strong> They can set better pricing than in open auctions, they can choose who advertises on their site, and competitive bidding drives higher CPMs.</p>
+<p><strong>Why advertisers use it:</strong> They can get high-quality inventory that isn’t available on open exchanges and there is more transparency than in open auctions.</p>
+<p>We talked about PMPs in great length before—programmatic is a major deal (pun intended).</p>
+<ol class="arabic simple" start="3">
+<li><p>Open Auction: The Free-for-All</p></li>
+</ol>
+<p>The open auction gets any stock that is left over after PG and PMP deals.  Anyone who has a DSP can place a bid.</p>
+<p><strong>How it works:</strong></p>
+<ul class="simple">
+<li><p>No floor price (or a very low floor: $0.50–$2 CPM) - All DSPs can bid - The highest bidder wins - Also termed “one-to-all” transactions or “open exchange”</p></li>
+</ul>
+<p><strong>For example:</strong>  A random blog has impressions that haven’t sold after private auctions and reserved deals.  They put it up for auction, and the person who bids the most money (even if it’s only $0.50) wins it.</p>
+<p><strong>Why publishers tolerate it:</strong> Some revenue is better than $0. Fills otherwise unsold inventory.</p>
+<p><strong>Why advertisers use it:</strong> Cheap impressions at scale. Quality varies wildly, but if you’re buying millions of impressions, the law of averages works in your favor.</p>
+<p>This is where <strong>Real-Time Bidding (RTB)</strong> happens—millisecond auctions for individual impressions.</p>
+<p>The Waterfall (in order of importance)</p>
+<p>This is how publishers sell their inventory:</p>
+<ol class="arabic simple">
+<li><p><strong>Programmatic Guaranteed</strong>—$20–$30 CPM, guaranteed 2. <strong>Private Marketplace</strong>  - $5–$15 CPM, only invited bidders can bid  - Anyone can bid, and the price is between $0.50 and $3 CPM.</p></li>
+</ol>
+<p>The “waterfall” refers to how the inventory moves from the top (most expensive) to the bottom (cheapest) until it is sold.</p>
+<p>Smart publishers make the most money by selling as much as they can at the top of the cascade.  Smart marketers receive the best inventory by being invited to PG and PMP deals instead of just bidding in the open exchange.</p>
+<hr class="docutils" />
+<p>Why Programmatic Won</p>
+<p>Programmatic advertising didn’t just make the previous system better; it destroyed it.</p>
+<p><strong>Before programmatic:</strong></p>
+<ul class="simple">
+<li><p>Weeks to start campaigns</p></li>
+<li><p>Manual insertion orders and trafficking - Limited targeting (demographics and context) - Reporting took weeks - All decisions were made by people</p></li>
+</ul>
+<p><strong>After programmatic:</strong></p>
+<ul class="simple">
+<li><p>Minutes to start marketing</p></li>
+<li><p>Bidding and displaying ads automatically - Targeting very specifically (by behavior, context, location, device, time of day)</p></li>
+<li><p>Reporting in real time - Algorithms keep getting better</p></li>
+</ul>
+<p>Is it perfect?  No.  There are problems with fraud, lost money, brand safety, and a lot of middlemen getting a piece.  But it’s still a lot better than sending insertion orders via fax and waiting for quarterly reports.</p>
+<p>Next up: How Real-Time Bidding actually works under the hood.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./05-Programmatic_Intro"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 5: Introduction to Programmatic Advertising</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02-RTB.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Millisecond Auction: Bidding in Real Time</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-who-s-who-of-the-programmatic-ecosystem">The Who’s who of the Programmatic Ecosystem:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ad-servers"><strong>Ad Servers</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Vishwanath Subramanian
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright © 2025 Vishwanath Subramanian. Licensed under CC BY-NC-ND 4.0..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

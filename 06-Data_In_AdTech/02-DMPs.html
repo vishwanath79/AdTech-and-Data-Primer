@@ -1,0 +1,752 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>DMPs (Data Management Platforms) - The Old Guard &#8212; AdTech for the data Professional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06-Data_In_AdTech/02-DMPs';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CDPs (Customer Data Platforms)" href="03-CDPs.html" />
+    <link rel="prev" title="Data Types in AdTech (First, Second, and Third-Party)" href="01-Data_Types.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../00-Preface.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AdTech for the data Professional</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 1 - Foundations of Digital Advertising &amp; Measurement</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../About.html">About the Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Introduction/index.html">Introduction</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-Core_Concepts/index.html">Chapter 2: Core Concepts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/01-What_is_AdTech.html">What is AdTech?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/02-Key_Dataflows.html">How Data Moves in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-Core_Concepts/03-Impressions_Clicks_Conversions.html">Important Numbers for Online Ads</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-Measurement_Fundamentals/index.html">Chapter 3: Measurement Fundamentals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/01-Importance_of_Measurement.html">Why It’s Important to Measure (and Why It’s Harder Than You Think)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/02-Counting_Impressions.html">Counting Impressions: Tags, Pixels, and Logs</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../03-Measurement_Fundamentals/03-Measurement_Challenges.html">The Messy Truth About Measuring ROI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-User_Identification/index.html">Chapter 4: User Identification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/01-Cookies.html">Cookies (Not the Good Kind)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/02-Crumbling_Cookies.html">The Great Cookie Flip-Flop (Chaos in Motion)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/03-Alternative_IDs.html">Life After Cookies (Other Ways to Identify Yourself)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-User_Identification/04-Device_vs_People.html">Device IDs vs. People IDs: Who Are We Even Following?</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 2 - Programmatic Advertising &amp; Data Activation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05-Programmatic_Intro/index.html">Chapter 5: Introduction to Programmatic Advertising</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/01-What_is_Programmatic.html">What is Programmatic Advertising?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/02-RTB.html">The Millisecond Auction: Bidding in Real Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Programmatic_Intro/03-Programmatic_Players.html">DSPs, SSPs, Ad Exchanges, and DMPs</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Chapter 6: Data in AdTech</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01-Data_Types.html">Data Types in AdTech (First, Second, and Third-Party)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">DMPs (Data Management Platforms) - The Old Guard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-CDPs.html">CDPs (Customer Data Platforms)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-Segmentation_Targeting.html">Targeting and Segmentation</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 3 - Modern Challenges &amp; Future Trends</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07-Privacy_Regulation/index.html">Chapter 7: Privacy and Regulation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/01-Privacy_Concerns.html">Privacy Issues in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/02-Regulations.html">Privacy Rules (The Laws With Teeth)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/03-CMPs.html">CMPs (Platforms for Managing Consent)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-Privacy_Regulation/04-Privacy_by_Design.html">Privacy by Design in Action (Patterns for Engineers)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08-Programming_in_AdTech/index.html">Chapter 8: Programming in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/01-Introduction.html">Programming in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/02-Adserver.html">Basic Ad Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/03-Header%20Bidding%20Basics.html">Header Bidding Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/04-Real%20Time%20Bidding.html">Real Time Bidding (RTB) Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/05-Creative%20AB%20Testing.html">Creative A/B Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/06-Deal%20IDs%20%26%20Private%20Marketplace%20%28PMP%29.html">Deal IDs &amp; Private Marketplace (PMP)</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Programming_in_AdTech/07-Client%20%26%20Server%20Side%20Tagging.html">Client-Side vs Server-Side Tagging</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09-AI_ML/index.html">AI &amp; Machine Learning in AdTech</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/01-AI_Applications.html">AI Applications in AdTech</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/02-Algorithmic_Bidding.html">Algorithmic Bidding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-AI_ML/03-Predictive_Analytics.html">Predictive Analytics in AdTech</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Conclusion.html">Conclusion: The AdTech Evolution Continues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendix.html">Appendix: Resources, Tools &amp; Further Reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/06-Data_In_AdTech/02-DMPs.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>DMPs (Data Management Platforms) - The Old Guard</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-dmp">What is a DMP?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-dmps-were-supposed-to-work">How DMPs Were Supposed to Work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-actually-happened">What Actually Happened</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cookie-apocalypse">1. <strong>Cookie Apocalypse</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#third-party-data-quality-issues">2. <strong>Third-Party Data Quality Issues</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identity-matching-was-a-mess">3. <strong>Identity Matching Was a Mess</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#walled-gardens-don-t-play-nice">4. <strong>Walled Gardens Don’t Play Nice</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cdps-came-along-and-did-it-better">5. <strong>CDPs Came Along and Did It Better</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-dmps-still-make-sense">When DMPs Still Make Sense</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-re-a-publisher-monetizing-audience-data"><strong>You’re a publisher monetizing audience data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-need-data-onboarding"><strong>You need data onboarding</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-re-running-complex-lookalike-modeling"><strong>You’re running complex lookalike modeling</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dmp-death-spiral-but-slow">The DMP Death Spiral (But Slow)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dmp-vs-cdp-the-short-version">DMP vs CDP (The Short Version)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-uncomfortable-truth">The Uncomfortable Truth</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="dmps-data-management-platforms-the-old-guard">
+<h1>DMPs (Data Management Platforms) - The Old Guard<a class="headerlink" href="#dmps-data-management-platforms-the-old-guard" title="Link to this heading">#</a></h1>
+<p>Once upon a time, DMPs (Data Management Platforms) were the hottest thing in AdTech. Every enterprise wanted one. Vendors promised unified customer views, perfect targeting, and magical ROI lifts.</p>
+<p>Then privacy regulations happened. Third-party cookies died. And DMPs started looking like expensive solutions to a problem that no longer exists in the same way.</p>
+<p>Let me explain.</p>
+<section id="what-is-a-dmp">
+<h2>What is a DMP?<a class="headerlink" href="#what-is-a-dmp" title="Link to this heading">#</a></h2>
+<p>A <strong>Data Management Platform</strong> is software that collects, organizes, and activates <strong>third-party and second-party data</strong> for advertising purposes. Think of it as a giant database that ingests audience data from multiple sources, segments it, and sends it to DSPs for targeting.</p>
+<p><strong>Key characteristics:</strong></p>
+<ul class="simple">
+<li><p>Designed for <strong>anonymous user data</strong> (cookie IDs, device IDs, not personally identifiable info)</p></li>
+<li><p>Focused on <strong>advertising activation</strong> (getting data into DSPs/ad platforms)</p></li>
+<li><p>Built to handle <strong>third-party data</strong> from data brokers</p></li>
+<li><p>Short data retention (90 days typical)</p></li>
+<li><p>Optimized for reach and scale, not depth</p></li>
+</ul>
+<p><strong>Major DMP vendors:</strong></p>
+<ul class="simple">
+<li><p>Oracle BlueKai (now Oracle Data Cloud)</p></li>
+<li><p>Adobe Audience Manager</p></li>
+<li><p>Salesforce DMP (Krux)</p></li>
+<li><p>Lotame</p></li>
+<li><p>Neustar</p></li>
+</ul>
+</section>
+<section id="how-dmps-were-supposed-to-work">
+<h2>How DMPs Were Supposed to Work<a class="headerlink" href="#how-dmps-were-supposed-to-work" title="Link to this heading">#</a></h2>
+<p>Here’s the classic DMP pitch from 2015:</p>
+<p><strong>Step 1: Collect data from everywhere</strong></p>
+<ul class="simple">
+<li><p>Your website (first-party cookies)</p></li>
+<li><p>Third-party data providers (buy segments like “in-market for cars”)</p></li>
+<li><p>CRM imports (hashed emails)</p></li>
+<li><p>Mobile app SDKs</p></li>
+<li><p>Offline data (store purchases, TV viewership)</p></li>
+</ul>
+<p><strong>Step 2: Unify and segment</strong></p>
+<ul class="simple">
+<li><p>Stitch together disparate IDs into user profiles</p></li>
+<li><p>Create audience segments (“high-value customers,” “lapsed users,” “lookalikes”)</p></li>
+<li><p>Build suppression lists (people who already converted)</p></li>
+</ul>
+<p><strong>Step 3: Activate in ad platforms</strong></p>
+<ul class="simple">
+<li><p>Push segments to DSPs for programmatic buying</p></li>
+<li><p>Sync with Facebook, Google, etc. for targeting</p></li>
+<li><p>Measure which audiences perform best</p></li>
+</ul>
+<p><strong>Step 4: Optimize</strong></p>
+<ul class="simple">
+<li><p>See which segments drive conversions</p></li>
+<li><p>Refine targeting based on performance</p></li>
+<li><p>Repeat</p></li>
+</ul>
+<p><strong>The promise:</strong> Know your audience, target better, waste less money.</p>
+</section>
+<section id="what-actually-happened">
+<h2>What Actually Happened<a class="headerlink" href="#what-actually-happened" title="Link to this heading">#</a></h2>
+<p>DMPs worked great… until they didn’t.</p>
+<p><strong>The problems:</strong></p>
+<section id="cookie-apocalypse">
+<h3>1. <strong>Cookie Apocalypse</strong><a class="headerlink" href="#cookie-apocalypse" title="Link to this heading">#</a></h3>
+<p>DMPs were built on third-party cookies. When Safari blocked them (2017), Firefox followed (2019), and Chrome announced deprecation (2020-2025 saga), DMPs lost their foundation.</p>
+<p>Without cookies, you can’t track users across sites. Without tracking, you can’t build profiles. Without profiles, your DMP is just an expensive dashboard showing incomplete data.</p>
+</section>
+<section id="third-party-data-quality-issues">
+<h3>2. <strong>Third-Party Data Quality Issues</strong><a class="headerlink" href="#third-party-data-quality-issues" title="Link to this heading">#</a></h3>
+<p>Remember how DMPs let you buy segments like “affluent millennials interested in travel”? Turns out that data was often:</p>
+<ul class="simple">
+<li><p><strong>Inaccurate</strong> (ever been targeted as the wrong age or gender?)</p></li>
+<li><p><strong>Stale</strong> (someone who browsed vacation sites 6 months ago isn’t necessarily “in-market” today)</p></li>
+<li><p><strong>Opaque</strong> (where did this data even come from?)</p></li>
+<li><p><strong>Non-compliant</strong> (did users actually consent to this tracking?)</p></li>
+</ul>
+<p>GDPR and CCPA made buying third-party data legally risky. Advertisers started asking “can we prove we have consent?” and vendors couldn’t always answer yes.</p>
+</section>
+<section id="identity-matching-was-a-mess">
+<h3>3. <strong>Identity Matching Was a Mess</strong><a class="headerlink" href="#identity-matching-was-a-mess" title="Link to this heading">#</a></h3>
+<p>DMPs tried to connect cookie IDs, device IDs, emails, and other identifiers into unified user profiles. This “identity resolution” worked… sometimes.</p>
+<p><strong>Example of what could go wrong:</strong></p>
+<ul class="simple">
+<li><p>My laptop has cookie ID abc123</p></li>
+<li><p>My phone has device ID xyz789</p></li>
+<li><p>My tablet has cookie ID def456</p></li>
+</ul>
+<p>The DMP tries to figure out these are all me. Maybe it gets it right (if I logged in somewhere). Maybe it thinks I’m three different people. Maybe it thinks my spouse and I are the same person because we share an iPad.</p>
+<p>When identity matching fails, you get:</p>
+<ul class="simple">
+<li><p>Duplicate reach (counting me 3 times)</p></li>
+<li><p>Wasted spend (targeting me on all devices)</p></li>
+<li><p>Incorrect frequency capping (showing me the same ad 20 times)</p></li>
+</ul>
+</section>
+<section id="walled-gardens-don-t-play-nice">
+<h3>4. <strong>Walled Gardens Don’t Play Nice</strong><a class="headerlink" href="#walled-gardens-don-t-play-nice" title="Link to this heading">#</a></h3>
+<p>Facebook, Google, and Amazon have their own massive first-party data. They don’t need your DMP, and they don’t let you export their data into your DMP.</p>
+<p>So your DMP has data for the open web, but not for the platforms where you spend 70% of your budget. That’s… not great for “unified customer views.”</p>
+</section>
+<section id="cdps-came-along-and-did-it-better">
+<h3>5. <strong>CDPs Came Along and Did It Better</strong><a class="headerlink" href="#cdps-came-along-and-did-it-better" title="Link to this heading">#</a></h3>
+<p>Customer Data Platforms (CDPs) emerged as DMP competitors focused on <strong>first-party data</strong> instead of third-party. They handle known customers, not anonymous cookies. They’re built for CRM, email, and personalization—not just advertising.</p>
+<p>As first-party data became king, CDPs started winning budgets that used to go to DMPs.</p>
+</section>
+</section>
+<section id="when-dmps-still-make-sense">
+<h2>When DMPs Still Make Sense<a class="headerlink" href="#when-dmps-still-make-sense" title="Link to this heading">#</a></h2>
+<p>Despite all the problems, DMPs aren’t dead yet. They’re useful if:</p>
+<section id="you-re-a-publisher-monetizing-audience-data">
+<h3><strong>You’re a publisher monetizing audience data</strong><a class="headerlink" href="#you-re-a-publisher-monetizing-audience-data" title="Link to this heading">#</a></h3>
+<p>Publishers use DMPs to:</p>
+<ul class="simple">
+<li><p>Package their audience into targetable segments</p></li>
+<li><p>Sell those segments to advertisers (second-party data deals)</p></li>
+<li><p>Increase CPMs by offering better targeting</p></li>
+</ul>
+<p>Example: A sports publisher uses a DMP to create segments like “NFL fans” or “fantasy sports players” and sells access to advertisers at higher CPMs than open exchange rates.</p>
+</section>
+<section id="you-need-data-onboarding">
+<h3><strong>You need data onboarding</strong><a class="headerlink" href="#you-need-data-onboarding" title="Link to this heading">#</a></h3>
+<p>DMPs help match offline data (CRM records, store purchases) to online IDs for digital targeting. If you have customer data but need to activate it programmatically, a DMP can bridge that gap.</p>
+</section>
+<section id="you-re-running-complex-lookalike-modeling">
+<h3><strong>You’re running complex lookalike modeling</strong><a class="headerlink" href="#you-re-running-complex-lookalike-modeling" title="Link to this heading">#</a></h3>
+<p>DMPs can find new audiences that resemble your best customers by analyzing behavioral signals across the web. If you’re trying to scale acquisition, lookalikes can work—when the underlying data is accurate.</p>
+</section>
+</section>
+<section id="the-dmp-death-spiral-but-slow">
+<h2>The DMP Death Spiral (But Slow)<a class="headerlink" href="#the-dmp-death-spiral-but-slow" title="Link to this heading">#</a></h2>
+<p>DMPs are in decline, but they’re not disappearing overnight:</p>
+<p><strong>2015-2017:</strong> Peak DMP hype - everyone wants one
+<strong>2018-2020:</strong> Cracks appear - cookie deprecation announced, GDPR/CCPA hit
+<strong>2021-2023:</strong> Budget shifts to CDPs - first-party data becomes priority
+<strong>2024-2025:</strong> DMPs consolidate - vendors pivot to “identity” or “data clean rooms”</p>
+<p>Oracle shut down BlueKai’s free tier. Salesforce is de-emphasizing DMP. Adobe is pushing Customer Journey Analytics instead.</p>
+<p>The writing is on the wall.</p>
+</section>
+<section id="dmp-vs-cdp-the-short-version">
+<h2>DMP vs CDP (The Short Version)<a class="headerlink" href="#dmp-vs-cdp-the-short-version" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>DMP</p></th>
+<th class="head"><p>CDP</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Data Type</strong></p></td>
+<td><p>Anonymous (cookies, device IDs)</p></td>
+<td><p>Known customers (email, CRM)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Primary Use</strong></p></td>
+<td><p>Advertising targeting</p></td>
+<td><p>Marketing personalization</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Data Sources</strong></p></td>
+<td><p>Third-party + second-party</p></td>
+<td><p>First-party</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Retention</strong></p></td>
+<td><p>Short (90 days)</p></td>
+<td><p>Long (years)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Identity</strong></p></td>
+<td><p>Cookie IDs</p></td>
+<td><p>Customer IDs</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Privacy</strong></p></td>
+<td><p>Questionable</p></td>
+<td><p>User consented</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Future</strong></p></td>
+<td><p>Declining</p></td>
+<td><p>Growing</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If you’re starting fresh in 2025, skip the DMP and build a CDP strategy around first-party data.</p>
+</section>
+<section id="the-uncomfortable-truth">
+<h2>The Uncomfortable Truth<a class="headerlink" href="#the-uncomfortable-truth" title="Link to this heading">#</a></h2>
+<p>DMPs were built for a world where tracking users across the internet without explicit consent was normal. That world is ending (finally).</p>
+<p>The vendors are pivoting to “identity solutions” and “data clean rooms” and trying to stay relevant. Some will succeed. Many won’t.</p>
+<p>If your company invested millions in a DMP infrastructure a few years ago, I’m sorry. You’re not alone. Lots of companies did. The industry moved on.</p>
+<p>Next: CDPs—the platform built for the first-party data era.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./06-Data_In_AdTech"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01-Data_Types.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Data Types in AdTech (First, Second, and Third-Party)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="03-CDPs.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">CDPs (Customer Data Platforms)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-dmp">What is a DMP?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-dmps-were-supposed-to-work">How DMPs Were Supposed to Work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-actually-happened">What Actually Happened</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cookie-apocalypse">1. <strong>Cookie Apocalypse</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#third-party-data-quality-issues">2. <strong>Third-Party Data Quality Issues</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identity-matching-was-a-mess">3. <strong>Identity Matching Was a Mess</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#walled-gardens-don-t-play-nice">4. <strong>Walled Gardens Don’t Play Nice</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cdps-came-along-and-did-it-better">5. <strong>CDPs Came Along and Did It Better</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-dmps-still-make-sense">When DMPs Still Make Sense</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-re-a-publisher-monetizing-audience-data"><strong>You’re a publisher monetizing audience data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-need-data-onboarding"><strong>You need data onboarding</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-re-running-complex-lookalike-modeling"><strong>You’re running complex lookalike modeling</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dmp-death-spiral-but-slow">The DMP Death Spiral (But Slow)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dmp-vs-cdp-the-short-version">DMP vs CDP (The Short Version)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-uncomfortable-truth">The Uncomfortable Truth</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Vishwanath Subramanian
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright © 2025 Vishwanath Subramanian. Licensed under CC BY-NC-ND 4.0..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
