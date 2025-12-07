@@ -1,5 +1,12 @@
 # AdTech Grounding Principles and Terms
 
+```{image} assets/images/adtech.png
+:alt: AdTech Book Cover
+:class: bg-primary mb-1
+:width: 100%
+:align: center
+```
+
 ## Preface
 
 Adtech (advertising technology) refers to tools that help manage online advertising campaigns. As you read this book, you will encounter various terms and concepts related to adtech.
