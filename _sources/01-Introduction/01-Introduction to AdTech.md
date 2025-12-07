@@ -20,11 +20,36 @@ The goal of this book is to provide a quick guide to adtech, from the basics to 
 
 Python is used to write the code examples in this book. You should be comfortable with Python and have a basic understanding of the language. Apart from that, an interest to learn about the adtech ecosystem and the code will get you a long way.
 
+# How is this book structured?
+
+This book is structured into the following chapters:
 
 
+Part 1 - Foundations of Digital Advertising & Measurement
+Introduction
+Chapter 2: Core Concepts
+Chapter 3: Measurement Fundamentals
+Chapter 4: User Identification: Cookies, Crumbling Cookies, Alternative IDs, Device vs People
 
+Part 2 - Programmatic Advertising & Data Activation
+Chapter 5: What is Programmatic Advertising
+Chapter 6: RTB
+Chapter 7: Programmatic Players
+Chapter 5: Introduction to Programmatic Advertising
+Chapter 6: Data in AdTech
 
+Part 3 - Modern Challenges & Future Trends
+Chapter 8: Data Types: 1st, 2nd, and 3rd Party
+Chapter 9: DMPs
+Chapter 10: CDPs
+Chapter 11: Segmentation and Targeting
+Chapter 7: Privacy and Regulation
+Chapter 8: Programming in AdTech
+Chapter 9: AI & Machine Learning in AdTech
 
+Appendices
+Conclusion
+Glossary
 
 
 

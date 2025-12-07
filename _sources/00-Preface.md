@@ -1,4 +1,3 @@
-# AdTech Grounding Principles and Terms
 
 ![AdTech Book Cover](assets/images/adtech.png)
 
