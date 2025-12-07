@@ -1,11 +1,6 @@
 # AdTech Grounding Principles and Terms
 
-```{image} assets/images/adtech.png
-:alt: AdTech Book Cover
-:class: bg-primary mb-1
-:width: 100%
-:align: center
-```
+![AdTech Book Cover](assets/images/adtech.png)
 
 ## Preface
 
