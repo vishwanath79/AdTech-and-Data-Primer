@@ -1,4 +1,4 @@
-# About the Author
+# About 
 
 ## Vishwanath Subramanian
 
@@ -13,6 +13,7 @@ This was a series of notes I took while learning about AdTech and programming in
 Non-usage of AI these days is like not using a computer in my opinion.
 
 The code examples in this book were generated using AI for boiler plate code and tweaked extensively to fit the needs of the book. All the code is for demonstration purposes only and will be constatntly updated as time permits to make sure its still relevant.
+
 
 ---
 
