@@ -400,7 +400,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-client-side-tagging">What’s Client-Side Tagging?</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-client-side-tagging">What’s Client-Side Tagging?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How It Works</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-events-client-side">Tracking Events Client-Side</a></li>
 </ul>
@@ -409,7 +409,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ad-blockers-destroy-everything">1. Ad Blockers Destroy Everything</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#browser-privacy-features">2. Browser Privacy Features</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#page-speed-takes-a-hit">3. Page Speed Takes a Hit</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-don-t-control-the-data">4. You Don’t Control the Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-dont-control-the-data">4. You Don’t Control the Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-quality-issues">5. Data Quality Issues</a></li>
 </ul>
 </li>
@@ -428,7 +428,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#server-side-challenges">Server-Side Challenges</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-re-responsible-for-infrastructure">1. You’re Responsible for Infrastructure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#youre-responsible-for-infrastructure">1. You’re Responsible for Infrastructure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-setup">2. More Complex Setup</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-of-some-browser-context">3. Loss of Some Browser Context</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api-rate-limits">4. API Rate Limits</a></li>
@@ -456,8 +456,8 @@ document.write(`
 <h1>Client-Side vs Server-Side Tagging<a class="headerlink" href="#client-side-vs-server-side-tagging" title="Link to this heading">#</a></h1>
 <p>Remember when tracking pixels were simple? Drop some JavaScript on your page, watch the magic happen, call it a day. Those were simpler times. Then browsers started blocking third-party cookies, users installed ad blockers, and privacy regulations showed up like an uninvited guest at a party. Now we’re rethinking how we track everything.</p>
 <p>Enter the great client vs server debate—where your tracking tags run, who controls them, and why it matters more than ever.</p>
-<section id="what-s-client-side-tagging">
-<h2>What’s Client-Side Tagging?<a class="headerlink" href="#what-s-client-side-tagging" title="Link to this heading">#</a></h2>
+<section id="whats-client-side-tagging">
+<h2>What’s Client-Side Tagging?<a class="headerlink" href="#whats-client-side-tagging" title="Link to this heading">#</a></h2>
 <p>Client-side tagging is the old-school approach (though still dominant). Your webpage loads JavaScript that fires directly in the user’s browser. Google Tag Manager, Facebook Pixel, LinkedIn Insight Tag—they all run client-side by default.</p>
 <p>Think of it like this: you’re hosting a party and asking every guest to sign their own name tag at the door. They control what they write, you just provide the Sharpie and stickers.</p>
 <section id="how-it-works">
@@ -552,8 +552,8 @@ document.write(`
 <h3>3. Page Speed Takes a Hit<a class="headerlink" href="#page-speed-takes-a-hit" title="Link to this heading">#</a></h3>
 <p>Every tag you load is another HTTP request, more JavaScript parsing, more execution time. I’ve audited pages with 50+ client-side tags. The page speed? Like watching paint dry.</p>
 </section>
-<section id="you-don-t-control-the-data">
-<h3>4. You Don’t Control the Data<a class="headerlink" href="#you-don-t-control-the-data" title="Link to this heading">#</a></h3>
+<section id="you-dont-control-the-data">
+<h3>4. You Don’t Control the Data<a class="headerlink" href="#you-dont-control-the-data" title="Link to this heading">#</a></h3>
 <p>When tags fire directly from the browser, you’re at the mercy of what the browser allows. If Safari decides to cap cookie lifespans at 7 days, you’re stuck with it.</p>
 </section>
 <section id="data-quality-issues">
@@ -862,8 +862,8 @@ document.write(`
 <section id="server-side-challenges">
 <h2>Server-Side Challenges<a class="headerlink" href="#server-side-challenges" title="Link to this heading">#</a></h2>
 <p>It’s not all sunshine and roses:</p>
-<section id="you-re-responsible-for-infrastructure">
-<h3>1. You’re Responsible for Infrastructure<a class="headerlink" href="#you-re-responsible-for-infrastructure" title="Link to this heading">#</a></h3>
+<section id="youre-responsible-for-infrastructure">
+<h3>1. You’re Responsible for Infrastructure<a class="headerlink" href="#youre-responsible-for-infrastructure" title="Link to this heading">#</a></h3>
 <p>That tracking server needs to be fast, reliable, and scalable. When it goes down, ALL your tracking goes down. Hope you like being on-call.</p>
 </section>
 <section id="more-complex-setup">
@@ -1051,7 +1051,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-client-side-tagging">What’s Client-Side Tagging?</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-client-side-tagging">What’s Client-Side Tagging?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How It Works</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-events-client-side">Tracking Events Client-Side</a></li>
 </ul>
@@ -1060,7 +1060,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ad-blockers-destroy-everything">1. Ad Blockers Destroy Everything</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#browser-privacy-features">2. Browser Privacy Features</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#page-speed-takes-a-hit">3. Page Speed Takes a Hit</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-don-t-control-the-data">4. You Don’t Control the Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-dont-control-the-data">4. You Don’t Control the Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-quality-issues">5. Data Quality Issues</a></li>
 </ul>
 </li>
@@ -1079,7 +1079,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#server-side-challenges">Server-Side Challenges</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-re-responsible-for-infrastructure">1. You’re Responsible for Infrastructure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#youre-responsible-for-infrastructure">1. You’re Responsible for Infrastructure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-setup">2. More Complex Setup</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-of-some-browser-context">3. Loss of Some Browser Context</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api-rate-limits">4. API Rate Limits</a></li>
