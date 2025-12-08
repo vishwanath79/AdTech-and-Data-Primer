@@ -14,6 +14,11 @@ Non-usage of AI these days is like not using a computer in my opinion.
 
 The code examples in this book were generated using AI for boiler plate code and tweaked extensively to fit the needs of the book. All the code is for demonstration purposes only and will be updated as time permits to make sure its still relevant.
 
+---
+
+### Support This Project
+
+If this book was useful to you, please consider donating to the <a href="https://www.redcross.org/donate/donation.html/" target="_blank">Red Cross</a>.
 
 ---
 
