@@ -15,7 +15,6 @@ The code examples in this book were generated using AI for boiler plate code and
 
 # About 
 
-## Vishwanath Subramanian
 
 I am a data professional with extensive experience in AdTech, data engineering, and leading data teams for global brands. [LinkedIn](https://www.linkedin.com/in/vishsubramanian/).
 
