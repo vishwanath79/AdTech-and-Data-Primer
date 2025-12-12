@@ -1,9 +1,3 @@
-# About 
-
-## Vishwanath Subramanian
-
-I am a data professional with extensive experience in AdTech, data engineering, and leading data teams for global brands. [LinkedIn](https://www.linkedin.com/in/vishsubramanian/).
-
 
 ### Why This Book?
 
@@ -18,7 +12,14 @@ If this book was useful to you, please consider donating to the <a href="https:/
 
 The code examples in this book were generated using AI for boiler plate code and tweaked extensively to fit the needs of the book. All the code is for demonstration purposes only and will be updated as time permits to make sure its still relevant. 
 
----
+
+# About 
+
+## Vishwanath Subramanian
+
+I am a data professional with extensive experience in AdTech, data engineering, and leading data teams for global brands. [LinkedIn](https://www.linkedin.com/in/vishsubramanian/).
+
+
 
 ### License
 
