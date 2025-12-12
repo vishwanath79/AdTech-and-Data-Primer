@@ -22,7 +22,7 @@ The code examples in this book were generated using AI for boiler plate code and
 
 ### License
 
-This book is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](http://creativecommons.org/licenses/by-nc-nd/4.0/).
+This book is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/).
 
 
 ---
