@@ -1,0 +1,9 @@
+.specstory
+research/
+programmatic/
+.sh
+.ipynb_checkpoints/
+.yaml
+output/
+.cursor/
+.DS_Store

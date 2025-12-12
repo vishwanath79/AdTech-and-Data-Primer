@@ -1,0 +1,71 @@
+# Table of Contents for Jupyter Book
+# Format: https://jupyterbook.org/en/stable/structure/toc.html
+
+format: jb-book
+root: 00-Preface
+
+parts:
+  - caption: Part 1 - Foundations of Digital Advertising & Measurement
+    chapters:
+      - file: About
+      - file: 01-Introduction/index
+      - file: 02-Core_Concepts/index
+        sections:
+          - file: 02-Core_Concepts/01-What_is_AdTech
+          - file: 02-Core_Concepts/02-Key_Dataflows
+          - file: 02-Core_Concepts/03-Impressions_Clicks_Conversions
+      - file: 03-Measurement_Fundamentals/index
+        sections:
+          - file: 03-Measurement_Fundamentals/01-Importance_of_Measurement
+          - file: 03-Measurement_Fundamentals/02-Counting_Impressions
+          - file: 03-Measurement_Fundamentals/03-Measurement_Challenges
+      - file: 04-User_Identification/index
+        sections:
+          - file: 04-User_Identification/01-Cookies
+          - file: 04-User_Identification/02-Crumbling_Cookies
+          - file: 04-User_Identification/03-Alternative_IDs
+          - file: 04-User_Identification/04-Device_vs_People
+
+  - caption: Part 2 - Programmatic Advertising & Data Activation
+    chapters:
+      - file: 05-Programmatic_Intro/index
+        sections:
+          - file: 05-Programmatic_Intro/01-What_is_Programmatic
+          - file: 05-Programmatic_Intro/02-RTB
+          - file: 05-Programmatic_Intro/03-Programmatic_Players
+      - file: 06-Data_In_AdTech/index
+        sections:
+          - file: 06-Data_In_AdTech/01-Data_Types
+          - file: 06-Data_In_AdTech/02-DMPs
+          - file: 06-Data_In_AdTech/03-CDPs
+          - file: 06-Data_In_AdTech/04-Segmentation_Targeting
+
+  - caption: Part 3 - Modern Challenges & Future Trends
+    chapters:
+      - file: 07-Privacy_Regulation/index
+        sections:
+          - file: 07-Privacy_Regulation/01-Privacy_Concerns
+          - file: 07-Privacy_Regulation/02-Regulations
+          - file: 07-Privacy_Regulation/03-CMPs
+          - file: 07-Privacy_Regulation/04-Privacy_by_Design
+      - file: 08-Programming_in_AdTech/index
+        sections:
+          - file: 08-Programming_in_AdTech/01-Introduction
+          - file: 08-Programming_in_AdTech/02-Adserver
+          - file: 08-Programming_in_AdTech/03-Header Bidding Basics
+          - file: 08-Programming_in_AdTech/04-Real Time Bidding
+          - file: 08-Programming_in_AdTech/05-Creative AB Testing
+          - file: 08-Programming_in_AdTech/06-Deal IDs & Private Marketplace (PMP)
+          - file: 08-Programming_in_AdTech/07-Client & Server Side Tagging
+      - file: 09-AI_ML/index
+        sections:
+          - file: 09-AI_ML/01-AI_Applications
+          - file: 09-AI_ML/02-Algorithmic_Bidding
+          - file: 09-AI_ML/03-Predictive_Analytics
+
+  - caption: Appendices
+    chapters:
+      - file: Conclusion
+      - file: Glossary
+      - file: Appendix
+      - file: References

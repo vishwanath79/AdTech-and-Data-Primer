@@ -1,0 +1,95 @@
+# Jupyter Book 2 Configuration
+# Documentation: https://jupyterbook.org/en/stable/customize/config.html
+
+title: AdTech for the data Professional
+author: ""
+copyright: "2025 CC BY-NC 4.0"
+logo: assets/images/adtech.png
+
+# Repository settings
+repository:
+  url: https://github.com/vishwanath79/AdTech-and-Data-Primer
+  path_to_book: book
+  branch: main
+
+# Book description
+description: "A comprehensive guide covering the fundamentals of AdTech, programmatic advertising, data management, privacy regulations, and the future of digital advertising for data professionals."
+
+# Book settings
+html:
+  baseurl: ""  # Set this if deploying to a subdirectory
+  home_page_in_navbar: true
+  use_repository_button: true
+  use_edit_page_button: true
+  use_issues_button: true
+  use_download_button: false
+  search_bar_position: "navbar"
+  theme:
+    primary_sidebar_end: ["search-field.html"]
+    navbar_end: ["navbar-icon-links.html"]
+# ... existing config ...
+  extra_navbar: |
+    <div style="margin-top: 20px;">
+      <a href="https://www.redcross.org/donate/donation.html/" target="_blank" style="text-decoration: none; color: #d63384; font-weight: bold;">
+        Donate to Red Cross
+      </a>
+    </div>
+  extra_footer: |
+    <div style="margin-top: 20px; padding-top: 10px; border-top: 1px solid #eee;">
+      If this book was useful to you, please consider donating to the 
+      <a href="https://www.redcross.org/donate/donation.html/" target="_blank" style="color: #d63384; font-weight: bold;">
+        Red Cross
+      </a>.
+      <br/><br/>
+      Licensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>.
+    </div>
+
+
+# Execute settings (for notebooks)
+# ... existing config ...
+execute:
+  execute_notebooks: "off"  # Options: "auto", "force", "cache", "off"
+  timeout: 60
+  allow_errors: false
+  kernel_name: "python3"
+
+# Parse settings
+parse:
+  myst_enable_extensions:
+    - colon_fence
+    - amsmath
+    - deflist
+    - fieldlist
+    - html_admonition
+    - html_image
+    - linkify
+    - smartquotes
+    - tasklist
+  myst_heading_anchors: 3
+  myst_substitutions:
+    key1: "value1"
+
+# Bibliography (comment out if not using citations)
+# bibtex_bibfiles:
+#   - references.bib
+
+# LaTeX/PDF settings (if building PDF)
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Sphinx settings
+sphinx:
+  config:
+    templates_path: ["_templates"]
+    html_theme_options:
+      logo_only: false
+      display_version: true
+      prev_next_buttons_location: "bottom"
+      style_external_links: false
+      toc_includehidden: true
+      navigation_depth: 3
+      collapse_navigation: true
+      sticky_navigation: true
+      includehidden: true
+      titles_only: false

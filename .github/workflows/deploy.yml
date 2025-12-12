@@ -1,0 +1,41 @@
+name: deploy-book
+
+# Trigger the deployment whenever changes are pushed to the main branch
+on:
+  push:
+    branches:
+      - main
+
+# Permissions needed to write to the gh-pages branch
+permissions:
+  contents: write
+
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    # 1. Install Python
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+
+    # 2. Install dependencies (Jupyter Book, etc.)
+    - name: Install dependencies
+      run: |
+        pip install -r book/requirements.txt
+
+    # 3. Build the book
+    - name: Build the book
+      run: |
+        jupyter-book build book
+        touch book/_build/html/.nojekyll
+
+    # 4. Push the built HTML to the 'gh-pages' branch
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./book/_build/html
